@@ -150,19 +150,25 @@ The docker compose configuration also provides a service for using the [WordPres
 Sample command to install WordPress:
 
 ```
-docker-compose run --rm wpcli core install --url=http://localhost --title=test --admin_user=admin --admin_email=test@example.com
+docker-compose run --rm wpcli wp core install --url=http://cioos.joel --title=test --admin_user=joel --admin_email=a@b.com
 ```
 
 Or to list installed plugins:
 
 ```
-docker-compose run --rm wpcli plugin list
+docker-compose run --rm wpcli wp plugin list
+```
+
+Flush cache
+
+```
+docker-compose run --rm wpcli wp rewrite flush
 ```
 
 For an easier usage you may consider adding an alias for the CLI:
 
 ```
-alias wp="docker-compose run --rm wpcli"
+alias wp="docker-compose run --rm wpcli wp"
 ```
 
 This way you can use the CLI command above as follows:

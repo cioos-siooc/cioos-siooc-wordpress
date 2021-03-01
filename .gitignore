@@ -21,3 +21,15 @@ node_modules/
 *.log
 *.sql
 *.sqlite
+
+wp-app/wp-admin/
+
+wp-app/wp-content/plugins/akismet/
+
+wp-app/wp-content/themes/twentynineteen/
+
+wp-app/wp-content/themes/twentytwenty/
+
+wp-app/wp-content/themes/twentytwentyone/
+
+wp-app/wp-includes/
