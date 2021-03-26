@@ -1,25 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap");
 /*!
-Theme Name: cioos
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
-Description: Description
-Version: 1.0.0
-Tested up to: 5.4
-Requires PHP: 5.6
-License: GNU General Public License v2 or later
-License URI: LICENSE
-Text Domain: cioos
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned.
-
-cioos is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+Theme Name: CIOOS - SIOOC
+Theme URI: https://cioos.ca
+Author: CIOOS - SIOOC
 */
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -27,26 +10,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Generic
 	- Normalize
 	- Box sizing
-# Base
-	- Typography
-	- Elements
-	- Links
-	- Forms
-## Layouts
-# Components
-	- Navigation
-	- Posts and pages
-	- Comments
-	- Widgets
-	- Media
-	- Captions
-	- Galleries
-# plugins
-	- Jetpack infinite scroll
-# Utilities
-	- Accessibility
-	- Alignments
-
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Generic
@@ -145,7 +108,7 @@ strong {
 code,
 kbd,
 samp {
-	font-family: monospace, monospace;
+	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", "Courier 10 Pitch", courier, monospace;
 	font-size: 1em;
 }
 
@@ -376,29 +339,17 @@ html {
 	box-sizing: border-box;
 }
 
-/*--------------------------------------------------------------
-# Base
---------------------------------------------------------------*/
 /* Typography
 --------------------------------------------- */
-body,
-button,
-input,
-select,
-optgroup,
-textarea {
-	color: #404040;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+body, button, input, select, optgroup, textarea {
+	color: black;
+	background-color: white;
+	font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
 
@@ -406,10 +357,7 @@ p {
 	margin-bottom: 1.5em;
 }
 
-dfn,
-cite,
-em,
-i {
+dfn, cite, em, i {
 	font-style: italic;
 }
 
@@ -422,8 +370,8 @@ address {
 }
 
 pre {
-	background: #eee;
-	font-family: "Courier 10 Pitch", courier, monospace;
+	background: white;
+	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", "Courier 10 Pitch", courier, monospace;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -431,21 +379,16 @@ pre {
 	padding: 1.6em;
 }
 
-code,
-kbd,
-tt,
-var {
-	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+code, kbd, tt, var {
+	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", "Courier 10 Pitch", courier, monospace;
 }
 
-abbr,
-acronym {
+abbr, acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
 
-mark,
-ins {
+mark, ins {
 	background: #fff9c0;
 	text-decoration: none;
 }
@@ -454,21 +397,14 @@ big {
 	font-size: 125%;
 }
 
-/* Elements
---------------------------------------------- */
-body {
-	background: #fff;
-}
-
 hr {
-	background-color: #ccc;
+	background-color: #fa7268;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
 }
 
-ul,
-ol {
+ul, ol {
 	margin: 0 0 1.5em 3em;
 }
 
@@ -480,8 +416,7 @@ ol {
 	list-style: decimal;
 }
 
-li > ul,
-li > ol {
+li > ul, li > ol {
 	margin-bottom: 0;
 	margin-left: 1.5em;
 }
@@ -495,9 +430,7 @@ dd {
 }
 
 /* Make sure embeds and iframes fit their containers. */
-embed,
-iframe,
-object {
+embed, iframe, object {
 	max-width: 100%;
 }
 
@@ -518,99 +451,57 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-	color: #4169e1;
+	color: #52a79b;
 }
 
 a:visited {
-	color: #800080;
+	color: #52a79b;
 }
 
-a:hover,
-a:focus,
-a:active {
-	color: #191970;
+a:hover, a:focus, a:active {
+	color: #fa7268;
 }
 
 a:focus {
 	outline: thin dotted;
 }
 
-a:hover,
-a:active {
+a:hover, a:active {
 	outline: 0;
 }
 
 /* Forms
 --------------------------------------------- */
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+	border: 1px solid #666;
+	border-radius: 0;
+	background: #52a79b;
+	color: white;
 	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+	padding: 0.6rem;
+	font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-weight: 600;
+	font-size: 0.8rem;
 }
 
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
+	background: #fa7268;
 }
 
-button:active,
-button:focus,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
+button:active, button:focus, input[type="button"]:active, input[type="button"]:focus, input[type="reset"]:active, input[type="reset"]:focus, input[type="submit"]:active, input[type="submit"]:focus {
+	background: #fa7268;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	padding: 3px;
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea {
+	color: black;
+	border: 1px solid #666;
+	padding: 0.6rem;
+	font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-weight: 600;
+	font-size: 0.8rem;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="range"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="color"]:focus,
-textarea:focus {
+input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="range"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="color"]:focus, textarea:focus {
 	color: #111;
 }
 
@@ -622,84 +513,26 @@ textarea {
 	width: 100%;
 }
 
-/*--------------------------------------------------------------
-# Layouts
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Components
---------------------------------------------------------------*/
-/* Navigation
+/* Posts and pages
 --------------------------------------------- */
-.main-navigation {
+.sticky {
 	display: block;
-	width: 100%;
 }
 
-.main-navigation ul {
-	display: none;
-	list-style: none;
+.post,
+.page {
 	margin: 0;
-	padding-left: 0;
 }
 
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
+.updated:not(.published) {
+	background: #e9aeae;
 }
 
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
-}
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	display: block;
-	left: auto;
-}
-
-.main-navigation ul ul a {
-	width: 200px;
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
-}
-
-.main-navigation li {
-	position: relative;
-}
-
-.main-navigation a {
-	display: block;
-	text-decoration: none;
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: flex;
-	}
-}
-
+/* Comments
+--------------------------------------------- */
 .site-main .comment-navigation,
-.site-main
-.posts-navigation,
-.site-main
-.post-navigation {
+.site-main .posts-navigation,
+.site-main .post-navigation {
 	margin: 0 0 1.5em;
 }
 
@@ -722,34 +555,6 @@ textarea {
 	flex: 1 0 50%;
 }
 
-/* Posts and pages
---------------------------------------------- */
-.sticky {
-	display: block;
-}
-
-.post,
-.page {
-	margin: 0 0 1.5em;
-}
-
-.updated:not(.published) {
-	display: none;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-}
-
-/* Comments
---------------------------------------------- */
 .comment-content a {
 	word-wrap: break-word;
 }
@@ -855,6 +660,44 @@ textarea {
 	display: block;
 }
 
+/* Alignments
+--------------------------------------------- */
+.alignleft {
+	/*rtl:ignore*/
+	float: left;
+	/*rtl:ignore*/
+	margin-right: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.alignright {
+	/*rtl:ignore*/
+	float: right;
+	/*rtl:ignore*/
+	margin-left: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1.5em;
+}
+
+.contentleft {
+	text-align: left;
+}
+
+.contentright {
+	text-align: right;
+}
+
+.contentcenter {
+	text-align: center;
+}
+
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
@@ -871,11 +714,142 @@ textarea {
 	display: block;
 }
 
-/*--------------------------------------------------------------
-# Utilities
---------------------------------------------------------------*/
-/* Accessibility
+/* Navigation
 --------------------------------------------- */
+.main-navigation {
+	display: block;
+	width: 100%;
+}
+
+ul.sitelanguages,
+ul.nav-menu {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	align-items: center;
+	align-content: center;
+	list-style-type: none;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.sitelanguages li,
+ul.nav-menu li {
+	list-style-type: none;
+	list-style: none;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+ul.sitelanguages li a,
+ul.nav-menu li a {
+	margin: 0;
+	padding: 0;
+	color: black;
+	display: inline-block;
+	text-decoration: none;
+	border-bottom: 3px solid rgba(255, 255, 255, 0);
+	transition: color 200ms linear, border 200ms linear;
+}
+
+ul.sitelanguages li a:hover,
+ul.nav-menu li a:hover {
+	border-bottom: 3px solid #b5b5b5;
+}
+
+ul.sitelanguages li ul,
+ul.nav-menu li ul {
+	height: unset;
+	display: block;
+	position: absolute;
+	left: -999em;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	background: white;
+	z-index: 100;
+	min-width: 200px;
+	border-top: 3px solid #52a79b;
+	opacity: 0;
+	transition: opacity 200ms linear;
+	margin: 0;
+	padding: 0;
+}
+
+ul.sitelanguages li ul a,
+ul.nav-menu li ul a {
+	font-weight: normal;
+	border-bottom: 0px solid #b5b5b5;
+}
+
+ul.sitelanguages li ul a:hover,
+ul.nav-menu li ul a:hover {
+	border-bottom: 0px solid #b5b5b5;
+}
+
+ul.sitelanguages li:last-child.menu-item-has-children .sub-menu,
+ul.nav-menu li:last-child.menu-item-has-children .sub-menu {
+	right: unset;
+}
+
+ul.sitelanguages li:last-child.menu-item-has-children:hover .sub-menu,
+ul.nav-menu li:last-child.menu-item-has-children:hover .sub-menu {
+	right: 0;
+}
+
+@media screen and (max-width: 800px) {
+	ul.sitelanguages li:last-child.menu-item-has-children:hover .sub-menu,
+	ul.nav-menu li:last-child.menu-item-has-children:hover .sub-menu {
+		right: unset;
+	}
+}
+
+ul.sitelanguages li:hover > ul,
+ul.sitelanguages li.focus > ul,
+ul.nav-menu li:hover > ul,
+ul.nav-menu li.focus > ul {
+	left: auto;
+	opacity: 1;
+}
+
+ul.sitelanguages li:hover > a,
+ul.sitelanguages li.focus > a,
+ul.sitelanguages .current_page_ancestor > a,
+ul.sitelanguages .current-menu-item > a,
+ul.nav-menu li:hover > a,
+ul.nav-menu li.focus > a,
+ul.nav-menu .current_page_ancestor > a,
+ul.nav-menu .current-menu-item > a {
+	color: #fa7268;
+}
+
+ul.sitelanguages .menu-item-has-children > a::after,
+ul.nav-menu .menu-item-has-children > a::after {
+	content: "\f347";
+	font-family: dashicons;
+	display: inline;
+	position: relative;
+	vertical-align: baseline;
+	line-height: 0;
+}
+
+/* Mobile menu. */
+.menu-toggle {
+	display: none;
+}
+
+@media screen and (max-width: 800px) {
+	.main-navigation.toggled ul,
+	.menu-toggle {
+		display: block;
+	}
+	.main-navigation ul,
+	ul.sitelanguages {
+		display: none;
+	}
+}
+
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	border: 0;
@@ -901,11 +875,8 @@ textarea {
 	font-size: 0.875rem;
 	font-weight: 700;
 	height: auto;
-	left: 5px;
 	line-height: normal;
-	padding: 15px 23px 14px;
 	text-decoration: none;
-	top: 5px;
 	width: auto;
 	z-index: 100000;
 }
@@ -915,30 +886,176 @@ textarea {
 	outline: 0;
 }
 
-/* Alignments
---------------------------------------------- */
-.alignleft {
-	/*rtl:ignore*/
-	float: left;
-	/*rtl:ignore*/
-	margin-right: 1.5em;
-	margin-bottom: 1.5em;
+/*--------------------------------------------------------------
+# Layouts
+
+This system works by creating rows, spanning the view port,
+and in each row a container is inserted to hold content.
+
+<div class=row1>
+    <div class=container> 
+    ------------
+    your content
+    ------------
+    </div>
+</div>  
+
+<div class=row2>
+    <div class=container> 
+    ------------
+    your content
+    ------------
+    </div>
+</div>    
+
+----------------------------------------------------------
+ row 1          -------------------------
+                |    container div      |
+                -------------------------
+----------------------------------------------------------
+
+----------------------------------------------------------
+ row 2          -------------------------
+                |    container div      |
+                -------------------------
+----------------------------------------------------------
+
+----------------------------------------------------------
+ row 3 ... etc
+                -------------------------
+                |    container div      |
+                -------------------------
+----------------------------------------------------------
+*/
+.container {
+	width: 100%;
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: 0 1em;
 }
 
-.alignright {
-	/*rtl:ignore*/
-	float: right;
-	/*rtl:ignore*/
-	margin-left: 1.5em;
-	margin-bottom: 1.5em;
+.post-nav,
+.pre-nav {
+	font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-weight: 600;
+	font-size: 0.8rem;
 }
 
-.aligncenter {
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 1.5em;
+.pre-nav {
+	background: #52a79b;
+	max-height: 3rem;
+}
+
+@media screen and (max-width: 800px) {
+	.pre-nav {
+		margin: 0 0 5px;
+	}
+}
+
+.pre-nav .container {
+	display: grid;
+	grid-template-columns: 90px max-content;
+	grid-template-rows: auto;
+	grid-column-gap: 1em;
+	height: 3em;
+	width: max-content;
+}
+
+.pre-nav .container .nationallogo {
+	grid-area: 1 / 1 / 1 / 2;
+	overflow: hidden;
+}
+
+.pre-nav .container .logotype {
+	grid-area: 1 / 2 / 1 / 3;
+	display: flex;
+}
+
+.pre-nav .container .logotype a {
+	padding: 0.8em;
+	align-self: center;
+	color: white;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.post-nav {
+	margin: 2em 0;
+}
+
+.post-nav .container {
+	display: grid;
+	grid-template-columns: 344px auto min-content;
+	grid-template-rows: auto;
+	grid-column-gap: 1em;
+}
+
+@media screen and (max-width: 800px) {
+	.post-nav .container {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.post-nav .sitelogo {
+	grid-area: 1 / 1 / 1 / 2;
+	width: 344px;
+}
+
+@media screen and (max-width: 800px) {
+	.post-nav .sitelogo {
+		width: 80vw;
+	}
+}
+
+.post-nav .main-nav {
+	grid-area: 1 / 2 / 1 / 3;
+	text-transform: uppercase;
+}
+
+.post-nav .main-nav li a {
+	padding: 2em .5em .5em .5em;
+}
+
+.post-nav .main-nav .sub-menu li a {
+	padding: .5em .5em 1em .5em;
+}
+
+.post-nav .sitelanguages {
+	text-transform: uppercase;
+}
+
+.post-nav .sitelanguages li a {
+	font-size: .8em;
+	color: #818181;
+	text-decoration: none;
+}
+
+.post-nav .menu-toggle {
+	width: 100%;
+}
+
+.site-main {
+	background-color: white;
+	margin: 3em 0;
+}
+
+.site-footer {
+	background: #17212b;
+}
+
+.site-footer .container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto;
+	grid-column-gap: 1em;
+}
+
+.elementor-top-section {
+	margin-bottom: 2.5em;
 }
 
 /*# sourceMappingURL=style.css.map */

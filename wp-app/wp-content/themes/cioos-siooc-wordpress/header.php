@@ -17,62 +17,41 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php esc_url( bloginfo( 'pingback_url' ) ); ?>" />
-
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'cioos' ); ?></a>
-	<div id="pre-header">
-	<div class="wrap-safari">
-	<div id="pre-header-core" class="main-navigation">
+<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'cioos' ); ?></a>
 
-		<nav id="site-navigation" class="main-navigation">
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-2',
-					'menu_id'        => 'pre-menu',
-				)
-			);
-			?>
-		</nav>
-
-
+<header class="page-header">
+	<div class="pre-nav">
+		<div class="container">
+			<div class="nationallogo"><a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/Icons-mark/ICON_White.svg"></a></div>
+			<div class="logotype"><a rel="home" href="<?php esc_url( bloginfo() ); ?>"><?php dynamic_sidebar('sidebar-logotype') ?></a></div>	
+		</div>
 	</div>
-	</div>
-	</div>
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	
+	<div class="post-nav">
+		<div class="container">
+			<div class="sitelogo">
+				<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/cioos-national_EN_FR.svg" alt="Logo"></a>
+			</div>	
+			<nav id="site-navigation" class="site-navigation nav main-nav main-navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', '_s' ); ?></button>
 				<?php
-			else :
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					)
+				);
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$cioos_description = get_bloginfo( 'description', 'display' );
-			if ( $cioos_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $cioos_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'cioos' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+			</nav>
+			<ul class="sitelanguages"><?php pll_the_languages(array(
+				'hide_current' => 1,
+				'display_names_as' => 'slug'
+			)); ?></ul>
+		</div>
+	</div>
+</header>
