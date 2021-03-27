@@ -13,46 +13,21 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="container">
-		<p>
-			footer
-			</p>
-			<p>
-			footer
-			</p>
-			<p>
-			footer
-			</p>
-			<p>
-			footer
-			</p>
-			<p>
-			footer
-			</p>
-			<p>
-			footer
-			</p>
-			<p>
-			footer
-			</p>
-			<p>
-			footer
-			</p>
-			<p>
-			footer
-			</p>
-			<p>
-			footer
-			</p>
-			<p>
-			footer
-			</p>
-			<p>
-			footer
-			</p>
-		</container>
+			<div class="col">
+			<?php dynamic_sidebar('sidebar-footer-1') ?>
+			</div>
+			<div class="col">
+			<?php dynamic_sidebar('sidebar-footer-2') ?>
+			</div>
+			<div class="col">
+			<?php dynamic_sidebar('sidebar-footer-3') ?>
+			</div>
+			<div class="col">
+			<?php dynamic_sidebar('sidebar-footer-4') ?>
+			</div>
+		</div>
 	</footer>
 	<!-- #colophon -->
-
 <?php wp_footer(); ?>
 
 </body>

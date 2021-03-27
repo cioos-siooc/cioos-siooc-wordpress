@@ -48,10 +48,16 @@
 				);
 				?>
 			</nav>
-			<ul class="sitelanguages"><?php pll_the_languages(array(
-				'hide_current' => 1,
-				'display_names_as' => 'slug'
-			)); ?></ul>
+			<nav id="language" class="site-navigation nav language-nav">
+				<div class="menu-default-container">
+					<ul class="sitelanguages">
+						<?php pll_the_languages(array(
+						'hide_current' => 1,
+						'display_names_as' => 'slug'
+						)); ?>
+					</ul>
+				</div>
+			</nav>
 		</div>
 	</div>
 </header>

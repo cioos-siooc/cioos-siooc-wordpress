@@ -4,16 +4,71 @@ Theme Name: CIOOS - SIOOC
 Theme URI: https://cioos.ca
 Author: CIOOS - SIOOC
 */
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Generic
-	- Normalize
-	- Box sizing
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Generic
---------------------------------------------------------------*/
+/* Reset everything*/
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+ul {
+	list-style: none;
+}
+
+button, input, select {
+	margin: 0;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+img, video {
+	height: auto;
+	max-width: 100%;
+}
+
+iframe {
+	border: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td, th {
+	padding: 0;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, cite,
+del, dfn, em, font, q, s, samp,
+strike, strong,
+ol, ul, li,
+fieldset, form, label, legend,
+tbody, tfoot, thead, tr {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
 /* Normalize
 --------------------------------------------- */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -346,7 +401,8 @@ body, button, input, select, optgroup, textarea {
 	background-color: white;
 	font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-size: 1rem;
-	line-height: 1.5;
+	line-height: 1.15;
+	border: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -472,45 +528,51 @@ a:hover, a:active {
 
 /* Forms
 --------------------------------------------- */
-button, input[type="button"], input[type="reset"], input[type="submit"] {
-	border: 1px solid #666;
+label {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+label input {
+	width: 100%;
+}
+
+button, input, select, textarea,
+input[type="text"], input[type="email"], input[type="url"],
+input[type="password"], input[type="search"], input[type="number"],
+input[type="tel"], input[type="range"], input[type="date"], input[type="month"],
+input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"],
+input[type="color"], textarea {
+	border: 1px solid;
+	border-color: #52a79b;
 	border-radius: 0;
-	background: #52a79b;
-	color: white;
+	background: white;
+	color: black;
 	line-height: 1;
 	padding: 0.6rem;
 	font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-weight: 600;
+	font-weight: 100;
 	font-size: 0.8rem;
 }
 
-button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
-	background: #fa7268;
-}
-
-button:active, button:focus, input[type="button"]:active, input[type="button"]:focus, input[type="reset"]:active, input[type="reset"]:focus, input[type="submit"]:active, input[type="submit"]:focus {
-	background: #fa7268;
-}
-
-input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea {
-	color: black;
-	border: 1px solid #666;
-	padding: 0.6rem;
-	font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+	background: #52a79b;
+	color: white;
 	font-weight: 600;
-	font-size: 0.8rem;
 }
 
-input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="range"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="color"]:focus, textarea:focus {
-	color: #111;
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover,
+button:active, button:focus, input[type="button"]:active, input[type="button"]:focus,
+input[type="reset"]:active, input[type="reset"]:focus, input[type="submit"]:active,
+input[type="submit"]:focus {
+	background: #fa7268;
+	border-color: #fa7268;
 }
 
-select {
-	border: 1px solid #ccc;
-}
-
-textarea {
-	width: 100%;
+input:focus, select:focus, option:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="range"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="color"]:focus, textarea:focus {
+	border-color: #fa7268;
+	background: #c6e3df;
 }
 
 /* Posts and pages
@@ -887,6 +949,13 @@ ul.nav-menu .menu-item-has-children > a::after {
 }
 
 /*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Layouts
+	- Normalize
+	- Box sizing
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
 # Layouts
 
 This system works by creating rows, spanning the view port,
@@ -925,34 +994,36 @@ and in each row a container is inserted to hold content.
                 -------------------------
                 |    container div      |
                 -------------------------
-----------------------------------------------------------
-*/
+----------------------------------------------------------*/
 .container {
-	width: 100%;
 	max-width: 1140px;
 	margin: 0 auto;
 	padding: 0 1em;
 }
 
-.post-nav,
-.pre-nav {
+.page-header {
+	background: white;
+}
+
+.page-header .post-nav,
+.page-header .pre-nav {
 	font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-weight: 600;
 	font-size: 0.8rem;
 }
 
-.pre-nav {
+.page-header .pre-nav {
 	background: #52a79b;
 	max-height: 3rem;
 }
 
 @media screen and (max-width: 800px) {
-	.pre-nav {
+	.page-header .pre-nav {
 		margin: 0 0 5px;
 	}
 }
 
-.pre-nav .container {
+.page-header .pre-nav .container {
 	display: grid;
 	grid-template-columns: 90px max-content;
 	grid-template-rows: auto;
@@ -961,17 +1032,17 @@ and in each row a container is inserted to hold content.
 	width: max-content;
 }
 
-.pre-nav .container .nationallogo {
+.page-header .pre-nav .container .nationallogo {
 	grid-area: 1 / 1 / 1 / 2;
 	overflow: hidden;
 }
 
-.pre-nav .container .logotype {
+.page-header .pre-nav .container .logotype {
 	grid-area: 1 / 2 / 1 / 3;
 	display: flex;
 }
 
-.pre-nav .container .logotype a {
+.page-header .pre-nav .container .logotype a {
 	padding: 0.8em;
 	align-self: center;
 	color: white;
@@ -979,11 +1050,11 @@ and in each row a container is inserted to hold content.
 	text-decoration: none;
 }
 
-.post-nav {
-	margin: 2em 0;
+.page-header .post-nav {
+	padding: 2em 0;
 }
 
-.post-nav .container {
+.page-header .post-nav .container {
 	display: grid;
 	grid-template-columns: 344px auto min-content;
 	grid-template-rows: auto;
@@ -991,7 +1062,7 @@ and in each row a container is inserted to hold content.
 }
 
 @media screen and (max-width: 800px) {
-	.post-nav .container {
+	.page-header .post-nav .container {
 		display: flex;
 		flex-direction: column;
 		flex-wrap: nowrap;
@@ -1000,47 +1071,49 @@ and in each row a container is inserted to hold content.
 	}
 }
 
-.post-nav .sitelogo {
+.page-header .post-nav .sitelogo {
 	grid-area: 1 / 1 / 1 / 2;
 	width: 344px;
 }
 
 @media screen and (max-width: 800px) {
-	.post-nav .sitelogo {
+	.page-header .post-nav .sitelogo {
 		width: 80vw;
 	}
 }
 
-.post-nav .main-nav {
+.page-header .post-nav .main-nav {
 	grid-area: 1 / 2 / 1 / 3;
 	text-transform: uppercase;
 }
 
-.post-nav .main-nav li a {
-	padding: 2em .5em .5em .5em;
+.page-header .post-nav .main-nav li a {
+	padding: 2em 0.5em 0.5em 0.5em;
 }
 
-.post-nav .main-nav .sub-menu li a {
-	padding: .5em .5em 1em .5em;
+.page-header .post-nav .main-nav .sub-menu li a {
+	padding: 0.5em 0.5em 1em 0.5em;
 }
 
-.post-nav .sitelanguages {
+.page-header .post-nav .language-nav {
+	grid-area: 1 / 3 / 1 / 4;
 	text-transform: uppercase;
 }
 
-.post-nav .sitelanguages li a {
-	font-size: .8em;
+.page-header .post-nav .language-nav li a {
+	padding: 2.5em 0.5em 0.5em 0.5em;
+	font-size: 0.8em;
 	color: #818181;
-	text-decoration: none;
 }
 
-.post-nav .menu-toggle {
+.page-header .post-nav .menu-toggle {
 	width: 100%;
 }
 
 .site-main {
+	overflow: hidden;
 	background-color: white;
-	margin: 3em 0;
+	margin: 0;
 }
 
 .site-footer {
@@ -1054,7 +1127,7 @@ and in each row a container is inserted to hold content.
 	grid-column-gap: 1em;
 }
 
-.elementor-top-section {
+.elementor-section-wrap > section {
 	margin-bottom: 2.5em;
 }
 
