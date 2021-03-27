@@ -33,3 +33,5 @@ wp-app/wp-content/themes/twentytwenty/
 wp-app/wp-content/themes/twentytwentyone/
 
 wp-app/wp-includes/
+
+.env
