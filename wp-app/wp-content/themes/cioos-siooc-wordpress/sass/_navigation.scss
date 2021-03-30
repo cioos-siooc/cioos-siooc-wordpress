@@ -1,11 +1,14 @@
 /* Navigation
 --------------------------------------------- */
+.menu-en-container,
+.menu-fr-container,
 .main-navigation {
 	display: block;
 	width: 100%;
 }
 ul.sitelanguages,
-ul.nav-menu {
+ul.nav-menu,
+ul.menu {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;

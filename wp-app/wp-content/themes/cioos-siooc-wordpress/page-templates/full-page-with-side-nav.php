@@ -1,5 +1,5 @@
 <?php
-/**
+/* Template Name: Page with Side Nav
  * The template for displaying all pages
  *
  * This is the template that displays all pages by default.
@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-	<main class="site-main">
+	<main id="primary" class="site-main">
 		<div class="container">
 			<?php
 			while ( have_posts() ) :
@@ -29,6 +29,7 @@ get_header();
 				endif;
 
 			endwhile; // End of the loop.
+			get_sidebar();
 		?>
 		</div>
 	</main><!-- #main -->

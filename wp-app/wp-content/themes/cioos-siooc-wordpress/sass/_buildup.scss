@@ -51,7 +51,9 @@ mark, ins {
 	background: #fff9c0;
 	text-decoration: none;
 }
-
+b, strong{
+	font-weight: 600;
+}
 big {
 	font-size: 125%;
 }
@@ -81,7 +83,7 @@ li > ul, li > ol {
 }
 
 dt {
-	font-weight: 700;
+	font-weight: 600;
 }
 
 dd {
@@ -153,7 +155,7 @@ input[type="color"], textarea {
 	border: 1px solid; // Since not all inputs can exist without a border, I make sure all inputs are bordered and hide them using like colours.
 	border-color: $color_2;
 	border-radius: 0;
-	background: $color_4;
+	background: $color_1;
 	color: $color_body_text;
 	line-height: 1;
 	padding: 0.6rem;
@@ -163,7 +165,7 @@ input[type="color"], textarea {
 }
 button, input[type="button"], input[type="reset"], input[type="submit"] {
 	background: $color_2;
-	color: $color_4;
+	color: $color_body_bg;
 	font-weight: 600;
 }
 //button hovers
@@ -173,9 +175,10 @@ input[type="reset"]:active, input[type="reset"]:focus, input[type="submit"]:acti
 input[type="submit"]:focus {
 	background: $color_3;
 	border-color: $color_3;
+	color: $color_body_text;
 }
 //textbox interactions
 input:focus, select:focus, option:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="range"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="color"]:focus, textarea:focus {
 	border-color: $color_3;
-	background: $color_5;
+	background: $color_body_bg
 }

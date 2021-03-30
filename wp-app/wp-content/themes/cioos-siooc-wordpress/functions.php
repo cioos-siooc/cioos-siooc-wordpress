@@ -117,17 +117,19 @@ add_action( 'after_setup_theme', 'cioos_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function cioos_widgets_init() {
-	// register_sidebar(array(
-	// 	'name'          => esc_html__( 'CIOOS Widget 1', 'cioos-widget-1' ),
-	// 	'id'            => 'sidebar-top',
-	// 	'description'   => esc_html__( 'Add widgets here.', 'cioos-widget-description-1' ),
-	// 	'before_widget' => '<section id="%1$s" class="widget %2$s">',
-	// 	'after_widget'  => '</section>',
-	// 	'before_title'  => '<h2 class="widget-title">',
-	// 	'after_title'   => '</h2>',
-	// ));
+
 	register_sidebar(array(
-		'name'          => esc_html__(  'CIOOS Logo type', 'cioos' ),
+		'name'          => esc_html__( 'Sidebar 1', 'sidebar-nav' ),
+		'id'            => 'sidebar-nav',
+		'description'   => esc_html__( 'Add widgets here.', 'cioos-widget-description-1' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	));
+
+	register_sidebar(array(
+		'name'          => esc_html__(  'Pre-nav top bar', 'cioos' ),
 		'id'            => 'sidebar-logotype',
 		'description'   => esc_html__( 'Add widgets here.', 'cioos' ),
 		'before_widget' => '',
