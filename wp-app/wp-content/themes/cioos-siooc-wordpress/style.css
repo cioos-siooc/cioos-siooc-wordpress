@@ -1,3 +1,56 @@
+/*--------------------------------------------------------
+>>> TABLE OF CONTENTS:
+-----------------------------------------------------------
+# instructions
+# includes
+# continer
+# header
+# main
+# footer
+--------------------------------------------------------*/
+/*--------------------------------------------------------
+# instructions
+----------------------------------------------------------
+This system works by creating rows, spanning the view port,
+and in each row a container is inserted to hold content.
+
+<div class=row1>
+    <div class=container> 
+    ------------
+    your content
+    ------------
+    </div>
+</div>  
+
+<div class=row2>
+    <div class=container> 
+    ------------
+    your content
+    ------------
+    </div>
+</div>    
+
+----------------------------------------------------------
+ row 1          -------------------------
+                |    container div      |
+                -------------------------
+----------------------------------------------------------
+
+----------------------------------------------------------
+ row 2          -------------------------
+                |    container div      |
+                -------------------------
+----------------------------------------------------------
+
+----------------------------------------------------------
+ row 3 ... etc
+                -------------------------
+                |    container div      |
+                -------------------------
+----------------------------------------------------------*/
+/*--------------------------------------------------------
+# Includes
+--------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap");
 /*!
 Theme Name: CIOOS - SIOOC
@@ -640,6 +693,12 @@ input:focus, select:focus, option:focus, input[type="text"]:focus, input[type="e
 	max-width: 100%;
 }
 
+/* Search form
+--------------------------------------------- */
+.search-form {
+	display: flex;
+}
+
 /* Media
 --------------------------------------------- */
 .page-content .wp-smiley,
@@ -972,52 +1031,8 @@ ul.menu .menu-item-has-children > a::after {
 	outline: 0;
 }
 
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Layouts
-	- Normalize
-	- Box sizing
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Layouts
-
-This system works by creating rows, spanning the view port,
-and in each row a container is inserted to hold content.
-
-<div class=row1>
-    <div class=container> 
-    ------------
-    your content
-    ------------
-    </div>
-</div>  
-
-<div class=row2>
-    <div class=container> 
-    ------------
-    your content
-    ------------
-    </div>
-</div>    
-
-----------------------------------------------------------
- row 1          -------------------------
-                |    container div      |
-                -------------------------
-----------------------------------------------------------
-
-----------------------------------------------------------
- row 2          -------------------------
-                |    container div      |
-                -------------------------
-----------------------------------------------------------
-
-----------------------------------------------------------
- row 3 ... etc
-                -------------------------
-                |    container div      |
-                -------------------------
+/*----------------------------------------------------------
+# container
 ----------------------------------------------------------*/
 .container {
 	max-width: 1140px;
@@ -1025,6 +1040,9 @@ and in each row a container is inserted to hold content.
 	padding: 0 1em;
 }
 
+/*----------------------------------------------------------
+# header
+----------------------------------------------------------*/
 .page-header {
 	background: white;
 }
@@ -1134,6 +1152,9 @@ and in each row a container is inserted to hold content.
 	width: 100%;
 }
 
+/*----------------------------------------------------------
+# main
+----------------------------------------------------------*/
 .site-main {
 	overflow: hidden;
 	background-color: white;
@@ -1141,12 +1162,12 @@ and in each row a container is inserted to hold content.
 }
 
 .site-main .container {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: auto;
-	grid-column-gap: 1em;
+	display: flex;
 }
 
+/*----------------------------------------------------------
+# footer
+----------------------------------------------------------*/
 .site-footer {
 	background: #17212b;
 }
