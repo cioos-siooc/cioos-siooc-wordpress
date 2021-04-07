@@ -80,16 +80,16 @@ $table_prefix = 'wp_';
 
 //  Localhost modifications
 define('WP_DEBUG', false );
-define('WP_HOME','http://example.test');
-define('WP_SITEURL','http://example.test');
+define('WP_HOME','https://example.test');
+define('WP_SITEURL','https://example.test');
 
 // If we're behind a proxy server and using HTTPS, we need to alert WordPress of that fact
 // see also http://codex.wordpress.org/Administration_Over_SSL#Using_a_Reverse_Proxy
 
-// TODO: Turn this back on
-// if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
-// 	$_SERVER['HTTPS'] = 'on';
-// }
+// This determines if Wordpress attempts SSL or not
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+	$_SERVER['HTTPS'] = 'on';
+}
 
 /* That's all, stop editing! Happy publishing. */
 
