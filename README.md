@@ -12,64 +12,84 @@ With this project you can quickly run the following:
 * Docker-Compose
 * Bash
 * Rsync
-* Configured `.env` and `.script-env` files
+* Configured `.env` and `wp-config.local.php` files
 
-An example .env
+-------------------------------------------------------------------------------
+
+## Usage
+
+1. Clone this repository 
+
+2. Change the `.enviromnment`, `hosts` and `wp-config.local.php` files to suit your needs
+
+3. Start up Docker Compose and build the containers.
+
+4. Install a new wordpress site, and apply the theme 
+
+//TODO: add wp-cli scripts to the docker compose file so it installs, and selects the proper theme.
+
+## Configuration - Change the .enviromnment and wp-config.local.php files
+
+### .env
+
+Edit the `.env` file to change the 
+- default IP address
+- Docker MySQL root password
+- Docker WordPress database name and remote MySQL password.
+
+#### An example .env
 
 ```.env
 IP=127.0.0.1
 DOCKER_DB_PASSWORD=replace_me_with_a_real_password
 DOCKER_DB_NAME=wordpress
 ```
-   
-* An example `/scripts/.script-env` file
+### wp-config.local.php
 
-```.script-env
-# Scripting variables
-DEV_WORDPRESS_DB_PASSWORD=wordpress
-PROD_WORDPRESS_DB_PASSWORD=replace_me_with_a_real_password
-```
-
-## Configuration
-
-Edit the `.env` and `scripts/.script-env` files to change the default IP address, Docker MySQL root password, Docker WordPress database name and remote MySQL password.
-
-## Usage
-
-1. Clone this repository and open a terminal in the project directory.
-
-2. To run the shell script to download the production MySQL dump and Wordpress Files:
-
-```shell
-bash pull-prod-db-and-files-to-local.sh
-```
-
-3. To build and start up Docker Compose and the containers described in `docker-compose.yml`: 
+Here you will set your URL for your local site
 
 ```
-docker-compose up --build
+define('WP_HOME','https://cioos.local');
+define('WP_SITEURL','https://cioos.local');
 ```
-
-This creates two new folders next to your `docker-compose.yml` file.
-
-* `wp-data` – used to store and restore database dumps
-* `wp-app` – the location of your WordPress application
-
-The containers are now built and running. You should be able to access the WordPress installation with the configured IP in the browser address. By default it is `http://127.0.0.1`.
+### hosts
 
 For convenience you may add a new entry into your hosts file.
-e.g.
 
 ```etc/hosts
 # You should have existing entries like this
 127.0.0.1        localhost
 
 # Below them, add this. Replace `example.test` with the domain name desired and `127.0.0.1` with the IP specified in `.env`.
-127.0.0.1 example.test
+
+127.0.0.1 cioos.local
+```
+### Building the containers for the first time
+```
+docker-compose up --build
 ```
 
+This creates an uninstalled version of wordpress.
+
+The containers are now built and running. You should be able to access the WordPress installation with the configured IP in the browser address, or URL.
+
+### Install wordpress
+
+Follow the instructions to install the wordpress core to your local drive. 
+
+### Activate the theme
+
+Dive into the Wordpress dashboard, and activate the siooc-cioos theme
+
+-------------------------------------------------------------------------------
 
 ## Commands
+
+### Stopping containers without removing state
+
+```
+docker-compose stop
+```
 
 ### Starting containers
 
@@ -77,12 +97,6 @@ You can start the containers with the `up` command in daemon mode (by adding `-d
 
 ```
 docker-compose start
-```
-
-### Stopping containers without removing state
-
-```
-docker-compose stop
 ```
 
 ### Stop containers and remove volumes
@@ -114,36 +128,27 @@ docker-compose up
 
 This will create the containers and populate the database with the given dump. You may set your host entry and change it in the database, or you simply overwrite it in `wp-config.php` by adding:
 
-```
-define('WP_HOME','http://example.test');
-define('WP_SITEURL','http://example.test');
-```
+## Developing or editing a Theme
 
-### Creating database dumps
+If you open the wordpress theme in your dev environment to change the files, you may use node and NPM to run some scripts, in a console, in the theme folder itself. The CSS is made by compiling the SASS pre-process scripts to make the changes.
 
-```
-./export.sh
-```
+I use `npm run watch` to look for sass changes, and create the CSS files as I need them.
+  
+### Theme dev commands
+   ```
+   - `composer lint:wpcs` : checks all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
+   - `composer lint:php` : checks all PHP files for syntax errors.
+   - `composer make-pot` : generates a .pot file in the `languages/` directory.
+   - `npm run compile:css` : compiles SASS files to css.
+   - `npm run compile:rtl` : generates an RTL stylesheet.
+   - `npm run watch` : watches all SASS files and recompiles them to css when they change.
+   - `npm run lint:scss` : checks all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
+   - `npm run lint:js` : checks all JavaScript files against [JavaScript Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/).
+   - `npm run bundle` : generates a .zip archive for distribution, excluding development and system files.
+   ```
 
-### Developing a Theme
 
-Configure the volume to load the theme in the container in the `docker-compose.yml`:
-
-```
-volumes:
-  - ./theme-name/trunk/:/var/www/html/wp-content/themes/theme-name
-```
-
-### Developing a Plugin
-
-Configure the volume to load the plugin in the container in the `docker-compose.yml`:
-
-```
-volumes:
-  - ./plugin-name/trunk/:/var/www/html/wp-content/plugins/plugin-name
-```
-
-### WP CLI
+## WP CLI
 
 The docker compose configuration also provides a service for using the [WordPress CLI](https://developer.wordpress.org/cli/commands/).
 
@@ -171,7 +176,7 @@ This way you can use the CLI command above as follows:
 wp plugin list
 ```
 
-### phpMyAdmin
+## phpMyAdmin
 
 You can also visit `http://127.0.0.1:8080` to access phpMyAdmin after starting the containers.
 
