@@ -46,14 +46,14 @@ define( 'DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         '58af91c93ec96a914fe9000fe536506d41c25a22');
-define( 'SECURE_AUTH_KEY',  'ee7c204f31d7f81d8810bffa4b5eaa7ee24aa4de');
-define( 'LOGGED_IN_KEY',    '6aa54cd56601b1fc6dfc6ff70e0cd43ed56d87a4');
-define( 'NONCE_KEY',        '8485ebd826cafbd222c2806b5f4372425baa5a78');
-define( 'AUTH_SALT',        'ea9af37c939a2f26a4efb5d6e3827d6281d44d61');
-define( 'SECURE_AUTH_SALT', '65b8fb5ddf65ebb4ec2a31b2c19ad295cc088cb8');
-define( 'LOGGED_IN_SALT',   'a91f9759bd76b4647b1943f6c88ca2c32edc16a2');
-define( 'NONCE_SALT',       '7087b0da11563a4eae4c70dd6243908ddd32decc');
+define( 'AUTH_KEY',         'changeme');
+define( 'SECURE_AUTH_KEY',  'changeme');
+define( 'LOGGED_IN_KEY',    'changeme');
+define( 'NONCE_KEY',        'changeme');
+define( 'AUTH_SALT',        'changeme');
+define( 'SECURE_AUTH_SALT', 'changeme');
+define( 'LOGGED_IN_SALT',   'changeme');
+define( 'NONCE_SALT',       'changeme');
 
 /**#@-*/
 
@@ -80,8 +80,8 @@ $table_prefix = 'wp_';
 
 //  Localhost modifications
 define('WP_DEBUG', false );
-define('WP_HOME','https://example.test');
-define('WP_SITEURL','https://example.test');
+define('WP_HOME','https://cioos.local');
+define('WP_SITEURL','https://cioos.local');
 
 // If we're behind a proxy server and using HTTPS, we need to alert WordPress of that fact
 // see also http://codex.wordpress.org/Administration_Over_SSL#Using_a_Reverse_Proxy

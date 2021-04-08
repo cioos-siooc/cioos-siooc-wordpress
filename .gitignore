@@ -1,5 +1,52 @@
-# ignore everything in the root except the "wp-content" directory.
-!wp-content/
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+# Project specific
+scripts/.*
+wp-app/*
+wp-data/*
+wp-app/wp-admin/
+wp-app/wp-content/plugins/akismet/
+wp-app/wp-content/themes/twentynineteen/
+wp-app/wp-content/themes/twentytwenty/
+wp-app/wp-content/themes/twentytwentyone/
+wp-app/wp-includes/
+.env
 
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins", "plugins", "themes" directory
@@ -22,16 +69,3 @@ node_modules/
 *.sql
 *.sqlite
 
-wp-app/wp-admin/
-
-wp-app/wp-content/plugins/akismet/
-
-wp-app/wp-content/themes/twentynineteen/
-
-wp-app/wp-content/themes/twentytwenty/
-
-wp-app/wp-content/themes/twentytwentyone/
-
-wp-app/wp-includes/
-
-.env
