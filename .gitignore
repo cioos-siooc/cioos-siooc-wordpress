@@ -40,23 +40,9 @@ Temporary Items
 scripts/.*
 wp-app/*
 wp-data/*
-wp-app/wp-admin/
-wp-app/wp-content/plugins/akismet/
-wp-app/wp-content/themes/twentynineteen/
-wp-app/wp-content/themes/twentytwenty/
-wp-app/wp-content/themes/twentytwentyone/
-wp-app/wp-includes/
+!wp-app/wp-content/themes/
+!wp-app/wp-content/plugins/
 .env
-
-# ignore everything in the "wp-content" directory, except:
-# "mu-plugins", "plugins", "themes" directory
-wp-content/*
-!wp-content/mu-plugins/
-!wp-content/plugins/
-!wp-content/themes/
-
-# ignore these plugins
-wp-content/plugins/hello.php
 
 # ignore specific themes
 wp-content/themes/twenty*/
@@ -68,4 +54,3 @@ node_modules/
 *.log
 *.sql
 *.sqlite
-
