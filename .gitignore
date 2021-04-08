@@ -38,8 +38,7 @@ Temporary Items
 
 # Project specific
 scripts/.*
-
-wp-data/*
+wp-app/*
 !wp-app/wp-content/themes/cioos-siooc-theme*
 !wp-app/wp-content/plugins/*
 .env
