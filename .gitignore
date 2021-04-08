@@ -40,6 +40,7 @@ Temporary Items
 scripts/.*
 wp-app/*
 wp-data/*
+!wp-app/wp-content/themes*
 !wp-app/wp-content/themes/*
 !wp-app/wp-content/plugins/*
 .env
