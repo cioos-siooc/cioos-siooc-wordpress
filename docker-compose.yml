@@ -22,10 +22,10 @@ services:
       WORDPRESS_DB_NAME: ${DOCKER_DB_NAME}
       WORDPRESS_DB_USER: ${DOCKER_DB_USER}
       WORDPRESS_DB_PASSWORD: ${DOCKER_DB_PASSWORD}
-      # WORDPRESS_CONFIG_EXTRA: 
-      #   define('WP_DEBUG', true );
-      #   define('WP_HOME','http://cioos.local');
-      #   define('WP_SITEURL','http://cioos.local');
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_DEBUG', true );
+        define('WP_HOME','https://cioos.local');
+        define('WP_SITEURL','https://cioos.local');
     depends_on:
       - db
     links:
