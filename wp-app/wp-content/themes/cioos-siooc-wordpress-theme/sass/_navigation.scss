@@ -1,19 +1,47 @@
 /* Navigation
 --------------------------------------------- */
-.menu-en-container,
-.menu-fr-container,
+
+.language-nav {
+	text-transform: uppercase;
+	ul{
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: flex-end;
+		align-items: center;
+		align-content: center;
+		
+	}
+	li a {
+		padding: 2.6em 0.6em 0.8em 0.6em; //smaller text needs to be pushed down further
+		font-size: 0.8em;
+		color: $color_light_gray;
+		display: inline-block;
+		text-decoration: none;
+		border-bottom: 3px solid $color_transparent;
+		transition: color 200ms linear, border 200ms linear;
+		text-align: center;
+	}
+}
+.main-nav,
+nav.site-nav > div,
 .main-navigation {
+	text-transform: uppercase;
 	display: block;
 	width: 100%;
 }
-ul.sitelanguages,
+
 ul.nav-menu,
+ul.menu,  
 .menu > ul {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: flex-end;
-	align-items: center;
+	align-items: end;
 	align-content: center;
 	list-style-type: none;
 	list-style: none;
@@ -27,15 +55,12 @@ ul.nav-menu,
 		padding: 0;
 		a {
 			margin: 0;
-			padding: 0;
+			padding: 2em 1em .5em 1em;
 			color: $color_body_text;
-			display: inline-block;
+			display: block;
 			text-decoration: none;
+			text-align: center;
 			border-bottom: 3px solid $color_transparent;
-			transition: color 200ms linear, border 200ms linear;
-		}
-		a:hover {
-			border-bottom: 3px solid $color_1;
 		}
 		// Secondary menu
 		ul {
@@ -53,10 +78,13 @@ ul.nav-menu,
 			margin: 0;
 			padding: 0;
 			a {
+				padding: 0.5em 0.5em 1em 0.5em;
 				font-weight: normal;
+				text-align: left;
 				border-bottom: 0px solid $color_1;
 			}
-			a:hover {
+			li:hover > a,
+			li.focus > a{
 				border-bottom: 0px solid $color_1;
 			}
 		}
@@ -80,6 +108,11 @@ ul.nav-menu,
 	}
 
 	li:hover > a,
+	li.focus > a{
+		transition: color 200ms linear, border 200ms linear;
+		border-bottom: 3px solid $color_1;}
+
+	li:hover > a,
 	li.focus > a,
 	.current_page_ancestor > a,
 	.current-menu-item > a {
@@ -93,8 +126,7 @@ ul.nav-menu,
 			font-family: dashicons;
 			display: inline;
 			position: relative;
-			vertical-align: baseline;
-			line-height: 0;
+			align-self: end;
 		}
 	}
 }
@@ -108,6 +140,41 @@ ul.nav-menu,
 	.main-navigation.toggled ul,
 	.menu-toggle {
 		display: block;
+		li{
+			ul {
+				height: unset;
+				display: block;
+				position: relative;
+				left: 0;
+				box-shadow: none;
+				background:$color_body_bg;
+				z-index: 100;
+				min-width: 200px;
+				border-top: none;  //fancy border on flyouts
+				opacity: 1;
+				transition: opacity 200ms linear;
+				margin: 0;
+				padding: 0;
+				a {
+					padding-left: 2em;
+					font-weight: normal;
+				}
+			}
+			a{
+				width: 100%;
+				text-align: left;
+				border-bottom: 1px solid #bbb;
+				padding: 1em;
+			}
+		}
+		li:hover > a,
+		li.focus > a,
+		.current_page_ancestor > a,
+		.current-menu-item > a,
+		.current_page_item > a {
+			color: $color_nav_highlight;
+			border-bottom: 0px solid $color_1;
+		}
 	}
 
 	.main-navigation ul,

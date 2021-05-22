@@ -22,44 +22,43 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'cioos' ); ?></a>
-
-<header class="page-header">
-	<div class="pre-nav">
-		<div class="container">
-			<div class="nationallogo"><a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/Icons-mark/ICON_White.svg"></a></div>
-			<div class="logotype"><a rel="home" href="<?php esc_url( bloginfo() ); ?>"><?php dynamic_sidebar('sidebar-logotype') ?></a></div>	
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'cioos' ); ?></a>
+	<header id="masthead" class="page-header">
+		<div class="pre-nav">
+			<div class="container">
+				<div class="nationallogo"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/Icons-mark/ICON_White.svg"></div>
+				<div class="logotype"><?php dynamic_sidebar('sidebarlogotype') ?></div>
+			</div>
 		</div>
-	</div>
-	
-	<div class="post-nav">
-		<div class="container">
-			<div class="sitelogo">
-				<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/cioos-national_EN_FR.svg" alt="Logo"></a>
-			</div>	
-			<nav id="site-navigation" class="site-navigation nav main-nav main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', '_s' ); ?></button>
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
-					)
-				);
-				?>
-			</nav>
-			<nav id="language" class="site-navigation nav language-nav">
-				<div class="menu-default-container">
-					<ul class="sitelanguages">
-						<?php if (function_exists('pll_the_languages')){
-							pll_the_languages(array(
-							'hide_current' => 1,
-							'display_names_as' => 'slug'
-							));
-						}?>
-					</ul>
-				</div>
-			</nav>
+		<div class="post-nav">
+			<div class="container">
+				<div class="sitelogo">
+					<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/cioos-national_EN_FR.svg" alt="Logo"></a>
+				</div>	
+				<nav id="site-navigation" class="site-nav nav main-nav main-navigation">
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', '_s' ); ?></button>
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+						)
+					);
+					?>
+				</nav>
+				<nav id="language" class="site-nav nav language-nav">
+					<div class="menu-default-container">
+						<ul class="sitelanguages">
+							<?php if (function_exists('pll_the_languages')){
+								pll_the_languages(array(
+								'hide_current' => 1,
+								'display_names_as' => 'slug'
+								));
+							}?>
+						</ul>
+					</div>
+				</nav>
+			</div>
 		</div>
-	</div>
-</header>
+	</header>

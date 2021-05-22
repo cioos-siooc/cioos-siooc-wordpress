@@ -6,6 +6,10 @@
  *
  * @package cioos
  */
+if ( ! defined( '_S_VERSION' ) ) {
+	// Replace the version number of the theme on each release.
+	define( '_S_VERSION', '1.0.0' );
+}
 
 if ( ! function_exists( 'cioos_setup' ) ) :
 	/**
@@ -50,17 +54,16 @@ if ( ! function_exists( 'cioos_setup' ) ) :
 			)
 		);
 
-		/*
+/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		
 		add_theme_support(
 			'html5',
 			array(
 				'search-form',
-				// 'comment-form',
-				// 'comment-list',
+				'comment-form',
+				'comment-list',
 				'gallery',
 				'caption',
 				'style',
@@ -69,16 +72,19 @@ if ( ! function_exists( 'cioos_setup' ) ) :
 		);
 
 		// Set up the WordPress core custom background feature.
-		// add_theme_support(
-		// 	'custom-background',
-		// 	apply_filters(
-		// 		'cioos_custom_background_args',
-		// 		array(
-		// 			'default-color' => 'ffffff',
-		// 			'default-image' => '',
-		// 		)
-		// 	)
-		// );
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'cioos_custom_background_args',
+				array(
+					'default-color' => 'ffffff',
+					'default-image' => '',
+				)
+			)
+		);
+
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		/**
 		 * Add support for core custom logo.
@@ -94,7 +100,6 @@ if ( ! function_exists( 'cioos_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
-		
 	}
 endif;
 add_action( 'after_setup_theme', 'cioos_setup' );
@@ -105,9 +110,9 @@ add_action( 'after_setup_theme', 'cioos_setup' );
  * Priority 0 to make it available to lower priority callbacks.
  *
  * @global int $content_width
- */
+*/
 function cioos_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'cioos_content_width', 1080 );
+	$GLOBALS['content_width'] = apply_filters( 'cioos_content_width', 1140 );
 }
 add_action( 'after_setup_theme', 'cioos_content_width', 0 );
 
@@ -116,75 +121,64 @@ add_action( 'after_setup_theme', 'cioos_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
+add_action( 'widgets_init', 'cioos_widgets_init' );
 function cioos_widgets_init() {
 
 	register_sidebar(array(
-		'name'          => esc_html__( 'Sidebar 1', 'sidebar-nav' ),
-		'id'            => 'sidebar-nav',
-		'description'   => esc_html__( 'Add widgets here.', 'cioos-widget-description-1' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	));
-
-	register_sidebar(array(
-		'name'          => esc_html__(  'Pre-nav top bar', 'cioos' ),
-		'id'            => 'sidebar-logotype',
-		'description'   => esc_html__( 'Add widgets here.', 'cioos' ),
-		'before_widget' => '',
-		'after_widget'  => '',
+		'name'          => __(  'Pre-nav Top Bar', 'sidebarlogotype-title' ),
+		'id'            => 'sidebarlogotype',
+		'description'   => __( 'Add widgets here.', 'sidebarlogotype-description' ),
+		'before_widget' => '<aside class="%1$s widget %2$s">',
+		'after_widget'  => '</aside>',
 		'before_title'  => '',
 		'after_title'   => '', 
-	));
-
+	) );
 	register_sidebar(array(
-		'name'          => esc_html__(  'Footer area 1', 'cioos' ),
+		'name'          => __(  'Footer area 1', 'sidebar-footer-1' ),
 		'id'            => 'sidebar-footer-1',
-		'description'   => esc_html__( 'Add widgets here.', 'cioos' ),
-		'before_widget' => '',
-		'after_widget'  => '',
+		'description'   => __( 'Add widgets here.', 'sidebar-footer-1-description' ),
+		'before_widget' => '<aside class="%1$s widget %2$s">',
+		'after_widget'  => '</aside>',
 		'before_title'  => '',
 		'after_title'   => '', 
-	));
+	) );
 	register_sidebar(array(
-		'name'          => esc_html__(  'Footer area 2', 'cioos' ),
+		'name'          => __(  'Footer area 2', 'sidebar-footer-2' ),
 		'id'            => 'sidebar-footer-2',
-		'description'   => esc_html__( 'Add widgets here.', 'cioos' ),
-		'before_widget' => '',
-		'after_widget'  => '',
+		'description'   => __( 'Add widgets here.', 'sidebar-footer-2-description' ),
+		'before_widget' => '<aside class="%1$s widget %2$s">',
+		'after_widget'  => '</aside>',
 		'before_title'  => '',
 		'after_title'   => '', 
-	));
+	) );
 	register_sidebar(array(
-		'name'          => esc_html__(  'Footer area 3', 'cioos' ),
+		'name'          => __(  'Footer area 3', 'sidebar-footer-3' ),
 		'id'            => 'sidebar-footer-3',
-		'description'   => esc_html__( 'Add widgets here.', 'cioos' ),
-		'before_widget' => '',
-		'after_widget'  => '',
+		'description'   => __( 'Add widgets here.', 'sidebar-footer-3-description' ),
+		'before_widget' => '<aside class="%1$s widget %2$s">',
+		'after_widget'  => '</aside>',
 		'before_title'  => '',
 		'after_title'   => '', 
-	));
+	) );
 	register_sidebar(array(
-		'name'          => esc_html__(  'Footer area 4', 'cioos' ),
+		'name'          => __(  'Footer area 4', 'sidebar-footer-4' ),
 		'id'            => 'sidebar-footer-4',
-		'description'   => esc_html__( 'Add widgets here.', 'cioos' ),
-		'before_widget' => '',
-		'after_widget'  => '',
+		'description'   => __( 'Add widgets here.', 'sidebar-footer-4-description' ),
+		'before_widget' => '<aside class="%1$s widget %2$s">',
+		'after_widget'  => '</aside>',
 		'before_title'  => '',
 		'after_title'   => '', 
-	));
-	
+	) );
 }
-add_action( 'widgets_init', 'cioos_widgets_init' );
+
 /**
  * Enqueue scripts and styles.
  */
 function cioos_scripts() {
-	wp_enqueue_style( 'cioos-style', get_stylesheet_uri(), array(),  );
+	wp_enqueue_style( 'cioos-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'cioos-style', 'rtl', 'replace' );
 	wp_enqueue_style('dashicons');
-	wp_enqueue_script( 'cioos-navigation', get_template_directory_uri() . '/js/navigation.js', array(),  true );
+	wp_enqueue_script( 'cioos-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
