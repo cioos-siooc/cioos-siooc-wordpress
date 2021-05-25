@@ -10,21 +10,22 @@ With this project you can run a local version of your site and test the theme. Y
 
 ## Contents
 
-* 3 folders:
-* * config
-* * wp-app
-* * * wp-content > plugins 
-* * * * all-in-one-wp-migration
-* * * * elementor
-* * * * polylang
-* * * * wordpress-importer
-* * * wp-content > themes
-* * * * cioos-siooc-wordpress-theme
-* * wp-data
+* .gitignore
+* README.MD
 * docker-compose.yml file
 * dockerfile
 * sample.env
 * wp-config.local.php
+* /config 
+* * php.conf.ini
+* wp-app / wp-content / plugins 
+* * /all-in-one-wp-migration
+* * /elementor
+* * /polylang
+* * /wordpress-importer
+* /wp-app / wp-content / themes
+* *  /cioos-siooc-wordpress-theme
+
 
 -------------------------------------------------------------------------------
 
