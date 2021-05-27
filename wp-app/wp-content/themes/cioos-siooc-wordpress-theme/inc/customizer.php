@@ -11,51 +11,55 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function cioos_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	
+	// ---------
+	// To add another control and option - like this colour picker
+	// ---------
+	// $wp_customize->add_setting( 'accent_color', array(
+	// 	'default' => '#f72525',
+	// 	'sanitize_callback' => 'sanitize_hex_color',
+	//   ) );
+	// $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color', array(
+	// 	'label' => __( 'Accent Color', 'theme_textdomain' ),
+	// 	'section' => 'title_tagline',
+	// 	'settings' => 'accent_color'
+	// ) ) );
 
-	if ( isset( $wp_customize->selective_refresh ) ) {
-		$wp_customize->selective_refresh->add_partial(
-			'blogname',
-			array(
-				'selector'        => '.site-title a',
-				'render_callback' => 'cioos_customize_partial_blogname',
-			)
-		);
-		$wp_customize->selective_refresh->add_partial(
-			'blogdescription',
-			array(
-				'selector'        => '.site-description',
-				'render_callback' => 'cioos_customize_partial_blogdescription',
-			)
-		);
-	}
+	$wp_customize->remove_control('logo'); //remove teh default logo, add 1 for each language 
+
+
+	$wp_customize->add_setting( 'defaultlogo', array(
+		'default' => '',
+  		'transport' => 'refresh'
+	  ) );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'defaultlogo', array(
+		'label' => __( 'DEFAULT LOGO', 'theme_textdomain' ),
+		'section' => 'title_tagline',
+		'settings' => 'defaultlogo'
+	) ) );
+
+	$wp_customize->add_setting( 'english_logo', array(
+		'default' => '',
+  		'transport' => 'refresh'
+	  ) );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'english_logo', array(
+		'label' => __( 'English Logo', 'theme_textdomain' ),
+		'section' => 'title_tagline',
+		'settings' => 'english_logo'
+	) ) );
+
+	$wp_customize->add_setting( 'french_logo', array(
+		'default' => '',
+  		'transport' => 'refresh'
+	  ) );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'french_logo', array(
+		'label' => __( 'French Logo', 'theme_textdomain' ),
+		'section' => 'title_tagline',
+		'settings' => 'french_logo'
+	) ) );
+
+
+
+	
 }
 add_action( 'customize_register', 'cioos_customize_register' );
-
-/**
- * Render the site title for the selective refresh partial.
- *
- * @return void
- */
-function cioos_customize_partial_blogname() {
-	bloginfo( 'name' );
-}
-
-/**
- * Render the site tagline for the selective refresh partial.
- *
- * @return void
- */
-function cioos_customize_partial_blogdescription() {
-	bloginfo( 'description' );
-}
-
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- */
-function cioos_customize_preview_js() {
-	wp_enqueue_script( 'cioos-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
-}
-add_action( 'customize_preview_init', 'cioos_customize_preview_js' );

@@ -27,14 +27,36 @@
 	<header id="masthead" class="page-header">
 		<div class="pre-nav">
 			<div class="container">
-				<div class="nationallogo"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/Icons-mark/ICON_White.svg"></div>
+				<div class="nationallogo"><img src="<?php bloginfo( 'template_url' ); ?>/img/CIOOS-watermark.svg"></div>
 				<div class="logotype"><?php dynamic_sidebar('sidebarlogotype') ?></div>
 			</div>
 		</div>
 		<div class="post-nav">
 			<div class="container">
 				<div class="sitelogo">
-					<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/cioos-national_EN_FR.svg" alt="Logo"></a>
+					<?php if (function_exists('pll_the_languages')){ ?>	
+						<?php if ( pll_current_language() == 'en'){ ?>
+							<?php if ( get_theme_mod( 'english_logo' )){ ?>
+								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php echo get_theme_mod( 'english_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+							<?php } else {?>
+								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/national/cioos-national_EN.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+							<?php }; ?>
+						<?php } else if ( pll_current_language() == 'fr'){?>
+							<?php if ( get_theme_mod( 'french_logo' )){ ?>
+								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php echo get_theme_mod( 'french_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+							<?php } else {?>
+								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/national/cioos-national_FR.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+							<?php }; ?>
+						<?php } else {?>
+							<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/national/cioos-national_EN_FR.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+						<?php }; ?>
+					<?php } else {?>
+						<?php if ( get_theme_mod( 'defaultlogo' )){ ?>
+							<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php echo get_theme_mod( 'DEFAULTLOGO' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+						<?php } else {?>
+							<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/national/cioos-national_EN_FR.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+						<?php }; ?>
+					<?php }; ?>
 				</div>	
 				<nav id="site-navigation" class="site-nav nav main-nav main-navigation">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', '_s' ); ?></button>
@@ -47,18 +69,18 @@
 					);
 					?>
 				</nav>
-				<nav id="language" class="site-nav nav language-nav">
-					<div class="menu-default-container">
-						<ul class="sitelanguages">
-							<?php if (function_exists('pll_the_languages')){
-								pll_the_languages(array(
-								'hide_current' => 1,
-								'display_names_as' => 'slug'
-								));
-							}?>
-						</ul>
-					</div>
-				</nav>
+				<?php if (function_exists('pll_the_languages')){ ?>
+					<nav id="language" class="site-nav nav language-nav">
+						<div class="menu-default-container">
+							<ul class="sitelanguages">
+								<?php pll_the_languages(array(
+									'hide_current' => 1,
+									'display_names_as' => 'slug'
+								));?>
+							</ul>
+						</div>
+					</nav>
+				<?php }; ?>
 			</div>
 		</div>
 	</header>

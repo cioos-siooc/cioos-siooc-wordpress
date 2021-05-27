@@ -51,6 +51,7 @@ and in each row a container is inserted to hold content.
 /*--------------------------------------------------------
 # Includes
 --------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap");
 /*!
 Theme Name: CIOOS - SIOOC
@@ -453,13 +454,17 @@ body, button, input, select, optgroup, textarea {
 	color: black;
 	background-color: white;
 	font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: 1rem;
-	line-height: 1.15;
+	font-size: 1em;
+	line-height: 1.625em;
 	border: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
+}
+
+h1 {
+	font-weight: 700;
 }
 
 p {
@@ -511,7 +516,7 @@ big {
 }
 
 hr {
-	background-color: #ffc857;
+	background-color: #fa7268;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
@@ -564,15 +569,15 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-	color: #007490;
+	color: #52a79b;
 }
 
 a:visited {
-	color: #007490;
+	color: #52a79b;
 }
 
 a:hover, a:focus, a:active {
-	color: #ffc857;
+	color: #fa7268;
 }
 
 a:focus {
@@ -602,9 +607,9 @@ input[type="tel"], input[type="range"], input[type="date"], input[type="month"],
 input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"],
 input[type="color"], textarea {
 	border: 1px solid;
-	border-color: #007490;
+	border-color: #52a79b;
 	border-radius: 0;
-	background: #b9d6f2;
+	background: #b5b5b5;
 	color: black;
 	line-height: 1;
 	padding: 0.6rem;
@@ -614,7 +619,7 @@ input[type="color"], textarea {
 }
 
 button, input[type="button"], input[type="reset"], input[type="submit"] {
-	background: #007490;
+	background: #52a79b;
 	color: white;
 	font-weight: 600;
 }
@@ -623,13 +628,13 @@ button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type=
 button:active, button:focus, input[type="button"]:active, input[type="button"]:focus,
 input[type="reset"]:active, input[type="reset"]:focus, input[type="submit"]:active,
 input[type="submit"]:focus {
-	background: #ffc857;
-	border-color: #ffc857;
+	background: #fa7268;
+	border-color: #fa7268;
 	color: black;
 }
 
 input:focus, select:focus, option:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="range"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="color"]:focus, textarea:focus {
-	border-color: #ffc857;
+	border-color: #fa7268;
 	background: white;
 }
 
@@ -925,7 +930,7 @@ ul.menu li ul,
 	background: white;
 	z-index: 100;
 	min-width: 200px;
-	border-top: 3px solid #007490;
+	border-top: 3px solid #52a79b;
 	opacity: 0;
 	transition: opacity 200ms linear;
 	margin: 0;
@@ -938,7 +943,7 @@ ul.menu li ul a,
 	padding: 0.5em 0.5em 1em 0.5em;
 	font-weight: normal;
 	text-align: left;
-	border-bottom: 0px solid #b9d6f2;
+	border-bottom: 0px solid #b5b5b5;
 }
 
 ul.nav-menu li ul li:hover > a,
@@ -947,7 +952,7 @@ ul.menu li ul li:hover > a,
 ul.menu li ul li.focus > a,
 .menu > ul li ul li:hover > a,
 .menu > ul li ul li.focus > a {
-	border-bottom: 0px solid #b9d6f2;
+	border-bottom: 0px solid #b5b5b5;
 }
 
 ul.nav-menu li:last-child.menu-item-has-children .sub-menu,
@@ -987,7 +992,7 @@ ul.menu li.focus > a,
 .menu > ul li:hover > a,
 .menu > ul li.focus > a {
 	transition: color 200ms linear, border 200ms linear;
-	border-bottom: 3px solid #b9d6f2;
+	border-bottom: 3px solid #b5b5b5;
 }
 
 ul.nav-menu li:hover > a,
@@ -1002,7 +1007,7 @@ ul.menu .current-menu-item > a,
 .menu > ul li.focus > a,
 .menu > ul .current_page_ancestor > a,
 .menu > ul .current-menu-item > a {
-	color: #ffc857;
+	color: #fa7268;
 }
 
 ul.nav-menu .page_item_has_children > a::after,
@@ -1066,8 +1071,8 @@ ul.menu .menu-item-has-children > a::after,
 	.menu-toggle .current_page_ancestor > a,
 	.menu-toggle .current-menu-item > a,
 	.menu-toggle .current_page_item > a {
-		color: #ffc857;
-		border-bottom: 0px solid #b9d6f2;
+		color: #fa7268;
+		border-bottom: 0px solid #b5b5b5;
 	}
 	.main-navigation ul,
 	ul.sitelanguages {
@@ -1111,6 +1116,118 @@ ul.menu .menu-item-has-children > a::after,
 	outline: 0;
 }
 
+.elementor-widget-heading.elementor-widget-heading .elementor-heading-title,
+.elementor-widget-heading .elementor-heading-title,
+.elementor-widget-image .widget-image-caption,
+.elementor-widget-text-editor,
+.elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap,
+.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap,
+.elementor-widget-text-editor.elementor-drop-cap-view-default .elementor-drop-cap,
+.elementor-widget-button a.elementor-button,
+.elementor-widget-button .elementor-button,
+.elementor-widget-divider,
+.elementor-widget-divider .elementor-divider__text,
+.elementor-widget-divider.elementor-view-stacked .elementor-icon,
+.elementor-widget-divider.elementor-view-framed .elementor-icon,
+.elementor-widget-divider.elementor-view-default .elementor-icon,
+.elementor-widget-divider.elementor-view-framed .elementor-icon,
+.elementor-widget-divider.elementor-view-default .elementor-icon svg,
+.elementor-widget-image-box .elementor-image-box-content .elementor-image-box-title,
+.elementor-widget-image-box .elementor-image-box-content .elementor-image-box-description,
+.elementor-widget-icon.elementor-view-stacked .elementor-icon,
+.elementor-widget-icon.elementor-view-framed .elementor-icon,
+.elementor-widget-icon.elementor-view-default .elementor-icon,
+.elementor-widget-icon.elementor-view-framed .elementor-icon,
+.elementor-widget-icon.elementor-view-default .elementor-icon svg,
+.elementor-widget-icon-box.elementor-view-stacked .elementor-icon,
+.elementor-widget-icon-box.elementor-view-framed .elementor-icon,
+.elementor-widget-icon-box.elementor-view-default .elementor-icon,
+.elementor-widget-icon-box .elementor-icon-box-content .elementor-icon-box-title,
+.elementor-widget-icon-box .elementor-icon-box-content .elementor-icon-box-description,
+.elementor-widget-star-rating .elementor-star-rating__title,
+.elementor-widget-image-carousel .elementor-image-carousel-caption,
+.elementor-widget-image-gallery .gallery-item .gallery-caption,
+.elementor-widget-icon-list .elementor-icon-list-item:not(:last-child):after,
+.elementor-widget-icon-list .elementor-icon-list-icon i,
+.elementor-widget-icon-list .elementor-icon-list-icon svg,
+.elementor-widget-icon-list .elementor-icon-list-text,
+.elementor-widget-icon-list .elementor-icon-list-item,
+.elementor-widget-counter .elementor-counter-number-wrapper,
+.elementor-widget-counter .elementor-counter-title,
+.elementor-widget-progress .elementor-progress-wrapper .elementor-progress-bar,
+.elementor-widget-progress .elementor-title,
+.elementor-widget-testimonial .elementor-testimonial-content,
+.elementor-widget-testimonial .elementor-testimonial-name,
+.elementor-widget-testimonial .elementor-testimonial-job,
+.elementor-widget-tabs .elementor-tab-title,
+.elementor-widget-tabs .elementor-tab-title.elementor-active,
+.elementor-widget-tabs .elementor-tab-content,
+.elementor-widget-accordion .elementor-accordion .elementor-tab-title,
+.elementor-widget-accordion .elementor-accordion .elementor-tab-title.elementor-active,
+.elementor-widget-accordion .elementor-accordion .elementor-tab-content,
+.elementor-widget-toggle .elementor-toggle .elementor-tab-title,
+.elementor-widget-toggle .elementor-toggle .elementor-tab-title.elementor-active,
+.elementor-widget-toggle .elementor-toggle .elementor-tab-content,
+.elementor-widget-alert .elementor-alert-title,
+.elementor-widget-alert .elementor-alert-description,
+.elementor-widget:not(:last-child), .elementor-widget-heading.elementor-widget-heading .elementor-heading-title,
+.elementor-widget-heading .elementor-heading-title,
+.elementor-widget-image .widget-image-caption,
+.elementor-widget-text-editor,
+.elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap,
+.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap,
+.elementor-widget-text-editor.elementor-drop-cap-view-default .elementor-drop-cap,
+.elementor-widget-button a.elementor-button,
+.elementor-widget-button .elementor-button,
+.elementor-widget-divider,
+.elementor-widget-divider .elementor-divider__text,
+.elementor-widget-divider.elementor-view-stacked .elementor-icon,
+.elementor-widget-divider.elementor-view-framed .elementor-icon,
+.elementor-widget-divider.elementor-view-default .elementor-icon,
+.elementor-widget-divider.elementor-view-framed .elementor-icon,
+.elementor-widget-divider.elementor-view-default .elementor-icon svg,
+.elementor-widget-image-box .elementor-image-box-content .elementor-image-box-title,
+.elementor-widget-image-box .elementor-image-box-content .elementor-image-box-description,
+.elementor-widget-icon.elementor-view-stacked .elementor-icon,
+.elementor-widget-icon.elementor-view-framed .elementor-icon,
+.elementor-widget-icon.elementor-view-default .elementor-icon,
+.elementor-widget-icon.elementor-view-framed .elementor-icon,
+.elementor-widget-icon.elementor-view-default .elementor-icon svg,
+.elementor-widget-icon-box.elementor-view-stacked .elementor-icon,
+.elementor-widget-icon-box.elementor-view-framed .elementor-icon,
+.elementor-widget-icon-box.elementor-view-default .elementor-icon,
+.elementor-widget-icon-box .elementor-icon-box-content .elementor-icon-box-title,
+.elementor-widget-icon-box .elementor-icon-box-content .elementor-icon-box-description,
+.elementor-widget-star-rating .elementor-star-rating__title,
+.elementor-widget-image-carousel .elementor-image-carousel-caption,
+.elementor-widget-image-gallery .gallery-item .gallery-caption,
+.elementor-widget-icon-list .elementor-icon-list-item:not(:last-child):after,
+.elementor-widget-icon-list .elementor-icon-list-icon i,
+.elementor-widget-icon-list .elementor-icon-list-icon svg,
+.elementor-widget-icon-list .elementor-icon-list-text,
+.elementor-widget-icon-list .elementor-icon-list-item,
+.elementor-widget-counter .elementor-counter-number-wrapper,
+.elementor-widget-counter .elementor-counter-title,
+.elementor-widget-progress .elementor-progress-wrapper .elementor-progress-bar,
+.elementor-widget-progress .elementor-title,
+.elementor-widget-testimonial .elementor-testimonial-content,
+.elementor-widget-testimonial .elementor-testimonial-name,
+.elementor-widget-testimonial .elementor-testimonial-job,
+.elementor-widget-tabs .elementor-tab-title,
+.elementor-widget-tabs .elementor-tab-title.elementor-active,
+.elementor-widget-tabs .elementor-tab-content,
+.elementor-widget-accordion .elementor-accordion .elementor-tab-title,
+.elementor-widget-accordion .elementor-accordion .elementor-tab-title.elementor-active,
+.elementor-widget-accordion .elementor-accordion .elementor-tab-content,
+.elementor-widget-toggle .elementor-toggle .elementor-tab-title,
+.elementor-widget-toggle .elementor-toggle .elementor-tab-title.elementor-active,
+.elementor-widget-toggle .elementor-toggle .elementor-tab-content,
+.elementor-widget-alert .elementor-alert-title,
+.elementor-widget-alert .elementor-alert-description {
+	font-family: inherit;
+	font-weight: inherit;
+}
+
 /*----------------------------------------------------------
 # container
 ----------------------------------------------------------*/
@@ -1135,7 +1252,7 @@ ul.menu .menu-item-has-children > a::after,
 }
 
 .page-header .pre-nav {
-	background: #007490;
+	background: #52a79b;
 	max-height: 3rem;
 }
 
@@ -1146,16 +1263,13 @@ ul.menu .menu-item-has-children > a::after,
 }
 
 .page-header .pre-nav .container {
-	display: grid;
-	grid-template-columns: 90px max-content;
-	grid-template-rows: auto;
-	grid-column-gap: 1em;
+	display: flex;
 	height: 3em;
 	width: max-content;
 }
 
 .page-header .pre-nav .container .nationallogo {
-	grid-area: 1 / 1 / 1 / 2;
+	width: 130px;
 	overflow: hidden;
 }
 
@@ -1164,11 +1278,18 @@ ul.menu .menu-item-has-children > a::after,
 	display: flex;
 }
 
-.page-header .pre-nav .container .logotype a {
-	padding: 0.8em;
+.page-header .pre-nav .container .logotype .widget {
 	align-self: center;
+	margin: 0;
+}
+
+.page-header .pre-nav .container .logotype p {
+	margin: 0;
+}
+
+.page-header .pre-nav .container .logotype a {
+	padding: 0;
 	color: white;
-	display: inline-block;
 	text-decoration: none;
 }
 
@@ -1177,10 +1298,7 @@ ul.menu .menu-item-has-children > a::after,
 }
 
 .page-header .post-nav .container {
-	display: grid;
-	grid-template-columns: 344px auto min-content;
-	grid-template-rows: auto;
-	grid-column-gap: 1em;
+	display: flex;
 }
 
 @media screen and (max-width: 800px) {
@@ -1193,15 +1311,18 @@ ul.menu .menu-item-has-children > a::after,
 	}
 }
 
-.page-header .post-nav .sitelogo {
-	grid-area: 1 / 1 / 1 / 2;
-	width: 344px;
-}
-
 @media screen and (max-width: 800px) {
 	.page-header .post-nav .sitelogo {
 		width: 80vw;
 	}
+}
+
+.page-header .post-nav .sitelogo a {
+	display: block;
+}
+
+.page-header .post-nav .sitelogo a img {
+	height: 6em;
 }
 
 .page-header .post-nav .main-nav {

@@ -10,7 +10,7 @@ if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
 }
-
+define( 'WP_DEBUG', true );
 if ( ! function_exists( 'cioos_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -87,19 +87,20 @@ if ( ! function_exists( 'cioos_setup' ) ) :
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
-		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 250,
-				'width'       => 250,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
-		);
+		* Don't add support for core custom logo - Make a French, English and Both logo
+		*
+		* @link https://codex.wordpress.org/Theme_Logo
+		*
+		* add_theme_support(
+		* 	'custom-logo',
+		* 	array(
+		* 		'height'      => 250,
+		* 		'width'       => 250,
+		* 		'flex-width'  => true,
+		* 		'flex-height' => true,
+		* 	)
+		* );
+		*/
 	}
 endif;
 add_action( 'after_setup_theme', 'cioos_setup' );
@@ -127,7 +128,7 @@ function cioos_widgets_init() {
 	register_sidebar(array(
 		'name'          => __(  'Pre-nav Top Bar', 'sidebarlogotype-title' ),
 		'id'            => 'sidebarlogotype',
-		'description'   => __( 'Add widgets here.', 'sidebarlogotype-description' ),
+		'description'   => __( 'Add the text description that is found on the top header of the site', 'sidebarlogotype-description' ),
 		'before_widget' => '<aside class="%1$s widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '',
