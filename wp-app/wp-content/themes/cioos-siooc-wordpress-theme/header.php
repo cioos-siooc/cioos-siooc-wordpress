@@ -39,22 +39,22 @@
 							<?php if ( get_theme_mod( 'english_logo' )){ ?>
 								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php echo get_theme_mod( 'english_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
 							<?php } else {?>
-								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/national/cioos-national_EN.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/cioos-atlantic_small_EN.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
 							<?php }; ?>
 						<?php } else if ( pll_current_language() == 'fr'){?>
 							<?php if ( get_theme_mod( 'french_logo' )){ ?>
 								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php echo get_theme_mod( 'french_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
 							<?php } else {?>
-								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/national/cioos-national_FR.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/cioos-atlantic_small_FR.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
 							<?php }; ?>
 						<?php } else {?>
-							<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/national/cioos-national_EN_FR.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+							<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/cioos-atlantic_small_EN_FR.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
 						<?php }; ?>
 					<?php } else {?>
 						<?php if ( get_theme_mod( 'defaultlogo' )){ ?>
 							<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php echo get_theme_mod( 'DEFAULTLOGO' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
 						<?php } else {?>
-							<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/national/cioos-national_EN_FR.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+							<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/cioos-atlantic_small_EN_FR.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
 						<?php }; ?>
 					<?php }; ?>
 				</div>	
