@@ -13,12 +13,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1{
+	font-size: 2.25rem;
 	font-weight: 700;
+	line-height: 1.33em;
 }
-h2{}
-h3{}
-h4{}
-h5{}
+h2{
+	font-size: 1.875rem;
+	font-weight: 700;
+	line-height: 1.2em;
+}
+h3{
+	font-size: 1.5rem;
+	font-weight: 300;
+	line-height: 1.33em;
+}
+h4{
+	font-size: 1.1875rem;
+	font-weight: 700;
+	line-height: 1.210em;
+}
 
 p {
 	margin-bottom: 1.5em;
@@ -161,24 +174,20 @@ input[type="tel"], input[type="range"], input[type="date"], input[type="month"],
 input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], 
 input[type="color"], textarea {
 	border: 1px solid; // Since not all inputs can exist without a border, I make sure all inputs are bordered and hide them using like colours.
-	border-color: $color_light_gray;
+	border-color: $color_2;
 	border-radius: 0;
-	background: $color_body_bg;
+	background: $color_1;
 	color: $color_body_text;
 	line-height: 1;
-	padding: 0.75rem;
+	padding: 0.6rem;
 	font-family: $font_family;
-	font-weight: 400;
-	font-size: 0.875rem;
-	&::placeholder {
-		color: $color_light_gray;
-		font-family: $font_family;
-	}
+	font-weight: 100;
+	font-size: 0.8rem;
 }
 button, input[type="button"], input[type="reset"], input[type="submit"] {
 	background: $color_2;
 	color: $color_body_bg;
-	font-weight: 700;
+	font-weight: 600;
 }
 //button hovers
 button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover,

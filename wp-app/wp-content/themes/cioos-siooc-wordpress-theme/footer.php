@@ -12,16 +12,16 @@
 ?>
 	<footer id="colophon" class="site-footer">
 		<div class="container">
-			<div class="col">
+			<div class="col">1
 			<?php dynamic_sidebar('sidebar-footer-1') ?>
 			</div>
-			<div class="col">
+			<div class="col">2
 			<?php dynamic_sidebar('sidebar-footer-2') ?>
 			</div>
-			<div class="col">
+			<div class="col">3
 			<?php dynamic_sidebar('sidebar-footer-3') ?>
 			</div>
-			<div class="col">
+			<div class="col">4
 			<?php dynamic_sidebar('sidebar-footer-4') ?>
 			</div>
 		</div>
