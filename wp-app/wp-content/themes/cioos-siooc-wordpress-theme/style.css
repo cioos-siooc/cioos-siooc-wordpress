@@ -52,7 +52,7 @@ and in each row a container is inserted to hold content.
 # Includes
 --------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
 /*!
 Theme Name: CIOOS - SIOOC
 Theme URI: https://cioos.ca
@@ -1188,6 +1188,57 @@ ul.menu .menu-item-has-children > a::after,
 #primary[tabindex="-1"]:focus {
 	outline: 0;
 }
+
+.page-id-1395 .entry-title {
+  display: none; }
+
+.home-grid {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 3em; }
+
+.home-h2 {
+  font-weight: 900; }
+
+.home-action {
+  margin: 5em 0 0 0;
+  font-size: 0.875em; }
+  .home-action p {
+    margin-top: 2em; }
+  .home-action a.home-btn-1,
+  .home-action a.home-btn-2 {
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.875em 1.5em;
+    border: 2px solid #e55162; }
+    .home-action a.home-btn-1:hover,
+    .home-action a.home-btn-2:hover {
+      background: #f1e268;
+      border-color: #f1e268;
+      color: #ffffff;
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+  .home-action a.home-btn-1 {
+    background: #e55162;
+    color: #ffffff;
+    margin-right: 0.25em; }
+  .home-action a.home-btn-2 {
+    background: #ffffff;
+    color: #000000; }
+
+.home-h3 {
+  width: 70%; }
+
+.home-paragraph,
+.home-contribute {
+  width: 80%; }
+
+.home-h3,
+.home-paragraph,
+.home-contribute {
+  margin: 0 auto 2em; }
 
 /*----------------------------------------------------------
 # container
