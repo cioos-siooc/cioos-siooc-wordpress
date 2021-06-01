@@ -52,7 +52,7 @@ and in each row a container is inserted to hold content.
 # Includes
 --------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
 /*!
 Theme Name: CIOOS - SIOOC
 Theme URI: https://cioos.ca
@@ -412,18 +412,37 @@ html {
 /* Typography
 --------------------------------------------- */
 body, button, input, select, optgroup, textarea {
-  color: black;
+  color: #353a3f;
   background-color: white;
   font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 1em;
   line-height: 1.625em;
-  border: 0; }
+  border: 0;
+  letter-spacing: -0.3125px; }
 
 h1, h2, h3, h4, h5, h6 {
-  clear: both; }
+  clear: both;
+  font-weight: 700;
+  color: #232527;
+  margin-bottom: 1.5em; }
 
 h1 {
-  font-weight: 700; }
+  font-size: 2em;
+  line-height: 1.5em; }
+
+h2 {
+  font-size: 1.875em;
+  line-height: 1.3125em; }
+
+h3 {
+  font-size: 1.325em;
+  line-height: 1.25em; }
+
+h4 {
+  font-size: 1.125em; }
+
+h5, h6 {
+  font-size: 1em; }
 
 p {
   margin-bottom: 1.5em; }
@@ -458,7 +477,8 @@ mark, ins {
   text-decoration: none; }
 
 b, strong {
-  font-weight: 600; }
+  font-weight: 700;
+  color: #232527; }
 
 big {
   font-size: 125%; }
@@ -483,7 +503,7 @@ li > ul, li > ol {
   margin-left: 1.5em; }
 
 dt {
-  font-weight: 600; }
+  font-weight: 700; }
 
 dd {
   margin: 0 1.5em 1.5em; }
@@ -506,7 +526,10 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-  color: #e55162; }
+  color: #e55162;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
 
 a:visited {
   color: #e55162; }
@@ -542,10 +565,10 @@ input[type="tel"], input[type="range"], input[type="date"], input[type="month"],
 input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"],
 input[type="color"], textarea {
   border: 1px solid;
-  border-color: #818181;
+  border-color: #616970;
   border-radius: 0;
   background: white;
-  color: black;
+  color: #353a3f;
   line-height: 1;
   padding: 0.75rem;
   font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -557,7 +580,7 @@ input[type="color"], textarea {
   input[type="tel"]::-webkit-input-placeholder, input[type="range"]::-webkit-input-placeholder, input[type="date"]::-webkit-input-placeholder, input[type="month"]::-webkit-input-placeholder,
   input[type="week"]::-webkit-input-placeholder, input[type="time"]::-webkit-input-placeholder, input[type="datetime"]::-webkit-input-placeholder, input[type="datetime-local"]::-webkit-input-placeholder,
   input[type="color"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-    color: #818181;
+    color: #616970;
     font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
   button:-ms-input-placeholder, input:-ms-input-placeholder, select:-ms-input-placeholder, textarea:-ms-input-placeholder,
   input[type="text"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder, input[type="url"]:-ms-input-placeholder,
@@ -565,7 +588,7 @@ input[type="color"], textarea {
   input[type="tel"]:-ms-input-placeholder, input[type="range"]:-ms-input-placeholder, input[type="date"]:-ms-input-placeholder, input[type="month"]:-ms-input-placeholder,
   input[type="week"]:-ms-input-placeholder, input[type="time"]:-ms-input-placeholder, input[type="datetime"]:-ms-input-placeholder, input[type="datetime-local"]:-ms-input-placeholder,
   input[type="color"]:-ms-input-placeholder, textarea:-ms-input-placeholder {
-    color: #818181;
+    color: #616970;
     font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
   button::-ms-input-placeholder, input::-ms-input-placeholder, select::-ms-input-placeholder, textarea::-ms-input-placeholder,
   input[type="text"]::-ms-input-placeholder, input[type="email"]::-ms-input-placeholder, input[type="url"]::-ms-input-placeholder,
@@ -573,7 +596,7 @@ input[type="color"], textarea {
   input[type="tel"]::-ms-input-placeholder, input[type="range"]::-ms-input-placeholder, input[type="date"]::-ms-input-placeholder, input[type="month"]::-ms-input-placeholder,
   input[type="week"]::-ms-input-placeholder, input[type="time"]::-ms-input-placeholder, input[type="datetime"]::-ms-input-placeholder, input[type="datetime-local"]::-ms-input-placeholder,
   input[type="color"]::-ms-input-placeholder, textarea::-ms-input-placeholder {
-    color: #818181;
+    color: #616970;
     font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
   button::placeholder, input::placeholder, select::placeholder, textarea::placeholder,
   input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="url"]::placeholder,
@@ -581,7 +604,7 @@ input[type="color"], textarea {
   input[type="tel"]::placeholder, input[type="range"]::placeholder, input[type="date"]::placeholder, input[type="month"]::placeholder,
   input[type="week"]::placeholder, input[type="time"]::placeholder, input[type="datetime"]::placeholder, input[type="datetime-local"]::placeholder,
   input[type="color"]::placeholder, textarea::placeholder {
-    color: #818181;
+    color: #616970;
     font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
 
 button, input[type="button"], input[type="reset"], input[type="submit"] {
@@ -595,7 +618,7 @@ input[type="reset"]:active, input[type="reset"]:focus, input[type="submit"]:acti
 input[type="submit"]:focus {
   background: #61111a;
   border-color: #61111a;
-  color: black; }
+  color: #353a3f; }
 
 input:focus, select:focus, option:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="range"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="color"]:focus, textarea:focus {
   border-color: #61111a;
@@ -816,13 +839,13 @@ input:focus, select:focus, option:focus, input[type="text"]:focus, input[type="e
   .language-nav li a {
     padding: 2.6em 0.6em 0.8em 0.6em;
     font-size: 0.8em;
-    color: #818181;
+    color: #616970;
     display: inline-block;
     text-decoration: none;
     border-bottom: 3px solid rgba(255, 255, 255, 0);
-    -webkit-transition: color 200ms linear, border 200ms linear;
-    -o-transition: color 200ms linear, border 200ms linear;
-    transition: color 200ms linear, border 200ms linear;
+    -webkit-transition: color 300ms linear, border 300ms linear;
+    -o-transition: color 300ms linear, border 300ms linear;
+    transition: color 300ms linear, border 300ms linear;
     text-align: center; }
 
 .main-nav,
@@ -873,7 +896,7 @@ ul.menu,
     ul.menu li:hover.menu-item-has-children > a::after,
     .menu > ul li:hover.page_item_has_children > a::after,
     .menu > ul li:hover.menu-item-has-children > a::after {
-      color: black;
+      color: #353a3f;
       -webkit-transition: color 0.3s ease;
       -o-transition: color 0.3s ease;
       transition: color 0.3s ease; }
@@ -882,7 +905,7 @@ ul.menu,
     .menu > ul li a {
       margin: 0;
       padding: 0.75em 0;
-      color: black;
+      color: #353a3f;
       display: block;
       text-decoration: none;
       text-align: center;
@@ -903,9 +926,9 @@ ul.menu,
       z-index: 100;
       min-width: 200px;
       opacity: 0;
-      -webkit-transition: opacity 200ms linear;
-      -o-transition: opacity 200ms linear;
-      transition: opacity 200ms linear;
+      -webkit-transition: opacity 300ms linear;
+      -o-transition: opacity 300ms linear;
+      transition: opacity 300ms linear;
       padding: 0; }
       ul.nav-menu li ul li,
       ul.menu li ul li,
@@ -938,7 +961,7 @@ ul.menu,
         -webkit-transition: border 0.3s ease;
         -o-transition: border 0.3s ease;
         transition: border 0.3s ease;
-        color: black; }
+        color: #353a3f; }
   ul.nav-menu li:last-child.menu-item-has-children .sub-menu,
   ul.menu li:last-child.menu-item-has-children .sub-menu,
   .menu > ul li:last-child.menu-item-has-children .sub-menu {
@@ -962,15 +985,6 @@ ul.menu,
     opacity: 1; }
   ul.nav-menu li:hover > a,
   ul.nav-menu li.focus > a,
-  ul.menu li:hover > a,
-  ul.menu li.focus > a,
-  .menu > ul li:hover > a,
-  .menu > ul li.focus > a {
-    -webkit-transition: color 300ms linear;
-    -o-transition: color 300ms linear;
-    transition: color 300ms linear; }
-  ul.nav-menu li:hover > a,
-  ul.nav-menu li.focus > a,
   ul.nav-menu .current_page_ancestor > a,
   ul.nav-menu .current-menu-item > a,
   ul.menu li:hover > a,
@@ -985,7 +999,7 @@ ul.menu,
   ul.nav-menu .sub-menu .current-menu-item > a,
   ul.menu .sub-menu .current-menu-item > a,
   .menu > ul .sub-menu .current-menu-item > a {
-    color: #000000; }
+    color: #232527; }
   ul.nav-menu .page_item_has_children > a::after,
   ul.nav-menu .menu-item-has-children > a::after,
   ul.menu .page_item_has_children > a::after,
@@ -1001,7 +1015,7 @@ ul.menu,
     align-self: end;
     font-size: 0.625em;
     margin-left: 0.75em;
-    color: #818181; }
+    color: #616970; }
 
 /* Mobile menu. */
 .menu-toggle {
@@ -1024,9 +1038,9 @@ ul.menu,
       min-width: 200px;
       border: none;
       opacity: 1;
-      -webkit-transition: opacity 200ms linear;
-      -o-transition: opacity 200ms linear;
-      transition: opacity 200ms linear;
+      -webkit-transition: opacity 300ms linear;
+      -o-transition: opacity 300ms linear;
+      transition: opacity 300ms linear;
       margin: 0;
       padding: 0; }
       .main-navigation.toggled ul li ul a,
@@ -1106,6 +1120,57 @@ ul.menu,
 #primary[tabindex="-1"]:focus {
   outline: 0; }
 
+.page-id-1395 .entry-title {
+  display: none; }
+
+.home-grid {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 3em; }
+
+.home-h2 {
+  font-weight: 900; }
+
+.home-action {
+  margin: 5em 0 0 0;
+  font-size: 0.875em; }
+  .home-action p {
+    margin-top: 2em; }
+  .home-action a.home-btn-1,
+  .home-action a.home-btn-2 {
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.875em 1.5em;
+    border: 2px solid #e55162; }
+    .home-action a.home-btn-1:hover,
+    .home-action a.home-btn-2:hover {
+      background: #f1e268;
+      border-color: #f1e268;
+      color: #ffffff;
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+  .home-action a.home-btn-1 {
+    background: #e55162;
+    color: #ffffff;
+    margin-right: 0.25em; }
+  .home-action a.home-btn-2 {
+    background: #ffffff;
+    color: #000000; }
+
+.home-h3 {
+  width: 70%; }
+
+.home-paragraph,
+.home-contribute {
+  width: 80%; }
+
+.home-h3,
+.home-paragraph,
+.home-contribute {
+  margin: 0 auto 2em; }
+
 /*----------------------------------------------------------
 # container
 ----------------------------------------------------------*/
@@ -1122,7 +1187,7 @@ ul.menu,
   .page-header .post-nav,
   .page-header .pre-nav {
     font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.8rem; }
   .page-header .pre-nav {
     background: #e55162;

@@ -100,9 +100,9 @@ $color_5: rgba(250, 240, 241, 1);
 // OTHER COLOURS
 $color_body_bg: rgba(255, 255, 255, 1);
 $color_transparent: rgba(255, 255, 255, 0);
-$color_body_text: rgba(0, 0, 0, 1);
-$color_light_gray: rgba(129, 129, 129, 1);
-$color_dark_gray: rgba(64, 64, 64, 1);
+$color_body_text: rgba(53, 58, 63, 1);
+$color_light_gray: rgba(97, 105, 112, 1);
+$color_dark_gray: rgba(35, 37, 39, 1);
 $color_nav_highlight: $color_2;
 $color_pre_nav: $color_3;
 $black: #000000;
@@ -111,12 +111,13 @@ $white: #ffffff;
 $color_footer_bg: rgb(23, 33, 43);
 
 // COMPONENTS
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
 @import "normalize"; // a 'reset'
 @import "buildup"; // a generic elements like forms and divs
 @import "wordpress"; // wordpress specific stuff like wp_galleries
 @import "navigation"; // The navigation system
 @import "accessibility"; // Accessibility helpers
+@import "home-page";
 //@import "de-elementor"; // Elementor helpers
 
 
@@ -139,7 +140,7 @@ $color_footer_bg: rgb(23, 33, 43);
     .post-nav,
     .pre-nav {
         font-family: $font_family;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 0.8rem;
     }
     background: $color_body_bg;
