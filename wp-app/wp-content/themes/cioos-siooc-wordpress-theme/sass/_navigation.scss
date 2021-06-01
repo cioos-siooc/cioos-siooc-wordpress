@@ -4,26 +4,33 @@
 .language-nav {
 	text-transform: uppercase;
 	ul{
-		margin: 0;
-		padding: 0;
-		list-style-type: none;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
 		justify-content: flex-end;
-		align-items: center;
+		align-items: end;
 		align-content: center;
-		
+		list-style-type: none;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+			list-style-type: none;
+			list-style: none;
+			position: relative;
+			margin: 0;
+			padding: 0;
+		}
 	}
 	li a {
-		padding: 2.6em 0.6em 0.8em 0.6em; //smaller text needs to be pushed down further
+		margin: 0;
+		display: block;
+		text-decoration: none;
+		text-align: center;
+		border-bottom: none;
+		padding: 1.2em ; 
 		font-size: 0.8em;
 		color: $color_light_gray;
-		display: inline-block;
-		text-decoration: none;
-		border-bottom: 3px solid $color_transparent;
-		transition: color 200ms linear, border 200ms linear;
-		text-align: center;
 	}
 }
 .main-nav,
@@ -32,6 +39,7 @@ nav.site-nav > div,
 	text-transform: uppercase;
 	display: block;
 	width: 100%;
+	align-self: center;
 }
 
 ul.nav-menu,
@@ -53,39 +61,53 @@ ul.menu,
 		position: relative;
 		margin: 0;
 		padding: 0;
+		&:hover {
+			&.page_item_has_children > a,
+			&.menu-item-has-children > a {
+				&::after {
+					color: $color_body_text;
+					transition: color 0.3s ease;
+				}
+			}
+		}
 		a {
 			margin: 0;
-			padding: 2em 1em .5em 1em;
+			padding: 1em;
 			color: $color_body_text;
 			display: block;
 			text-decoration: none;
 			text-align: center;
-			border-bottom: 3px solid $color_transparent;
+			border-bottom: none;
 		}
 		// Secondary menu
 		ul {
+			overflow: hidden;
+			padding: .25em 0;
+			margin: 0;
 			height: unset;
 			display: block;
 			position: absolute;
 			left: -999em;
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 			background:$color_body_bg;
+			border: 1px solid rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
 			z-index: 100;
 			min-width: 200px;
-			border-top: 3px solid $color_2;  //fancy border on flyouts
 			opacity: 0;
 			transition: opacity 200ms linear;
-			margin: 0;
-			padding: 0;
 			a {
-				padding: 0.5em 0.5em 1em 0.5em;
-				font-weight: normal;
+				padding: 0.5em;
 				text-align: left;
-				border-bottom: 0px solid $color_1;
+				border-left: 3px solid $color_body_bg;
+				line-height: 1.5em;
 			}
 			li:hover > a,
 			li.focus > a{
-				border-bottom: 0px solid $color_1;
+				border-left: 3px solid $color_2;
+				background: rgba(0, 0, 0, 0.05);
+				transition: border 0.3s ease;
+				color: $color_body_text;
 			}
 		}
 	}
@@ -109,8 +131,8 @@ ul.menu,
 
 	li:hover > a,
 	li.focus > a{
-		transition: color 200ms linear, border 200ms linear;
-		border-bottom: 3px solid $color_1;}
+		transition: color 300ms linear;
+	}
 
 	li:hover > a,
 	li.focus > a,
@@ -119,6 +141,11 @@ ul.menu,
 		color: $color_nav_highlight;
 	}
 
+	.sub-menu {
+		.current-menu-item > a {
+			color: $black;
+		}
+	}
 	.page_item_has_children > a,
 	.menu-item-has-children > a {
 		&::after {
@@ -127,6 +154,9 @@ ul.menu,
 			display: inline;
 			position: relative;
 			align-self: end;
+			font-size: 0.625em;
+			margin-left: 0.75em;
+			color: $color_light_gray;
 		}
 	}
 }
@@ -140,31 +170,30 @@ ul.menu,
 	.main-navigation.toggled ul,
 	.menu-toggle {
 		display: block;
-		li{
+		li {
 			ul {
 				height: unset;
 				display: block;
 				position: relative;
 				left: 0;
 				box-shadow: none;
-				background:$color_body_bg;
+				background: $color_body_bg;
 				z-index: 100;
 				min-width: 200px;
-				border-top: none;  //fancy border on flyouts
+				border: none;
 				opacity: 1;
 				transition: opacity 200ms linear;
 				margin: 0;
 				padding: 0;
 				a {
-					padding-left: 2em;
-					font-weight: normal;
+					padding-left: 1em;
+					border-left-color: rgba(0, 0, 0, 0.05);
 				}
 			}
-			a{
+			a {
 				width: 100%;
 				text-align: left;
-				border-bottom: 1px solid #bbb;
-				padding: 1em;
+				padding: 0.5em 0;
 			}
 		}
 		li:hover > a,
@@ -172,8 +201,24 @@ ul.menu,
 		.current_page_ancestor > a,
 		.current-menu-item > a,
 		.current_page_item > a {
-			color: $color_nav_highlight;
+			color: $black;
 			border-bottom: 0px solid $color_1;
+			background: none;
+		}
+		li:hover > a {
+			color: $color_2;
+		}
+		.sub-menu {
+			li:hover > a {
+				color: $black;
+			}
+		}
+	}
+	.menu-toggle {
+		border: none;
+		margin: 2em 0 1em;
+		&:hover {
+			cursor: pointer;
 		}
 	}
 
@@ -181,6 +226,14 @@ ul.menu,
 	ul.sitelanguages {
 		display: none;
 	}
+	ul.nav-menu,
+	ul.menu,  
+	.menu > ul {
+		li {
+			margin: 0;
+		}
+	}
 }
+
 
 
