@@ -7,7 +7,6 @@ body, button, input, select, optgroup, textarea {
 	font-size: $font_size;
 	line-height: $line_height;
 	border: 0;
-	letter-spacing: -0.3125px;
 }
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
@@ -74,8 +73,7 @@ mark, ins {
 	text-decoration: none;
 }
 b, strong{
-	font-weight: 700;
-	color: $color_dark_gray;
+	font-weight: 600;
 }
 big {
 	font-size: 125%;
@@ -106,7 +104,7 @@ li > ul, li > ol {
 }
 
 dt {
-	font-weight: 700;
+	font-weight: 600;
 }
 
 dd {
@@ -136,7 +134,6 @@ table {
 --------------------------------------------- */
 a {
 	color: $color_2;
-	transition: all 0.3s ease;
 }
 
 a:visited {

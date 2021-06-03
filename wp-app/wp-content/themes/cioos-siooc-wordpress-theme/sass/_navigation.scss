@@ -130,6 +130,11 @@ ul.menu,
 	}
 
 	li:hover > a,
+	li.focus > a{
+		transition: color 300ms linear;
+	}
+
+	li:hover > a,
 	li.focus > a,
 	.current_page_ancestor > a,
 	.current-menu-item > a {
@@ -138,7 +143,7 @@ ul.menu,
 
 	.sub-menu {
 		.current-menu-item > a {
-			color: $color_dark_gray;
+			color: $black;
 		}
 	}
 	.page_item_has_children > a,
@@ -177,7 +182,7 @@ ul.menu,
 				min-width: 200px;
 				border: none;
 				opacity: 1;
-				transition: opacity 300ms linear;
+				transition: opacity 200ms linear;
 				margin: 0;
 				padding: 0;
 				a {
