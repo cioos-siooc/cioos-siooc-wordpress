@@ -52,7 +52,6 @@ and in each row a container is inserted to hold content.
 # Includes
 --------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
 /*!
 Theme Name: CIOOS - SIOOC
 Theme URI: https://cioos.ca
@@ -1367,6 +1366,40 @@ ul.menu .menu-item-has-children > a::after,
 
 .elementor-section-wrap > section {
 	margin-bottom: 2.5em;
+}
+
+/*----------------------------------------------------------
+# Just colours
+----------------------------------------------------------*/
+.page-header .pre-nav {
+	background: #007490;
+}
+
+.site-footer {
+	background: #17212b;
+}
+
+ul.nav-menu ul li:hover > a,
+ul.nav-menu ul li.focus > a,
+ul.menu ul li:hover > a,
+ul.menu ul li.focus > a,
+.menu > ul ul li:hover > a,
+.menu > ul ul li.focus > a {
+	border-left: 3px solid #007490;
+}
+
+li:hover > a,
+li.focus > a,
+.current_page_ancestor > a,
+.current-menu-item > a {
+	color: #007490;
+}
+
+@media screen and (max-width: 800px) {
+	.main-navigation.toggled ul li:hover > a,
+	.menu-toggle li:hover > a {
+		color: #007490;
+	}
 }
 
 /*# sourceMappingURL=style.css.map */
