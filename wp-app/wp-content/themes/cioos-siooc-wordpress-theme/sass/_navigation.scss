@@ -4,26 +4,33 @@
 .language-nav {
 	text-transform: uppercase;
 	ul{
-		margin: 0;
-		padding: 0;
-		list-style-type: none;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
 		justify-content: flex-end;
-		align-items: center;
+		align-items: end;
 		align-content: center;
-		
+		list-style-type: none;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+			list-style-type: none;
+			list-style: none;
+			position: relative;
+			margin: 0;
+			padding: 0;
+		}
 	}
 	li a {
-		padding: 2.6em 0.6em 0.8em 0.6em; //smaller text needs to be pushed down further
+		margin: 0;
+		display: block;
+		text-decoration: none;
+		text-align: center;
+		border-bottom: none;
+		padding: 1.2em ; 
 		font-size: 0.8em;
 		color: $color_light_gray;
-		display: inline-block;
-		text-decoration: none;
-		border-bottom: 3px solid $color_transparent;
-		transition: color 200ms linear, border 200ms linear;
-		text-align: center;
 	}
 }
 .main-nav,
@@ -52,7 +59,7 @@ ul.menu,
 		list-style-type: none;
 		list-style: none;
 		position: relative;
-		margin: 0 0 0 1.75em;
+		margin: 0;
 		padding: 0;
 		&:hover {
 			&.page_item_has_children > a,
@@ -65,7 +72,7 @@ ul.menu,
 		}
 		a {
 			margin: 0;
-			padding: 0.75em 0;
+			padding: 1em;
 			color: $color_body_text;
 			display: block;
 			text-decoration: none;
@@ -74,38 +81,29 @@ ul.menu,
 		}
 		// Secondary menu
 		ul {
-			margin-left: 0;
+			overflow: hidden;
+			padding: .25em 0;
+			margin: 0;
 			height: unset;
 			display: block;
 			position: absolute;
 			left: -999em;
 			box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-			background: $color_body_bg;
+			background:$color_body_bg;
 			border: 1px solid rgba(0, 0, 0, 0.2);
 			border-radius: 5px;
 			z-index: 100;
 			min-width: 200px;
 			opacity: 0;
 			transition: opacity 200ms linear;
-			padding: 0;
-			li {
-				margin: 0;
-				&:first-child {
-					margin-top: 0.5em;
-				}
-				&:last-child {
-					margin-bottom: 0.5em;
-				}
-			}
 			a {
-				padding: 0.625em 1.5em;
+				padding: 0.5em;
 				text-align: left;
-				text-transform: capitalize;
 				border-left: 3px solid $color_body_bg;
 				line-height: 1.5em;
 			}
 			li:hover > a,
-			li.focus > a {
+			li.focus > a{
 				border-left: 3px solid $color_2;
 				background: rgba(0, 0, 0, 0.05);
 				transition: border 0.3s ease;
@@ -132,7 +130,7 @@ ul.menu,
 	}
 
 	li:hover > a,
-	li.focus > a {
+	li.focus > a{
 		transition: color 300ms linear;
 	}
 
@@ -140,7 +138,7 @@ ul.menu,
 	li.focus > a,
 	.current_page_ancestor > a,
 	.current-menu-item > a {
-		color: $color_nav_highlight;
+		color: $color_2;
 	}
 
 	.sub-menu {
@@ -236,5 +234,6 @@ ul.menu,
 		}
 	}
 }
+
 
 

@@ -39,27 +39,35 @@
 							<?php if ( get_theme_mod( 'english_logo' )){ ?>
 								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php echo get_theme_mod( 'english_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
 							<?php } else {?>
-								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/cioos-atlantic_small_EN.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/pacific/cioos-pacific_EN.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
 							<?php }; ?>
 						<?php } else if ( pll_current_language() == 'fr'){?>
 							<?php if ( get_theme_mod( 'french_logo' )){ ?>
 								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php echo get_theme_mod( 'french_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
 							<?php } else {?>
-								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/cioos-atlantic_small_FR.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/pacific/cioos-pacific_FR.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
 							<?php }; ?>
 						<?php } else {?>
-							<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/cioos-atlantic_small_EN_FR.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+							<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/pacific/cioos-pacific_EN_FR.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
 						<?php }; ?>
 					<?php } else {?>
 						<?php if ( get_theme_mod( 'defaultlogo' )){ ?>
 							<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php echo get_theme_mod( 'DEFAULTLOGO' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
 						<?php } else {?>
-							<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/cioos-atlantic_small_EN_FR.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+							<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/pacific/cioos-pacific_EN_FR.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
 						<?php }; ?>
 					<?php }; ?>
 				</div>	
 				<nav id="site-navigation" class="site-nav nav main-nav main-navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', '_s' ); ?></button>
+					<?php if (function_exists('pll_the_languages')){ ?>	
+						<?php if ( pll_current_language() == 'en'){ ?>					
+							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Primary Menu</button>
+						<?php } else if( pll_current_language() == 'fr'){  ?>
+							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">menu primary</button>
+						<?php } else {?>
+							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Primary Menu</button>
+						<?php }; ?>
+					<?php }; ?>
 					<?php
 					wp_nav_menu(
 						array(
