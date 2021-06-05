@@ -1,0 +1,197 @@
+/* Typography
+--------------------------------------------- */
+body, button, input, select, optgroup, textarea {
+	color: $color_body_text;
+	background-color: $color_body_bg;
+	font-family: $font_family;
+	font-size: $font_size;
+	line-height: $line_height;
+	border: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+}
+
+h1{
+	font-size: 2.25rem;
+	font-weight: 700;
+	line-height: 1.33em;
+}
+h2{
+	font-size: 1.875rem;
+	font-weight: 700;
+	line-height: 1.2em;
+}
+h3{
+	font-size: 1.5rem;
+	font-weight: 300;
+	line-height: 1.33em;
+}
+h4{
+	font-size: 1.1875rem;
+	font-weight: 700;
+	line-height: 1.210em;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: $color_body_bg;
+	font-family: $mono_font;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code, kbd, tt, var {
+	font-family: $mono_font;
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+b, strong{
+	font-weight: 600;
+}
+big {
+	font-size: 125%;
+}
+
+hr {
+	background-color: $color_3;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul, ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul, li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: 600;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed, iframe, object {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/* Links
+--------------------------------------------- */
+a {
+	//colours set in regional colours
+}
+
+a:visited {
+	//colours set in regional colours
+}
+
+a:hover, a:focus, a:active {
+	//colours set in regional colours
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover, a:active {
+	outline: 0;
+}
+
+/* Forms
+--------------------------------------------- */
+// use <form>
+//       <label><input></label>
+//       <label><input><input></label>
+//       <label><tesxarea></label>
+//     </form>
+// where possible
+
+label {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+label input {
+	width: 100%;
+}
+//buttons
+button, input, select, textarea,  input[type="button"], input[type="reset"], input[type="submit"] {
+	border: 2px solid; // Since not all inputs can exist without a border, I make sure all inputs are bordered and hide them using like colours.
+	border-radius: 0;
+	line-height: 1;
+	padding: 1rem;
+	font-family: $font_family;
+	font-weight: 400;
+	//colours set in regional colours
+}
+//fields
+input[type="text"], input[type="email"], input[type="url"], 
+input[type="password"], input[type="search"], input[type="number"], 
+input[type="tel"], input[type="range"], input[type="date"], input[type="month"], 
+input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], 
+input[type="color"] {
+	border: 1px solid; // Since not all inputs can exist without a border, I make sure all inputs are bordered and hide them using like colours.
+	border-radius: 0;
+	line-height: 1;
+	padding: 1rem;
+	font-family: $font_family;
+	font-weight: 400;
+	//colours set in regional colours
+}
+
+
