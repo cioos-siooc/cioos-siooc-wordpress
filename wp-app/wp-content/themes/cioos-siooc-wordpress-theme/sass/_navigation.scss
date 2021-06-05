@@ -20,17 +20,16 @@
 			position: relative;
 			margin: 0;
 			padding: 0;
+			a {
+				margin: 0;
+				display: block;
+				text-decoration: none;
+				text-align: center;
+				border-bottom: none;
+				padding: 1.2em ; 
+				font-size: 0.8em;
+			}
 		}
-	}
-	li a {
-		margin: 0;
-		display: block;
-		text-decoration: none;
-		text-align: center;
-		border-bottom: none;
-		padding: 1.2em ; 
-		font-size: 0.8em;
-		color: $color_light_gray;
 	}
 }
 .main-nav,
@@ -65,7 +64,6 @@ ul.menu,
 			&.page_item_has_children > a,
 			&.menu-item-has-children > a {
 				&::after {
-					color: $color_body_text;
 					transition: color 0.3s ease;
 				}
 			}
@@ -73,7 +71,6 @@ ul.menu,
 		a {
 			margin: 0;
 			padding: 1em;
-			color: $color_body_text;
 			display: block;
 			text-decoration: none;
 			text-align: center;
@@ -99,15 +96,14 @@ ul.menu,
 			a {
 				padding: 0.5em;
 				text-align: left;
-				border-left: 3px solid $color_body_bg;
+				
 				line-height: 1.5em;
 			}
 			li:hover > a,
 			li.focus > a{
-				border-left: 3px solid $color_2;
 				background: rgba(0, 0, 0, 0.05);
 				transition: border 0.3s ease;
-				color: $color_body_text;
+
 			}
 		}
 	}
@@ -134,18 +130,7 @@ ul.menu,
 		transition: color 300ms linear;
 	}
 
-	li:hover > a,
-	li.focus > a,
-	.current_page_ancestor > a,
-	.current-menu-item > a {
-		color: $color_2;
-	}
 
-	.sub-menu {
-		.current-menu-item > a {
-			color: $black;
-		}
-	}
 	.page_item_has_children > a,
 	.menu-item-has-children > a {
 		&::after {
@@ -156,7 +141,6 @@ ul.menu,
 			align-self: end;
 			font-size: 0.625em;
 			margin-left: 0.75em;
-			color: $color_light_gray;
 		}
 	}
 }
@@ -177,7 +161,6 @@ ul.menu,
 				position: relative;
 				left: 0;
 				box-shadow: none;
-				background: $color_body_bg;
 				z-index: 100;
 				min-width: 200px;
 				border: none;
@@ -202,12 +185,9 @@ ul.menu,
 		.current-menu-item > a,
 		.current_page_item > a {
 			color: $black;
-			border-bottom: 0px solid $color_1;
 			background: none;
 		}
-		li:hover > a {
-			color: $color_2;
-		}
+
 		.sub-menu {
 			li:hover > a {
 				color: $black;
@@ -215,7 +195,6 @@ ul.menu,
 		}
 	}
 	.menu-toggle {
-		border: none;
 		margin: 2em 0 1em;
 		&:hover {
 			cursor: pointer;

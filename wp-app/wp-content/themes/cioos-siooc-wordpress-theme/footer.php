@@ -10,7 +10,7 @@
  */
 
 ?>
-	<footer style="background-image: url(/wp-content/themes/cioos-siooc-wordpress/img/footer.svg); background-size:cover;" id="colophon" class="site-footer">
+	<footer id="colophon" class="site-footer">
 		<div class="container">
 			<div class="col">
 			<?php dynamic_sidebar('sidebar-footer-1') ?>

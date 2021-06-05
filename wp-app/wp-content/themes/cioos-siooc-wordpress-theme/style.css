@@ -587,18 +587,6 @@ table {
 
 /* Links
 --------------------------------------------- */
-a {
-	color: #007490;
-}
-
-a:visited {
-	color: #007490;
-}
-
-a:hover, a:focus, a:active {
-	color: #ffc857;
-}
-
 a:focus {
 	outline: thin dotted;
 }
@@ -619,42 +607,26 @@ label input {
 	width: 100%;
 }
 
-button, input, select, textarea,
+button, input, select, textarea, input[type="button"], input[type="reset"], input[type="submit"] {
+	border: 2px solid;
+	border-radius: 0;
+	line-height: 1;
+	padding: 1rem;
+	font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-weight: 400;
+}
+
 input[type="text"], input[type="email"], input[type="url"],
 input[type="password"], input[type="search"], input[type="number"],
 input[type="tel"], input[type="range"], input[type="date"], input[type="month"],
 input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"],
-input[type="color"], textarea {
+input[type="color"] {
 	border: 1px solid;
-	border-color: #007490;
 	border-radius: 0;
-	background: #b9d6f2;
-	color: #353a3f;
 	line-height: 1;
-	padding: 0.6rem;
+	padding: 1rem;
 	font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-weight: 100;
-	font-size: 0.8rem;
-}
-
-button, input[type="button"], input[type="reset"], input[type="submit"] {
-	background: #007490;
-	color: white;
-	font-weight: 600;
-}
-
-button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover,
-button:active, button:focus, input[type="button"]:active, input[type="button"]:focus,
-input[type="reset"]:active, input[type="reset"]:focus, input[type="submit"]:active,
-input[type="submit"]:focus {
-	background: #ffc857;
-	border-color: #ffc857;
-	color: #353a3f;
-}
-
-input:focus, select:focus, option:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="range"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="color"]:focus, textarea:focus {
-	border-color: #ffc857;
-	background: white;
+	font-weight: 400;
 }
 
 /* Posts and pages
@@ -891,7 +863,7 @@ input:focus, select:focus, option:focus, input[type="text"]:focus, input[type="e
 	padding: 0;
 }
 
-.language-nav li a {
+.language-nav ul li a {
 	margin: 0;
 	display: block;
 	text-decoration: none;
@@ -899,7 +871,6 @@ input:focus, select:focus, option:focus, input[type="text"]:focus, input[type="e
 	border-bottom: none;
 	padding: 1.2em;
 	font-size: 0.8em;
-	color: #616970;
 }
 
 .main-nav,
@@ -942,7 +913,6 @@ ul.menu li:hover.page_item_has_children > a::after,
 ul.menu li:hover.menu-item-has-children > a::after,
 .menu > ul li:hover.page_item_has_children > a::after,
 .menu > ul li:hover.menu-item-has-children > a::after {
-	color: #353a3f;
 	transition: color 0.3s ease;
 }
 
@@ -951,7 +921,6 @@ ul.menu li a,
 .menu > ul li a {
 	margin: 0;
 	padding: 1em;
-	color: #353a3f;
 	display: block;
 	text-decoration: none;
 	text-align: center;
@@ -983,7 +952,6 @@ ul.menu li ul a,
 .menu > ul li ul a {
 	padding: 0.5em;
 	text-align: left;
-	border-left: 3px solid white;
 	line-height: 1.5em;
 }
 
@@ -993,10 +961,8 @@ ul.menu li ul li:hover > a,
 ul.menu li ul li.focus > a,
 .menu > ul li ul li:hover > a,
 .menu > ul li ul li.focus > a {
-	border-left: 3px solid #007490;
 	background: rgba(0, 0, 0, 0.05);
 	transition: border 0.3s ease;
-	color: #353a3f;
 }
 
 ul.nav-menu li:last-child.menu-item-has-children .sub-menu,
@@ -1038,27 +1004,6 @@ ul.menu li.focus > a,
 	transition: color 300ms linear;
 }
 
-ul.nav-menu li:hover > a,
-ul.nav-menu li.focus > a,
-ul.nav-menu .current_page_ancestor > a,
-ul.nav-menu .current-menu-item > a,
-ul.menu li:hover > a,
-ul.menu li.focus > a,
-ul.menu .current_page_ancestor > a,
-ul.menu .current-menu-item > a,
-.menu > ul li:hover > a,
-.menu > ul li.focus > a,
-.menu > ul .current_page_ancestor > a,
-.menu > ul .current-menu-item > a {
-	color: #007490;
-}
-
-ul.nav-menu .sub-menu .current-menu-item > a,
-ul.menu .sub-menu .current-menu-item > a,
-.menu > ul .sub-menu .current-menu-item > a {
-	color: #000000;
-}
-
 ul.nav-menu .page_item_has_children > a::after,
 ul.nav-menu .menu-item-has-children > a::after,
 ul.menu .page_item_has_children > a::after,
@@ -1072,7 +1017,6 @@ ul.menu .menu-item-has-children > a::after,
 	align-self: end;
 	font-size: 0.625em;
 	margin-left: 0.75em;
-	color: #616970;
 }
 
 /* Mobile menu. */
@@ -1092,7 +1036,6 @@ ul.menu .menu-item-has-children > a::after,
 		position: relative;
 		left: 0;
 		box-shadow: none;
-		background: white;
 		z-index: 100;
 		min-width: 200px;
 		border: none;
@@ -1123,19 +1066,13 @@ ul.menu .menu-item-has-children > a::after,
 	.menu-toggle .current-menu-item > a,
 	.menu-toggle .current_page_item > a {
 		color: #000000;
-		border-bottom: 0px solid #b9d6f2;
 		background: none;
-	}
-	.main-navigation.toggled ul li:hover > a,
-	.menu-toggle li:hover > a {
-		color: #007490;
 	}
 	.main-navigation.toggled ul .sub-menu li:hover > a,
 	.menu-toggle .sub-menu li:hover > a {
 		color: #000000;
 	}
 	.menu-toggle {
-		border: none;
 		margin: 2em 0 1em;
 	}
 	.menu-toggle:hover {
@@ -1212,7 +1149,6 @@ ul.menu .menu-item-has-children > a::after,
 }
 
 .page-header .pre-nav {
-	background: #007490;
 	max-height: 3rem;
 }
 
@@ -1312,7 +1248,8 @@ ul.menu .menu-item-has-children > a::after,
 # footer
 ----------------------------------------------------------*/
 .site-footer {
-	background: #17212b;
+	background-image: url(/wp-content/themes/cioos-siooc-wordpress/img/footer.svg);
+	background-size: cover;
 	padding: 4em 0;
 }
 
@@ -1369,37 +1306,103 @@ ul.menu .menu-item-has-children > a::after,
 }
 
 /*----------------------------------------------------------
-# Just colours
+# Just region-specific colours
 ----------------------------------------------------------*/
 .page-header .pre-nav {
 	background: #007490;
 }
 
-.site-footer {
-	background: #17212b;
+.language-nav ul li a {
+	color: #616970;
 }
 
-ul.nav-menu ul li:hover > a,
-ul.nav-menu ul li.focus > a,
+.site-footer {
+	background-color: #17212b;
+}
+
+ul.nav-menu li a, ul.menu li a, .menu > ul li a {
+	color: #000000;
+}
+
+ul.nav-menu li a:hover,
+ul.menu li a:hover,
+.menu > ul li a:hover,
+ul.nav-menu li.current_page_ancestor > a,
+ul.nav-menu li.current-menu-item > a
+ul.menu li.current_page_ancestor > a,
+ul.menu li.current-menu-item > a {
+	color: #007490;
+}
+
+ul.nav-menu li ul a,
+ul.menu li ul a,
+.menu > ul li ul a {
+	border-left: 3px solid white;
+}
+
+ul.nav-menu li ul,
+ul.menu li ul,
+.main-navigation.toggled ul li ul,
+.menu > ul li ul,
+.menu-toggle li ul {
+	background: white;
+}
+
+.nav-menu ul li:hover > a, .nav-menu ul li.focus > a,
 ul.menu ul li:hover > a,
 ul.menu ul li.focus > a,
 .menu > ul ul li:hover > a,
 .menu > ul ul li.focus > a {
+	border-left: 3px solid #ffc857;
+}
+
+.sub-menu .current-menu-item > a {
+	color: #007490;
 	border-left: 3px solid #007490;
 }
 
-li:hover > a,
-li.focus > a,
-.current_page_ancestor > a,
-.current-menu-item > a {
+a {
 	color: #007490;
 }
 
-@media screen and (max-width: 800px) {
-	.main-navigation.toggled ul li:hover > a,
-	.menu-toggle li:hover > a {
-		color: #007490;
-	}
+a:visited {
+	color: #007490;
+}
+
+a:hover, a:focus, a:active {
+	color: #ffc857;
+}
+
+/* Forms
+--------------------------------------------- */
+button, input, select, textarea, input[type="button"], input[type="reset"], input[type="submit"] {
+	border-color: #007490;
+	background: #007490;
+	color: #ffffff;
+}
+
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover,
+button:active, button:focus, input[type="button"]:active, input[type="button"]:focus,
+input[type="reset"]:active, input[type="reset"]:focus, input[type="submit"]:active,
+input[type="submit"]:focus {
+	background: #b9d6f2;
+	border-color: #007490;
+	color: #007490;
+}
+
+input[type="text"], input[type="email"], input[type="url"],
+input[type="password"], input[type="search"], input[type="number"],
+input[type="tel"], input[type="range"], input[type="date"], input[type="month"],
+input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"],
+input[type="color"] {
+	border-color: #007490;
+	background: #b9d6f2;
+	color: #007490;
+}
+
+input:focus, select:focus, option:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="range"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="color"]:focus, textarea:focus {
+	border-color: #ffc857;
+	background: white;
 }
 
 /*# sourceMappingURL=style.css.map */
