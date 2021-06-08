@@ -56,7 +56,7 @@ and in each row a container is inserted to hold content.
 # Includes
 --------------------------------------------------------*/
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap');
 
 //WIDTHS
 $max_width: 1140px; //Old size
@@ -84,18 +84,18 @@ $mono_font: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", "Courier 10 Pit
 // $color_5: rgba(198, 227, 223, 1);
 
 // Atlantic
-// $color_1: rgba(241, 226, 104, 1);
-// $color_2: rgba(229, 81, 98, 1);
-// $color_3: rgba(97, 17, 26, 1);
-// $color_4: rgba(47, 184, 218, 1);
-// $color_5: rgba(250, 240, 241, 1);
+$color_1: rgba(241, 226, 104, 1);
+$color_2: rgba(229, 81, 98, 1);
+$color_3: rgba(97, 17, 26, 1);
+$color_4: rgba(47, 184, 218, 1);
+$color_5: rgba(250, 240, 241, 1);
 
 // Pacific
-$color_1: rgba(185, 214, 242, 1);
-$color_2: rgba(0, 116, 144, 1);
-$color_3: rgba(255, 200, 87, 1);
-$color_4: rgba(255, 107, 53, 1);
-$color_5: rgba(135, 142, 136, 1);
+// $color_1: rgba(185, 214, 242, 1);
+// $color_2: rgba(0, 116, 144, 1);
+// $color_3: rgba(255, 200, 87, 1);
+// $color_4: rgba(255, 107, 53, 1);
+// $color_5: rgba(135, 142, 136, 1);
 
 
 // OTHER COLOURS
@@ -116,6 +116,8 @@ $white: #ffffff;
 @import "wordpress"; // wordpress specific stuff like wp_galleries
 @import "navigation"; // The navigation system
 @import "accessibility"; // Accessibility helpers
+@import "home-page";
+@import "internal-page";
 //@import "de-elementor"; // Elementor helpers
 
 
@@ -254,8 +256,10 @@ $white: #ffffff;
         input {
             border: none;
             width: 100%;
+            padding: 0.75rem;
             &.button {
-                padding: 1em 0;
+                padding: 0.875rem 0;
+                font-weight: 700;
                 &:hover {
                     cursor: pointer;
                 }
