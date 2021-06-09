@@ -9,7 +9,6 @@
 # footer
 --------------------------------------------------------*/
 
-
 /*--------------------------------------------------------
 # instructions
 ----------------------------------------------------------
@@ -51,12 +50,11 @@ and in each row a container is inserted to hold content.
                 -------------------------
 ----------------------------------------------------------*/
 
-
 /*--------------------------------------------------------
 # Includes
 --------------------------------------------------------*/
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 
 //WIDTHS
 $max_width: 1140px; //Old size
@@ -70,11 +68,9 @@ $font_size: 1em;
 $line_height: 1.625em;
 $mono_font: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", "Courier 10 Pitch", courier, monospace;
 
-
 // RA SPECIFIC COLOURS - SEE CIOOS Brand Guidelines
 // these are used where approprite around the site in
 // links and navigation colours, rollovers and more
-
 
 // National
 // $color_1: rgba(181, 181, 181, 1);
@@ -84,19 +80,18 @@ $mono_font: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", "Courier 10 Pit
 // $color_5: rgba(198, 227, 223, 1);
 
 // Atlantic
-$color_1: rgba(241, 226, 104, 1);
-$color_2: rgba(229, 81, 98, 1);
-$color_3: rgba(97, 17, 26, 1);
-$color_4: rgba(47, 184, 218, 1);
-$color_5: rgba(250, 240, 241, 1);
+// $color_1: rgba(241, 226, 104, 1);
+// $color_2: rgba(229, 81, 98, 1);
+// $color_3: rgba(97, 17, 26, 1);
+// $color_4: rgba(47, 184, 218, 1);
+// $color_5: rgba(250, 240, 241, 1);
 
 // Pacific
-// $color_1: rgba(185, 214, 242, 1);
-// $color_2: rgba(0, 116, 144, 1);
-// $color_3: rgba(255, 200, 87, 1);
-// $color_4: rgba(255, 107, 53, 1);
-// $color_5: rgba(135, 142, 136, 1);
-
+$color_1: rgba(185, 214, 242, 1);
+$color_2: rgba(0, 116, 144, 1);
+$color_3: rgba(255, 200, 87, 1);
+$color_4: rgba(255, 107, 53, 1);
+$color_5: rgba(135, 142, 136, 1);
 
 // OTHER COLOURS
 $color_body_bg: rgba(255, 255, 255, 1);
@@ -116,13 +111,28 @@ $white: #ffffff;
 @import "wordpress"; // wordpress specific stuff like wp_galleries
 @import "navigation"; // The navigation system
 @import "accessibility"; // Accessibility helpers
-@import "home-page";
-@import "internal-page";
 //@import "de-elementor"; // Elementor helpers
 
-
 /*----------------------------------------------------------
-# container
+# The site row container
+----------------------------------------------------------*/
+.site {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+    .page-header {
+        flex-shrink: 0;
+    }
+    .site-main {
+        flex-grow: 1;
+    }
+    .site-footer {
+        flex-shrink: 0;
+    } // Keeps the footer and header at the top and bottom of the site
+}
+/*----------------------------------------------------------
+# container within each row
 ----------------------------------------------------------*/
 
 .container {
@@ -131,19 +141,18 @@ $white: #ffffff;
     padding: 0 1em; // allows the content some room at small screens
 }
 
-
 /*----------------------------------------------------------
 # header
 ----------------------------------------------------------*/
 
 .page-header {
+    background: $color_body_bg;
     .post-nav,
     .pre-nav {
         font-family: $font_family;
         font-weight: 700;
         font-size: 0.8rem;
     }
-    background: $color_body_bg;
     .pre-nav {
         max-height: 3rem;
         @media screen and (max-width: $mobile_trigger) {
@@ -153,25 +162,22 @@ $white: #ffffff;
             display: flex;
             height: 3em; //three lines tall.
             width: max-content;
-
             .nationallogo {
                 overflow: hidden;
                 display: flex;
-                img{
+                img {
                     align-self: center;
-                    margin:0 1em 0 0;
+                    margin: 0 1em 0 0;
                     width: 5em;
                 }
-            } 
+            }
             .logotype {
                 display: flex;
-                .widget{
+                .widget {
                     align-self: center;
-                    margin:0;
-                }
-                p {
                     margin: 0;
                 }
+                p,
                 a {
                     padding: 0;
                     color: $color_body_bg;
@@ -225,15 +231,17 @@ $white: #ffffff;
 # footer
 ----------------------------------------------------------*/
 .site-footer {
-    background-image: url(/wp-content/themes/cioos-siooc-wordpress/img/footer.svg); 
-    background-size:cover;
+    background-image: url(/wp-content/themes/cioos-siooc-wordpress/img/footer.svg);
+    background-size: cover;
     padding: 4em 0;
     .container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: auto;
         grid-column-gap: 3em;
-        article{width:100%}
+        article {
+            width: 100%;
+        }
         aside {
             font-weight: 700;
             color: $color_body_bg;
@@ -256,10 +264,8 @@ $white: #ffffff;
         input {
             border: none;
             width: 100%;
-            padding: 0.75rem;
             &.button {
-                padding: 0.875rem 0;
-                font-weight: 700;
+                padding: 1em 0;
                 &:hover {
                     cursor: pointer;
                 }
@@ -270,90 +276,153 @@ $white: #ffffff;
         }
     }
 }
-.elementor-section-wrap > section{
+.elementor-section-wrap > section {
     margin-bottom: 2.5em;
 }
 
-
 /*----------------------------------------------------------
-# Just region-specific colours
+# Region-dependant colours
 ----------------------------------------------------------*/
 
-.page-header .pre-nav {     
-                                                                                        background: $color_2;}  //top bar regional globe area
- .language-nav ul li a{                                                                 color: $color_light_gray; //Language switch colour
- }
- .site-footer {      
-                                                                                        background-color: $color_footer_bg;}   //footer bg
-
-ul.nav-menu li a, ul.menu li a, .menu > ul li a {       
-                                                                                        color: $black;} // Main & flyout nav text color
-ul.nav-menu li a:hover, 
-ul.menu li a:hover, 
+.page-header .pre-nav {
+    background: $color_2; //top bar regional globe area
+}
+.language-nav ul li a {
+    color: $color_light_gray; //Language switch colour
+}
+.site-footer {
+    background-color: $color_footer_bg; //footer bg
+}
+ul.nav-menu li a,
+ul.menu li a,
+.menu > ul li a {
+    color: $black; // Main & flyout nav text color
+}
+ul.nav-menu li a:hover,
+ul.menu li a:hover,
 .menu > ul li a:hover,
 ul.nav-menu li.current_page_ancestor > a,
-ul.nav-menu li.current-menu-item > a
-ul.menu li.current_page_ancestor > a,
-ul.menu li.current-menu-item > a  {         
-                                                                                        color: $color_2;} // Main & flyout nav text color hover
+ul.nav-menu li.current-menu-item > a ul.menu li.current_page_ancestor > a,
+ul.menu li.current-menu-item > a {
+    color: $color_2; // Main & flyout nav text color hover
+}
 ul.nav-menu,
 ul.menu,
-.menu > ul { li ul a {      
-                                                                                        border-left: 3px solid $color_body_bg;}} // flyout link border colour
+.menu > ul {
+    li ul a {
+        border-left: 3px solid $color_body_bg; // flyout link border colour
+    }
+}
 ul.nav-menu,
-ul.menu, 	
-.main-navigation.toggled ul, 
+ul.menu,
+.main-navigation.toggled ul,
 .menu > ul,
-.menu-toggle {li {ul {
-                                                                                        background:$color_body_bg;}}} // flyout bg  colorul
+.menu-toggle {
+    li {
+        ul {
+            background: $color_body_bg; // flyout bg  colour
+        }
+    }
+}
 .nav-menu,
-ul.menu, 
-.menu > ul {ul {li:hover > a,li.focus > a{     
-                                                                                        border-left: 3px solid $color_3;}}} // flyout link border colour hover
-.sub-menu {.current-menu-item > a {
-                                                                                        color: $color_2;
-                                                                                        border-left: 3px solid $color_2;}} // flyout link current-link colour
-
+ul.menu,
+.menu > ul {
+    ul {
+        li:hover > a,
+        li.focus > a {
+            border-left: 3px solid $color_3; // flyout link border colour hover
+        }
+    }
+}
+.sub-menu {
+    .current-menu-item > a {
+        color: $color_2;
+        border-left: 3px solid $color_2; // flyout link current-link colour
+    }
+}
 a {
-	                                                                                    color: $color_2;} //  text link colour
+    color: $color_2; //  text link colour
+}
 a:visited {
-	                                                                                    color: $color_2;} //  text link colour visited
-a:hover, a:focus, a:active {
-	                                                                                    color: $color_3;} //  text link colour hover
+    color: $color_2; //  text link colour visited
+}
+a:hover,
+a:focus,
+a:active {
+    color: $color_3; //  text link colour hover
+}
 
 /* Forms
 --------------------------------------------- */
 
-
-//button colours
-button, input, select, textarea,  input[type="button"], input[type="reset"], input[type="submit"] {
-	border-color: $color_2;
-	background: $color_2;
-	color: $white;
+button,
+input,
+select,
+textarea,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    border-color: $color_2; //button colours
+    background: $color_2;
+    color: $white;
 }
-//button hovers
-button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover,
-button:active, button:focus, input[type="button"]:active, input[type="button"]:focus, 
-input[type="reset"]:active, input[type="reset"]:focus, input[type="submit"]:active, 
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+button:active,
+button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
 input[type="submit"]:focus {
-	background: $color_1;
-	border-color: $color_2;
-	color: $color_2;
+    background: $color_1; //button hovers
+    border-color: $color_2;
+    color: $color_2;
 }
-//field colours
-input[type="text"], input[type="email"], input[type="url"], 
-input[type="password"], input[type="search"], input[type="number"], 
-input[type="tel"], input[type="range"], input[type="date"], input[type="month"], 
-input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], 
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
 input[type="color"] {
-	border-color: $color_2;
-	background: $color_1;
-	color: $color_2;
-}
-//textbox interactions
-input:focus, select:focus, option:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="range"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="color"]:focus, textarea:focus {
-	border-color: $color_3;
-	background: $color_body_bg
-}
+    border-color: $color_2; //field colours
 
-
+    background: $color_1;
+    color: $color_2;
+}
+input:focus,
+select:focus,
+option:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+    border-color: $color_3; //textbox interactions
+    background: $color_body_bg;
+}
