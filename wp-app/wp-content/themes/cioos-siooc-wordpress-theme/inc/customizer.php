@@ -25,15 +25,14 @@ function cioos_customize_register( $wp_customize ) {
 	// 	'settings' => 'accent_color'
 	// ) ) );
 
-	$wp_customize->remove_control('logo'); //remove teh default logo, add 1 for each language 
-
+	$wp_customize->remove_control('logo'); //remove the default logo, add 1 for each language.
 
 	$wp_customize->add_setting( 'defaultlogo', array(
 		'default' => '',
   		'transport' => 'refresh'
 	  ) );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'defaultlogo', array(
-		'label' => __( 'DEFAULT LOGO', 'theme_textdomain' ),
+		'label' => __( 'Dual Language Logo - not used yet', 'theme_textdomain' ),
 		'section' => 'title_tagline',
 		'settings' => 'defaultlogo'
 	) ) );
@@ -58,8 +57,21 @@ function cioos_customize_register( $wp_customize ) {
 		'settings' => 'french_logo'
 	) ) );
 
+	$wp_customize->add_setting( 'ra_selector', array(
+		'default' => 'national',
+  		'transport' => 'refresh'
+	  ) );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ra_selector', array(
+		'type' => 'radio',
+		'section' => 'colors', 
+		'label' => __( 'Ra Theme selector' ),
+		'description' => __( 'Pick your RA' ),
+		'choices' => array(
+			'national' => __( 'National' ),
+			'pacific' => __( 'Pacific' ),
+			'atlantic' => __( 'Atlantic' ),
+		),
+	) ) );
 
-
-	
 }
 add_action( 'customize_register', 'cioos_customize_register' );
