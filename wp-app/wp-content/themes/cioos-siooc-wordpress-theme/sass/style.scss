@@ -416,6 +416,18 @@ $white: #ffffff;
                 border-color: $color_3; //textbox interactions
                 background: $color_body_bg;
             }
+            
+            .three-column-gallery-with-title,
+            .three-column-gallery-with-title.is-cropped {
+                ul li.blocks-gallery-item img {
+                    border-color: $color_2;
+                }
+            }
 
+            .inline-list-with-checkmarks {
+                li::before {
+                    color: $color_5;
+                }
+            }
     }
 }
