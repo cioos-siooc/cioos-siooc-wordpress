@@ -20,7 +20,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(get_theme_mod( 'ra_selector' )); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'cioos' ); ?></a>
@@ -34,7 +34,7 @@
 		<div class="post-nav">
 			<div class="container">
 				<div class="sitelogo">
-					<?php if (function_exists('pll_the_languages')){ ?>	
+					<?php if (function_exists('pll_the_languages')){ ?>
 						<?php if ( pll_current_language() == 'en'){ ?>
 							<?php if ( get_theme_mod( 'english_logo' )){ ?>
 								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php echo get_theme_mod( 'english_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>

@@ -61,7 +61,7 @@ function cioos_customize_register( $wp_customize ) {
 		'default' => 'national',
   		'transport' => 'refresh'
 	  ) );
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ra_selector', array(
+	$wp_customize->add_control( 'ra_selector', array(
 		'type' => 'radio',
 		'section' => 'colors', 
 		'label' => __( 'Ra Theme selector' ),
@@ -71,7 +71,7 @@ function cioos_customize_register( $wp_customize ) {
 			'pacific' => __( 'Pacific' ),
 			'atlantic' => __( 'Atlantic' ),
 		),
-	) ) );
+	) );
 
 }
 add_action( 'customize_register', 'cioos_customize_register' );
