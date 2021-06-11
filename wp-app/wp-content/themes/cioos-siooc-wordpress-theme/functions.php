@@ -207,6 +207,98 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Add unlimited sidebars.
+ */
+require get_template_directory() . '/inc/SidebarGenerator.php';
+
+add_action("add_meta_boxes", "add_custom_meta_box");
+
+function add_custom_meta_box()
+{
+    add_meta_box(
+			"cioos_sidebar_dropdown", 
+			"Custom Meta Box", 
+			"custom_meta_box_markup", 
+			"page", 
+			"normal", 
+			"default", 
+			null);
+}
+
+function custom_meta_box_markup($post)
+{
+	global $wp_registered_sidebars;
+	$sidebar_dropdown = get_post_meta( $post->ID, 'sidebar_dropdown_value', true );
+	$meta = get_post_meta( $post->ID );
+	$layout = ( isset( $meta['layout'][0] ) && '' !== $meta['layout'][0] ) ? $meta['layout'][0] : '';
+	// $saved_term = $this->field->value;
+	wp_nonce_field(basename(__FILE__), "meta-box-nonce");
+	
+
+	?>
+		<table class="form-table">
+			<tbody>
+			<tr class="meta_layout">
+					<th><label for="sidebar_layout_title">Page Layout</label></th>
+					<td>
+						<ul style="list-style:none">
+							<?php
+								echo '<li><input type="radio" id="layout-full" name="layout" value=option1' . checked( $layout, 'option1', false ) . '>';  
+								echo '<label for="layout-full">Full Width</label></li>';
+								echo '<li><input type="radio" id="layout-left" name="layout" value=option2' . checked( $layout, 'option2', false ) . '>';    
+								echo '<label for="layout-left">Left Sidebar</label></li>';
+							?>
+						</ul>
+					</td>				
+				</tr>
+				<tr class="meta_sidebar">
+					<th><label for="sidebar_title">Select a Sidebar</label></th>
+					<td>
+						<select id="cioos_sidebar_dropdown" name="cioos_sidebar_dropdown">
+							<?php
+								foreach ( $wp_registered_sidebars as $key => $value ) {
+									if ( strpos( $value['id'], 'footer' ) !== false ) {
+									} else {
+										echo '<option ' . selected( $value['id'], $sidebar_dropdown, false ) . ' value=' . $value['id'] . '>' . $value['name'] . '</option>';
+									}    
+								}
+							?>
+						</select>
+					</td>				
+				</tr>
+			</tbody>
+		</table>
+	<?php  
+}
+
+add_action("save_post", "save_custom_meta_box", 10, 3);
+
+function save_custom_meta_box($post_id, $post, $update)
+{
+    if (!isset($_POST["meta-box-nonce"]) || !wp_verify_nonce($_POST["meta-box-nonce"], basename(__FILE__)))
+        return $post_id;
+
+    if(isset($_POST["cioos_sidebar_dropdown"]))
+    {
+			update_post_meta($post_id, "sidebar_dropdown_value", $_POST["cioos_sidebar_dropdown"]);
+    }
+		
+		if(isset($_POST["layout"]))
+    {
+			update_post_meta( $post_id, 'layout', sanitize_text_field( wp_unslash( $_POST['layout'] ) ) ); // Input var okay.
+    }    
+}
+
+function cioos_scripts_admin($hook_suffix) {
+	if( 'post.php' == $hook_suffix || 'post-new.php' == $hook_suffix ) {
+		wp_enqueue_script( 'custom_js', get_template_directory_uri() . '/js/sidebar.js', array( 'jquery' ));
+ }
+}
+add_action( 'admin_enqueue_scripts', 'cioos_scripts_admin' );
+
+
+
+/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
