@@ -1038,6 +1038,22 @@ abstract class Ai1wm_Database {
 								$this->query( $query );
 							}
 
+							// Replace table full-text indexes (MySQL <= 5.5)
+							if ( $this->errno() === 1214 ) {
+
+								// Full-text searches are supported for MyISAM tables only.
+								// In MySQL 5.6 and up, they can also be used with InnoDB tables
+								$query = $this->replace_table_fulltext_indexes( $query );
+
+								// Run SQL query
+								$this->query( $query );
+							}
+
+							// Check tablespace exists
+							if ( $this->errno() === 1813 ) {
+								throw new Ai1wm_Database_Exception( __( 'Error importing database table. <a href="https://help.servmask.com/knowledgebase/mysql-error-importing-table/" target="_blank">Technical details</a>', AI1WM_PLUGIN_NAME ), 503 );
+							}
+
 							// Check max queries per hour
 							if ( $this->errno() === 1226 ) {
 								if ( stripos( $this->error(), 'max_queries_per_hour' ) !== false ) {
@@ -1756,7 +1772,6 @@ abstract class Ai1wm_Database {
 	 * @return string
 	 */
 	protected function replace_table_options( $input ) {
-		// Set table replace options
 		$search  = array(
 			'TYPE=InnoDB',
 			'TYPE=MyISAM',
@@ -1796,7 +1811,6 @@ abstract class Ai1wm_Database {
 	 * @return string
 	 */
 	protected function replace_table_engines( $input ) {
-		// Set table replace engines
 		$search  = array(
 			'ENGINE=MyISAM',
 			'ENGINE=Aria',
@@ -1816,7 +1830,6 @@ abstract class Ai1wm_Database {
 	 * @return string
 	 */
 	protected function replace_table_row_format( $input ) {
-		// Set table replace row format
 		$search  = array(
 			'ENGINE=InnoDB',
 			'ENGINE=MyISAM',
@@ -1827,6 +1840,20 @@ abstract class Ai1wm_Database {
 		);
 
 		return str_ireplace( $search, $replace, $input );
+	}
+	/**
+	 * Replace table full-text indexes (MySQL <= 5.5)
+	 *
+	 * @param  string $input SQL statement
+	 * @return string
+	 */
+	protected function replace_table_fulltext_indexes( $input ) {
+		$pattern = array(
+			'/\s+FULLTEXT KEY(.+),/i',
+			'/,\s+FULLTEXT KEY(.+)/i',
+		);
+
+		return preg_replace( $pattern, '', $input );
 	}
 
 	/**

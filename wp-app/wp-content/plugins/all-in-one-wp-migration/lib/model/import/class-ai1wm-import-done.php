@@ -60,6 +60,8 @@ class Ai1wm_Import_Done {
 						ai1wm_discover_plugin_basename( 'force-https-littlebizzy/force-https.php' ),
 					)
 				);
+
+				ai1wm_woocommerce_force_ssl( false );
 			}
 
 			// Deactivate WordPress plugins
@@ -164,6 +166,8 @@ class Ai1wm_Import_Done {
 							ai1wm_discover_plugin_basename( 'force-https-littlebizzy/force-https.php' ),
 						)
 					);
+
+					ai1wm_woocommerce_force_ssl( false );
 				}
 
 				// Deactivate WordPress plugins
@@ -271,6 +275,8 @@ class Ai1wm_Import_Done {
 							ai1wm_discover_plugin_basename( 'force-https-littlebizzy/force-https.php' ),
 						)
 					);
+
+					ai1wm_woocommerce_force_ssl( false );
 				}
 
 				// Deactivate WordPress plugins
@@ -335,6 +341,11 @@ class Ai1wm_Import_Done {
 				// Initial DB version
 				ai1wm_initial_db_version();
 			}
+		}
+
+		// Clear auth cookie (WP Cerber)
+		if ( ai1wm_validate_plugin_basename( 'wp-cerber/wp-cerber.php' ) ) {
+			wp_clear_auth_cookie();
 		}
 
 		$should_reset_permalinks = false;

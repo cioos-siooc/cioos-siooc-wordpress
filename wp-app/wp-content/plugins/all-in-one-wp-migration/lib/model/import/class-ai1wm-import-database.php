@@ -463,16 +463,20 @@ class Ai1wm_Import_Database {
 					// Get scheme
 					$new_scheme = parse_url( $blog['New']['WordPress']['UploadsURL'], PHP_URL_SCHEME );
 
-					// Add path with single quote
-					if ( ! in_array( sprintf( "='%s", trailingslashit( $old_path ) ), $old_replace_values ) ) {
-						$old_replace_values[] = sprintf( "='%s", trailingslashit( $old_path ) );
-						$new_replace_values[] = sprintf( "='%s", trailingslashit( $new_path ) );
-					}
+					// Replace Uploads URL Path
+					if ( basename( $old_path ) ) {
 
-					// Add path with double quote
-					if ( ! in_array( sprintf( '="%s', trailingslashit( $old_path ) ), $old_replace_values ) ) {
-						$old_replace_values[] = sprintf( '="%s', trailingslashit( $old_path ) );
-						$new_replace_values[] = sprintf( '="%s', trailingslashit( $new_path ) );
+						// Add path with single quote
+						if ( ! in_array( sprintf( "='%s", trailingslashit( $old_path ) ), $old_replace_values ) ) {
+							$old_replace_values[] = sprintf( "='%s", trailingslashit( $old_path ) );
+							$new_replace_values[] = sprintf( "='%s", trailingslashit( $new_path ) );
+						}
+
+						// Add path with double quote
+						if ( ! in_array( sprintf( '="%s', trailingslashit( $old_path ) ), $old_replace_values ) ) {
+							$old_replace_values[] = sprintf( '="%s', trailingslashit( $old_path ) );
+							$new_replace_values[] = sprintf( '="%s', trailingslashit( $new_path ) );
+						}
 					}
 
 					// Set Uploads URL scheme
@@ -757,16 +761,20 @@ class Ai1wm_Import_Database {
 				// Get scheme
 				$new_scheme = parse_url( ai1wm_get_uploads_url(), PHP_URL_SCHEME );
 
-				// Add path with single quote
-				if ( ! in_array( sprintf( "='%s", trailingslashit( $old_path ) ), $old_replace_values ) ) {
-					$old_replace_values[] = sprintf( "='%s", trailingslashit( $old_path ) );
-					$new_replace_values[] = sprintf( "='%s", trailingslashit( $new_path ) );
-				}
+				// Replace Uploads URL Path
+				if ( basename( $old_path ) ) {
 
-				// Add path with double quote
-				if ( ! in_array( sprintf( '="%s', trailingslashit( $old_path ) ), $old_replace_values ) ) {
-					$old_replace_values[] = sprintf( '="%s', trailingslashit( $old_path ) );
-					$new_replace_values[] = sprintf( '="%s', trailingslashit( $new_path ) );
+					// Add path with single quote
+					if ( ! in_array( sprintf( "='%s", trailingslashit( $old_path ) ), $old_replace_values ) ) {
+						$old_replace_values[] = sprintf( "='%s", trailingslashit( $old_path ) );
+						$new_replace_values[] = sprintf( "='%s", trailingslashit( $new_path ) );
+					}
+
+					// Add path with double quote
+					if ( ! in_array( sprintf( '="%s', trailingslashit( $old_path ) ), $old_replace_values ) ) {
+						$old_replace_values[] = sprintf( '="%s', trailingslashit( $old_path ) );
+						$new_replace_values[] = sprintf( '="%s', trailingslashit( $new_path ) );
+					}
 				}
 
 				// Add Uploads URL scheme
@@ -905,6 +913,13 @@ class Ai1wm_Import_Database {
 		foreach ( $wpdb->global_tables as $table_name ) {
 			$old_table_prefixes[] = ai1wm_servmask_prefix( 'mainsite' ) . $table_name;
 			$new_table_prefixes[] = ai1wm_table_prefix() . $table_name;
+		}
+
+		// Since BuddyBoss Platform 2.0, non-multisite configurations have stored signups in
+		// the same way as Multisite configs traditionally have: in the wp_signups table
+		if ( ai1wm_validate_plugin_basename( 'buddyboss-platform/bp-loader.php' ) ) {
+			$old_table_prefixes[] = ai1wm_servmask_prefix( 'mainsite' ) . 'signups';
+			$new_table_prefixes[] = ai1wm_table_prefix() . 'signups';
 		}
 
 		// Set base table prefixes
