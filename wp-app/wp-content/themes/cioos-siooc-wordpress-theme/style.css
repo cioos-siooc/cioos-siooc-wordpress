@@ -15,7 +15,7 @@ This system works by creating rows, spanning the view port,
 and in each row a container is inserted to hold content.
 
 <div class=row1>
-    <div class=container> 
+    <div class=container>
     ------------
     your content
     ------------
@@ -625,6 +625,7 @@ input[type="color"] {
 	border-radius: 0;
 	line-height: 1;
 	padding: 1rem;
+	margin: 0 0 1em 0;
 	font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-weight: 400;
 }
@@ -780,6 +781,79 @@ input[type="color"] {
 
 .gallery-caption {
 	display: block;
+}
+
+.three-column-gallery-with-title ul,
+.three-column-gallery-with-title.is-cropped ul {
+	margin: 0 auto;
+}
+
+.three-column-gallery-with-title ul li,
+.three-column-gallery-with-title.is-cropped ul li {
+	margin-bottom: 4rem;
+}
+
+.three-column-gallery-with-title ul li figure,
+.three-column-gallery-with-title.is-cropped ul li figure {
+	width: 33.3%;
+	margin: 0 auto;
+	text-align: center;
+	display: block;
+	position: relative;
+}
+
+.three-column-gallery-with-title ul li.blocks-gallery-item img,
+.three-column-gallery-with-title.is-cropped ul li.blocks-gallery-item img {
+	border-radius: 5rem;
+	border-style: solid;
+	border-width: 1px;
+	height: auto;
+}
+
+.three-column-gallery-with-title ul li figure figcaption,
+.three-column-gallery-with-title.is-cropped ul li figure figcaption {
+	background: none;
+	color: black;
+	font-weight: bold;
+	font-size: 1rem;
+	position: relative;
+	padding: 1rem 0 0 0;
+	overflow: unset;
+}
+
+/* Lists
+--------------------------------------------- */
+.inline-list-with-checkmarks {
+	width: 90%;
+	margin: 1rem auto 2rem;
+	clear: both;
+}
+
+.inline-list-with-checkmarks::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.inline-list-with-checkmarks li::before {
+	content: "\f15e";
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'dashicons';
+	font-weight: bold;
+	line-height: 1rem;
+	font-size: 2rem;
+	margin-right: 8px;
+	word-wrap: break-word;
+	vertical-align: middle;
+}
+
+.inline-list-with-checkmarks li {
+	list-style-type: none;
+	float: left;
+	width: 33.3%;
+	font-size: 1.1rem;
+	line-height: 2.5rem;
 }
 
 /* Alignments
@@ -1209,6 +1283,7 @@ ul.menu .menu-item-has-children > a::after,
 .page-header .pre-nav .container .logotype p,
 .page-header .pre-nav .container .logotype a {
 	padding: 0;
+	margin: 0;
 	color: white;
 	text-decoration: none;
 }
@@ -1292,17 +1367,6 @@ ul.menu .menu-item-has-children > a::after,
 	margin-top: 1em;
 }
 
-.site-footer .container a {
-	color: white;
-	text-decoration: none;
-	font-weight: 400;
-	line-height: 1.75em;
-}
-
-.site-footer .container a:hover {
-	text-decoration: underline;
-}
-
 .site-footer .mailchimp-form input {
 	border: none;
 	width: 100%;
@@ -1333,11 +1397,11 @@ body.atlantic {
 }
 
 body.atlantic hr {
-	background-color: #fa7268;
+	background-color: #56dcbe;
 }
 
 body.atlantic .page-header .pre-nav {
-	background: #e49494;
+	background: #e55162;
 }
 
 body.atlantic .language-nav ul li a {
@@ -1346,6 +1410,18 @@ body.atlantic .language-nav ul li a {
 
 body.atlantic .site-footer {
 	background-color: #17212b;
+}
+
+body.atlantic .site-footer a, body.atlantic .site-footer a:link, body.atlantic .site-footer ul.menu li a {
+	color: #ffffff;
+}
+
+body.atlantic .site-footer a:visited, body.atlantic .site-footer a:link:visited, body.atlantic .site-footer ul.menu li a:visited {
+	color: #ffffff;
+}
+
+body.atlantic .site-footer a:hover, body.atlantic .site-footer a:focus, body.atlantic .site-footer a:active, body.atlantic .site-footer a:link:hover, body.atlantic .site-footer a:link:focus, body.atlantic .site-footer a:link:active, body.atlantic .site-footer ul.menu li a:hover, body.atlantic .site-footer ul.menu li a:focus, body.atlantic .site-footer ul.menu li a:active {
+	color: #56dcbe;
 }
 
 body.atlantic ul.nav-menu li a,
@@ -1360,7 +1436,7 @@ body.atlantic .menu > ul li a:hover,
 body.atlantic ul.nav-menu li.current_page_ancestor > a,
 body.atlantic ul.nav-menu li.current-menu-item > a ul.menu li.current_page_ancestor > a,
 body.atlantic ul.menu li.current-menu-item > a {
-	color: #e49494;
+	color: #e55162;
 }
 
 body.atlantic ul.nav-menu li ul a,
@@ -1383,28 +1459,29 @@ body.atlantic ul.menu ul li:hover > a,
 body.atlantic ul.menu ul li.focus > a,
 body.atlantic .menu > ul ul li:hover > a,
 body.atlantic .menu > ul ul li.focus > a {
-	border-left: 3px solid #fa7268;
+	border-left: 3px solid #56dcbe;
 }
 
 body.atlantic .sub-menu .current-menu-item > a {
-	color: #e49494;
-	border-left: 3px solid #e49494;
+	color: #e55162;
+	border-left: 3px solid #e55162;
 }
 
 body.atlantic a {
-	color: #e49494;
+	color: #e55162;
 }
 
 body.atlantic a:visited {
-	color: #e49494;
+	color: #e55162;
 }
 
 body.atlantic a:hover,
 body.atlantic a:focus,
 body.atlantic a:active {
-	color: #fa7268;
+	color: #56dcbe;
 }
 
+body.atlantic .elementor-button,
 body.atlantic button,
 body.atlantic input,
 body.atlantic select,
@@ -1412,11 +1489,12 @@ body.atlantic textarea,
 body.atlantic input[type="button"],
 body.atlantic input[type="reset"],
 body.atlantic input[type="submit"] {
-	border-color: #e49494;
-	background: #e49494;
+	border-color: #e55162;
+	background: #e55162;
 	color: #ffffff;
 }
 
+body.atlantic .elementor-button:hover,
 body.atlantic button:hover,
 body.atlantic input[type="button"]:hover,
 body.atlantic input[type="reset"]:hover,
@@ -1429,9 +1507,9 @@ body.atlantic input[type="reset"]:active,
 body.atlantic input[type="reset"]:focus,
 body.atlantic input[type="submit"]:active,
 body.atlantic input[type="submit"]:focus {
-	background: #52a79b;
-	border-color: #e49494;
-	color: #e49494;
+	background: #e48c66;
+	border-color: #e55162;
+	color: #e55162;
 }
 
 body.atlantic input[type="text"],
@@ -1449,9 +1527,9 @@ body.atlantic input[type="time"],
 body.atlantic input[type="datetime"],
 body.atlantic input[type="datetime-local"],
 body.atlantic input[type="color"] {
-	border-color: #e49494;
-	background: #52a79b;
-	color: #e49494;
+	border-color: #e55162;
+	background: #e48c66;
+	color: #e55162;
 }
 
 body.atlantic input:focus,
@@ -1473,8 +1551,17 @@ body.atlantic input[type="datetime"]:focus,
 body.atlantic input[type="datetime-local"]:focus,
 body.atlantic input[type="color"]:focus,
 body.atlantic textarea:focus {
-	border-color: #fa7268;
+	border-color: #56dcbe;
 	background: white;
+}
+
+body.atlantic .three-column-gallery-with-title ul li.blocks-gallery-item img,
+body.atlantic .three-column-gallery-with-title.is-cropped ul li.blocks-gallery-item img {
+	border-color: #e55162;
+}
+
+body.atlantic .inline-list-with-checkmarks li::before {
+	color: #f1e268;
 }
 
 body.pacific {
@@ -1496,6 +1583,18 @@ body.pacific .language-nav ul li a {
 
 body.pacific .site-footer {
 	background-color: #17212b;
+}
+
+body.pacific .site-footer a, body.pacific .site-footer a:link, body.pacific .site-footer ul.menu li a {
+	color: #ffffff;
+}
+
+body.pacific .site-footer a:visited, body.pacific .site-footer a:link:visited, body.pacific .site-footer ul.menu li a:visited {
+	color: #ffffff;
+}
+
+body.pacific .site-footer a:hover, body.pacific .site-footer a:focus, body.pacific .site-footer a:active, body.pacific .site-footer a:link:hover, body.pacific .site-footer a:link:focus, body.pacific .site-footer a:link:active, body.pacific .site-footer ul.menu li a:hover, body.pacific .site-footer ul.menu li a:focus, body.pacific .site-footer ul.menu li a:active {
+	color: #ffc857;
 }
 
 body.pacific ul.nav-menu li a,
@@ -1555,6 +1654,7 @@ body.pacific a:active {
 	color: #ffc857;
 }
 
+body.pacific .elementor-button,
 body.pacific button,
 body.pacific input,
 body.pacific select,
@@ -1567,6 +1667,7 @@ body.pacific input[type="submit"] {
 	color: #ffffff;
 }
 
+body.pacific .elementor-button:hover,
 body.pacific button:hover,
 body.pacific input[type="button"]:hover,
 body.pacific input[type="reset"]:hover,
@@ -1627,6 +1728,15 @@ body.pacific textarea:focus {
 	background: white;
 }
 
+body.pacific .three-column-gallery-with-title ul li.blocks-gallery-item img,
+body.pacific .three-column-gallery-with-title.is-cropped ul li.blocks-gallery-item img {
+	border-color: #007490;
+}
+
+body.pacific .inline-list-with-checkmarks li::before {
+	color: #878e88;
+}
+
 body.national {
 	/* Forms
             --------------------------------------------- */
@@ -1646,6 +1756,18 @@ body.national .language-nav ul li a {
 
 body.national .site-footer {
 	background-color: #17212b;
+}
+
+body.national .site-footer a, body.national .site-footer a:link, body.national .site-footer ul.menu li a {
+	color: #ffffff;
+}
+
+body.national .site-footer a:visited, body.national .site-footer a:link:visited, body.national .site-footer ul.menu li a:visited {
+	color: #ffffff;
+}
+
+body.national .site-footer a:hover, body.national .site-footer a:focus, body.national .site-footer a:active, body.national .site-footer a:link:hover, body.national .site-footer a:link:focus, body.national .site-footer a:link:active, body.national .site-footer ul.menu li a:hover, body.national .site-footer ul.menu li a:focus, body.national .site-footer ul.menu li a:active {
+	color: #fa7268;
 }
 
 body.national ul.nav-menu li a,
@@ -1705,6 +1827,7 @@ body.national a:active {
 	color: #fa7268;
 }
 
+body.national .elementor-button,
 body.national button,
 body.national input,
 body.national select,
@@ -1717,6 +1840,7 @@ body.national input[type="submit"] {
 	color: #ffffff;
 }
 
+body.national .elementor-button:hover,
 body.national button:hover,
 body.national input[type="button"]:hover,
 body.national input[type="reset"]:hover,
@@ -1775,6 +1899,188 @@ body.national input[type="color"]:focus,
 body.national textarea:focus {
 	border-color: #fa7268;
 	background: white;
+}
+
+body.national .three-column-gallery-with-title ul li.blocks-gallery-item img,
+body.national .three-column-gallery-with-title.is-cropped ul li.blocks-gallery-item img {
+	border-color: #52a79b;
+}
+
+body.national .inline-list-with-checkmarks li::before {
+	color: #c6e3df;
+}
+
+body.slgo {
+	/* Forms
+            --------------------------------------------- */
+}
+
+body.slgo hr {
+	background-color: #c1b499;
+}
+
+body.slgo .page-header .pre-nav {
+	background: #00adef;
+}
+
+body.slgo .language-nav ul li a {
+	color: #616970;
+}
+
+body.slgo .site-footer {
+	background-color: #17212b;
+}
+
+body.slgo .site-footer a, body.slgo .site-footer a:link, body.slgo .site-footer ul.menu li a {
+	color: #ffffff;
+}
+
+body.slgo .site-footer a:visited, body.slgo .site-footer a:link:visited, body.slgo .site-footer ul.menu li a:visited {
+	color: #ffffff;
+}
+
+body.slgo .site-footer a:hover, body.slgo .site-footer a:focus, body.slgo .site-footer a:active, body.slgo .site-footer a:link:hover, body.slgo .site-footer a:link:focus, body.slgo .site-footer a:link:active, body.slgo .site-footer ul.menu li a:hover, body.slgo .site-footer ul.menu li a:focus, body.slgo .site-footer ul.menu li a:active {
+	color: #c1b499;
+}
+
+body.slgo ul.nav-menu li a,
+body.slgo ul.menu li a,
+body.slgo .menu > ul li a {
+	color: #000000;
+}
+
+body.slgo ul.nav-menu li a:hover,
+body.slgo ul.menu li a:hover,
+body.slgo .menu > ul li a:hover,
+body.slgo ul.nav-menu li.current_page_ancestor > a,
+body.slgo ul.nav-menu li.current-menu-item > a ul.menu li.current_page_ancestor > a,
+body.slgo ul.menu li.current-menu-item > a {
+	color: #00adef;
+}
+
+body.slgo ul.nav-menu li ul a,
+body.slgo ul.menu li ul a,
+body.slgo .menu > ul li ul a {
+	border-left: 3px solid white;
+}
+
+body.slgo ul.nav-menu li ul,
+body.slgo ul.menu li ul,
+body.slgo .main-navigation.toggled ul li ul,
+body.slgo .menu > ul li ul,
+body.slgo .menu-toggle li ul {
+	background: white;
+}
+
+body.slgo .nav-menu ul li:hover > a,
+body.slgo .nav-menu ul li.focus > a,
+body.slgo ul.menu ul li:hover > a,
+body.slgo ul.menu ul li.focus > a,
+body.slgo .menu > ul ul li:hover > a,
+body.slgo .menu > ul ul li.focus > a {
+	border-left: 3px solid #c1b499;
+}
+
+body.slgo .sub-menu .current-menu-item > a {
+	color: #00adef;
+	border-left: 3px solid #00adef;
+}
+
+body.slgo a {
+	color: #00adef;
+}
+
+body.slgo a:visited {
+	color: #00adef;
+}
+
+body.slgo a:hover,
+body.slgo a:focus,
+body.slgo a:active {
+	color: #c1b499;
+}
+
+body.slgo .elementor-button,
+body.slgo button,
+body.slgo input,
+body.slgo select,
+body.slgo textarea,
+body.slgo input[type="button"],
+body.slgo input[type="reset"],
+body.slgo input[type="submit"] {
+	border-color: #00adef;
+	background: #00adef;
+	color: #ffffff;
+}
+
+body.slgo .elementor-button:hover,
+body.slgo button:hover,
+body.slgo input[type="button"]:hover,
+body.slgo input[type="reset"]:hover,
+body.slgo input[type="submit"]:hover,
+body.slgo button:active,
+body.slgo button:focus,
+body.slgo input[type="button"]:active,
+body.slgo input[type="button"]:focus,
+body.slgo input[type="reset"]:active,
+body.slgo input[type="reset"]:focus,
+body.slgo input[type="submit"]:active,
+body.slgo input[type="submit"]:focus {
+	background: #1e4659;
+	border-color: #00adef;
+	color: #00adef;
+}
+
+body.slgo input[type="text"],
+body.slgo input[type="email"],
+body.slgo input[type="url"],
+body.slgo input[type="password"],
+body.slgo input[type="search"],
+body.slgo input[type="number"],
+body.slgo input[type="tel"],
+body.slgo input[type="range"],
+body.slgo input[type="date"],
+body.slgo input[type="month"],
+body.slgo input[type="week"],
+body.slgo input[type="time"],
+body.slgo input[type="datetime"],
+body.slgo input[type="datetime-local"],
+body.slgo input[type="color"] {
+	border-color: #00adef;
+	background: #1e4659;
+	color: #00adef;
+}
+
+body.slgo input:focus,
+body.slgo select:focus,
+body.slgo option:focus,
+body.slgo input[type="text"]:focus,
+body.slgo input[type="email"]:focus,
+body.slgo input[type="url"]:focus,
+body.slgo input[type="password"]:focus,
+body.slgo input[type="search"]:focus,
+body.slgo input[type="number"]:focus,
+body.slgo input[type="tel"]:focus,
+body.slgo input[type="range"]:focus,
+body.slgo input[type="date"]:focus,
+body.slgo input[type="month"]:focus,
+body.slgo input[type="week"]:focus,
+body.slgo input[type="time"]:focus,
+body.slgo input[type="datetime"]:focus,
+body.slgo input[type="datetime-local"]:focus,
+body.slgo input[type="color"]:focus,
+body.slgo textarea:focus {
+	border-color: #c1b499;
+	background: white;
+}
+
+body.slgo .three-column-gallery-with-title ul li.blocks-gallery-item img,
+body.slgo .three-column-gallery-with-title.is-cropped ul li.blocks-gallery-item img {
+	border-color: #00adef;
+}
+
+body.slgo .inline-list-with-checkmarks li::before {
+	color: #c6cb1f;
 }
 
 /*# sourceMappingURL=style.css.map */

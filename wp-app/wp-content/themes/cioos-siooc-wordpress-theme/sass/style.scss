@@ -16,7 +16,7 @@ This system works by creating rows, spanning the view port,
 and in each row a container is inserted to hold content.
 
 <div class=row1>
-    <div class=container> 
+    <div class=container>
     ------------
     your content
     ------------
@@ -62,8 +62,7 @@ $max_width: 1140px; //Old size
 $mobile_trigger: 800px; // when to flip to compressed fluid view
 
 //FONTS
-$font_family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-    "Helvetica Neue", sans-serif;
+$font_family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,"Helvetica Neue", sans-serif;
 $font_size: 1em;
 $line_height: 1.625em;
 $mono_font: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", "Courier 10 Pitch", courier, monospace;
@@ -72,9 +71,10 @@ $mono_font: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", "Courier 10 Pit
 // these are used where appropriate around the site in
 // links and navigation colours, rollovers and more
 $ras:
-  "atlantic"  rgba(82, 167, 155, 1) rgb(228, 148, 148)rgba(250, 114, 104, 1) rgba(255, 255, 255, 1) rgba(198, 227, 223, 1),
+  "atlantic" rgb(228, 140, 102)rgba(229, 81, 98, 1)rgba(86, 220, 190, 1) rgba(47, 184, 218, 1) rgba(241, 226, 104, 1),
   "pacific" rgba(185, 214, 242, 1) rgba(0, 116, 144, 1) rgba(255, 200, 87, 1) rgba(255, 107, 53, 1) rgba(135, 142, 136, 1),
-  "national" rgba(181, 181, 181, 1) rgba(82, 167, 155, 1) rgba(250, 114, 104, 1) rgba(255, 255, 255, 1) rgba(198, 227, 223, 1);
+  "national" rgba(181, 181, 181, 1) rgba(82, 167, 155, 1) rgba(250, 114, 104, 1) rgba(255, 255, 255, 1) rgba(198, 227, 223, 1),
+  "slgo" rgba(30, 70, 89, 1) rgba(0, 173, 239, 1) rgba(193, 180, 153, 1) rgba(140, 198, 62, 1) rgba(198, 203, 31, 1);
 
 
 // OTHER COLOURS
@@ -87,7 +87,6 @@ $color_footer_bg: rgb(23, 33, 43);
 $black: #000000;
 $white: #ffffff;
 
-// END OF $color_ vars
 // COMPONENTS
 //@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
 @import "normalize"; // a 'reset'
@@ -95,7 +94,6 @@ $white: #ffffff;
 @import "wordpress"; // wordpress specific stuff like wp_galleries
 @import "navigation"; // The navigation system
 @import "accessibility"; // Accessibility helpers
-//@import "de-elementor"; // Elementor helpers
 
 /*----------------------------------------------------------
 # The site row container
@@ -164,6 +162,7 @@ $white: #ffffff;
                 p,
                 a {
                     padding: 0;
+                    margin: 0;
                     color: $color_body_bg;
                     text-decoration: none;
                 }
@@ -233,15 +232,6 @@ $white: #ffffff;
                 margin-top: 1em;
             }
         }
-        a {
-            color: $color_body_bg;
-            text-decoration: none;
-            font-weight: 400;
-            line-height: 1.75em;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
     }
     // MailChimp signup form
     .mailchimp-form {
@@ -282,6 +272,17 @@ $white: #ffffff;
             }
             .site-footer {
                 background-color: $color_footer_bg; //footer bg
+                a, a:link, ul.menu li a {
+                    color: $white; //  text link colour
+                    &:visited {
+                        color: $white; //  text link colour visited
+                    }
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        color: $color_3; //  text link colour hover
+                    }
+                }
             }
             ul.nav-menu li a,
             ul.menu li a,
@@ -345,6 +346,7 @@ $white: #ffffff;
             /* Forms
             --------------------------------------------- */
     
+            .elementor-button,
             button,
             input,
             select,
@@ -356,7 +358,7 @@ $white: #ffffff;
                 background: $color_2;
                 color: $white;
             }
-    
+            .elementor-button:hover,
             button:hover,
             input[type="button"]:hover,
             input[type="reset"]:hover,

@@ -68,6 +68,11 @@ Here you will set your URL for your local site
 ```
 define('WP_HOME','https://cioos.local');
 define('WP_SITEURL','https://cioos.local');
+
+#### Temporary instructions:
+
+- Once installed, copy the contents of the local file into wp-config.php
+
 ```
 ### hosts
 
@@ -96,7 +101,26 @@ Follow the instructions to install the wordpress core to your local drive.
 
 ### Activate the theme
 
-Dive into the Wordpress dashboard, and activate the siooc-cioos theme in 
+Dive into the Wordpress dashboard, and activate the siooc-cioos theme
+
+### Import your content.
+I have found that the wp-importer that comes with Word press is capable of importing a lot of the content from the original site. There are some steps to do first:
+Turn on all included plugins 
+   - Especially the Languages
+Import worpress file
+Set Elementor to use the theme CSS  
+   - Elementor > settings > disable elementor global colours and fonts
+   - remove the global styles set by elementor in templates > all > delete - default_kit > empty trash
+Customize the site in site > customize
+   - remove the widgets that may have come with the site, replace the widget in Pre Nav bar with text and a link to National and text
+   - mess with footer wigets and get what you need.
+   - add the right menus to the main area.
+Customize the site in Elementor
+   - edit page >  settings >
+
+
+
+
 
 -------------------------------------------------------------------------------
 

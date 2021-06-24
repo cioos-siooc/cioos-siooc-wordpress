@@ -28,7 +28,11 @@
 		<div class="pre-nav">
 			<div class="container">
 				<div class="nationallogo"><img src="<?php bloginfo( 'template_url' ); ?>/img/CIOOS-watermark.svg"></div>
-				<div class="logotype"><?php dynamic_sidebar('sidebarlogotype') ?></div>
+				<div class="logotype">
+				<?php if ( is_active_sidebar( 'sidebarlogotype' ) ) : ?>
+				<?php dynamic_sidebar( 'sidebarlogotype' ); ?>
+				<?php endif; ?>
+				</div>
 			</div>
 		</div>
 		<div class="post-nav">

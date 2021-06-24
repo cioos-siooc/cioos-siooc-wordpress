@@ -37,14 +37,14 @@ Temporary Items
 .history/
 
 # Project specific
-scripts/.*
-wp-data/*
-!wp-app/wp-content/themes/cioos-siooc-theme*
-!wp-app/wp-content/plugins/*
+scripts/
+wp-data/
+wp-app/
+!wp-app/wp-content/themes/cioos-siooc-theme/
+!wp-app/wp-content/plugins/
 .env
 
 # ignore specific themes
-wp-app/wp-content/themes/twenty*/
 wp-app/wp-content/plugins/akismet/*
 
 # ignore node dependency directories
@@ -57,4 +57,3 @@ node_modules/
 
 # prepros files
 *.prepros*
-wp-app/wp-content/themes/cioos-siooc-wordpress-theme - Copy/
