@@ -116,11 +116,7 @@ Customize the site in site > customize
    - mess with footer wigets and get what you need.
    - add the right menus to the main area.
 Customize the site in Elementor
-   - edit page >  settings >
-
-
-
-
+   - edit page >  settings > hide title on each page where the title is not supposed to be.
 
 -------------------------------------------------------------------------------
 
@@ -128,9 +124,9 @@ Customize the site in Elementor
 
 ## Use the all-in-one-wp-migration, Elementor templates, or the wordpress-importer to bring content from the live site
 
-**all-in-one-wp-migration**, will allow you to grab all the content on the site and move it into the fresh theme. Wp-migration-pro will allow you to rewrite the entire site and database, as you find it on production, if you chose to. You can pick and chose the portions you want as well.
+**all-in-one-wp-migration**, will allow you to grab all the content on the site and move it into the fresh theme. Wp-migration-pro is a little greedy and you will bring over all the cruft and extra plugins that you may not need.
 
-**wordpress-importer** will get your content only. It will not be styled in the Elementor systm. This can be useful for quick changes
+**wordpress-importer** This is the easiest one, its just tha pages and posts. Your new site will need Polylang and Elementor activated to use it though. All the content brough in keeps it's styling if Elementor is active on the new site.
 
 **Elementor templates** allow a page or component built in Elementor to be replicated on another site. THis will keep the Elementor styling, but it will be a long process, as each page needs to be saved, and loaded individually.
 
