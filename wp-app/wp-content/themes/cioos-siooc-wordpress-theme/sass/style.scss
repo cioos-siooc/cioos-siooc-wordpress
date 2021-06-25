@@ -71,10 +71,10 @@ $mono_font: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", "Courier 10 Pit
 // these are used where appropriate around the site in
 // links and navigation colours, rollovers and more
 $ras:
-  "atlantic" rgb(228, 140, 102)rgba(229, 81, 98, 1)rgba(86, 220, 190, 1) rgba(47, 184, 218, 1) rgba(241, 226, 104, 1),
-  "pacific" rgba(185, 214, 242, 1) rgba(0, 116, 144, 1) rgba(255, 200, 87, 1) rgba(255, 107, 53, 1) rgba(135, 142, 136, 1),
-  "national" rgba(181, 181, 181, 1) rgba(82, 167, 155, 1) rgba(250, 114, 104, 1) rgba(255, 255, 255, 1) rgba(198, 227, 223, 1),
-  "slgo" rgba(30, 70, 89, 1) rgba(0, 173, 239, 1) rgba(193, 180, 153, 1) rgba(140, 198, 62, 1) rgba(198, 203, 31, 1);
+  "atlantic" rgb(228, 140, 102)         rgba(229, 81, 98, 1)    rgba(86, 220, 190, 1)   rgba(47, 184, 218, 1)   rgba(241, 226, 104, 1),
+  "pacific"  rgba(185, 214, 242, 1)     rgba(0, 116, 144, 1)    rgba(255, 200, 87, 1)   rgba(255, 107, 53, 1)   rgba(135, 142, 136, 1),
+  "national" rgba(181, 181, 181, 1)     rgba(82, 167, 155, 1)   rgba(198, 227, 223, 1)  rgba(250, 114, 104, 1)  rgba(255, 255, 255, 1), 
+  "slgo"     rgba(30, 70, 89, 1)        rgba(0, 173, 239, 1)    rgba(140, 198, 62, 1)   rgba(198, 203, 31, 1)   rgba(193, 180, 153, 1);
 
 
 // OTHER COLOURS
@@ -260,176 +260,193 @@ $white: #ffffff;
 
 @each $name, $color_1, $color_2, $color_3, $color_4, $color_5, $color_6 in $ras {
     body.#{$name}{
-            hr {
-                background-color: $color_3;
-            }
-                    
-            .page-header .pre-nav {
-                background: $color_2; //top bar regional globe area
-            }
-            .language-nav ul li a {
-                color: $color_light_gray; //Language switch colour
-            }
-            .site-footer {
-                background-color: $color_footer_bg; //footer bg
-                a, a:link, ul.menu li a {
-                    color: $white; //  text link colour
-                    &:visited {
-                        color: $white; //  text link colour visited
-                    }
-                    &:hover,
-                    &:focus,
-                    &:active {
-                        color: $color_3; //  text link colour hover
-                    }
+        hr {
+            background-color: $color_3;
+        }
+                
+        .page-header .pre-nav {
+            background: $color_2; //top bar regional globe area
+        }
+        .language-nav ul li a {
+            color: $color_light_gray; //Language switch colour
+        }
+        .site-footer {
+            background-color: $color_footer_bg; //footer bg
+            a, a:link, ul.menu li a {
+                color: $white; //  text link colour
+                &:visited {
+                    color: $white; //  text link colour visited
+                }
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $color_3; //  text link colour hover
                 }
             }
-            ul.nav-menu li a,
-            ul.menu li a,
-            .menu > ul li a {
-                color: $black; // Main & flyout nav text color
+        }
+        ul.nav-menu li a,
+        ul.menu li a,
+        .menu > ul li a {
+            color: $black; // Main & flyout nav text color
+        }
+        ul.nav-menu li a:hover,
+        ul.menu li a:hover,
+        .menu > ul li a:hover,
+        ul.nav-menu li.current_page_ancestor > a,
+        ul.nav-menu li.current-menu-item > a ul.menu li.current_page_ancestor > a,
+        ul.menu li.current-menu-item > a {
+            color: $color_2; // Main & flyout nav text color hover
+        }
+        ul.nav-menu,
+        ul.menu,
+        .menu > ul {
+            li ul a {
+                border-left: 3px solid $color_body_bg; // flyout link border colour
             }
-            ul.nav-menu li a:hover,
-            ul.menu li a:hover,
-            .menu > ul li a:hover,
-            ul.nav-menu li.current_page_ancestor > a,
-            ul.nav-menu li.current-menu-item > a ul.menu li.current_page_ancestor > a,
-            ul.menu li.current-menu-item > a {
-                color: $color_2; // Main & flyout nav text color hover
-            }
-            ul.nav-menu,
-            ul.menu,
-            .menu > ul {
-                li ul a {
-                    border-left: 3px solid $color_body_bg; // flyout link border colour
-                }
-            }
-            ul.nav-menu,
-            ul.menu,
-            .main-navigation.toggled ul,
-            .menu > ul,
-            .menu-toggle {
-                li {
-                    ul {
-                        background: $color_body_bg; // flyout bg  colour
-                    }
-                }
-            }
-            .nav-menu,
-            ul.menu,
-            .menu > ul {
+        }
+        ul.nav-menu,
+        ul.menu,
+        .main-navigation.toggled ul,
+        .menu > ul,
+        .menu-toggle {
+            li {
                 ul {
-                    li:hover > a,
-                    li.focus > a {
-                        border-left: 3px solid $color_3; // flyout link border colour hover
-                    }
+                    background: $color_body_bg; // flyout bg  colour
                 }
             }
-            .sub-menu {
-                .current-menu-item > a {
-                    color: $color_2;
-                    border-left: 3px solid $color_2; // flyout link current-link colour
+        }
+        .nav-menu,
+        ul.menu,
+        .menu > ul {
+            ul {
+                li:hover > a,
+                li.focus > a {
+                    border-left: 3px solid $color_3; // flyout link border colour hover
                 }
             }
-            a {
-                color: $color_2; //  text link colour
-            }
-            a:visited {
-                color: $color_2; //  text link colour visited
-            }
-            a:hover,
-            a:focus,
-            a:active {
-                color: $color_3; //  text link colour hover
-            }
-    
-            /* Forms
-            --------------------------------------------- */
-    
-            .elementor-button,
-            button,
-            input,
-            select,
-            textarea,
-            input[type="button"],
-            input[type="reset"],
-            input[type="submit"] {
-                border-color: $color_2; //button colours
-                background: $color_2;
-                color: $white;
-            }
-            .elementor-button:hover,
-            button:hover,
-            input[type="button"]:hover,
-            input[type="reset"]:hover,
-            input[type="submit"]:hover,
-            button:active,
-            button:focus,
-            input[type="button"]:active,
-            input[type="button"]:focus,
-            input[type="reset"]:active,
-            input[type="reset"]:focus,
-            input[type="submit"]:active,
-            input[type="submit"]:focus {
-                background: $color_1; //button hovers
-                border-color: $color_2;
+        }
+        .sub-menu {
+            .current-menu-item > a {
                 color: $color_2;
+                border-left: 3px solid $color_2; // flyout link current-link colour
             }
-    
-            input[type="text"],
-            input[type="email"],
-            input[type="url"],
-            input[type="password"],
-            input[type="search"],
-            input[type="number"],
-            input[type="tel"],
-            input[type="range"],
-            input[type="date"],
-            input[type="month"],
-            input[type="week"],
-            input[type="time"],
-            input[type="datetime"],
-            input[type="datetime-local"],
-            input[type="color"] {
-                border-color: $color_2; //field colours
-    
-                background: $color_1;
-                color: $color_2;
-            }
-            input:focus,
-            select:focus,
-            option:focus,
-            input[type="text"]:focus,
-            input[type="email"]:focus,
-            input[type="url"]:focus,
-            input[type="password"]:focus,
-            input[type="search"]:focus,
-            input[type="number"]:focus,
-            input[type="tel"]:focus,
-            input[type="range"]:focus,
-            input[type="date"]:focus,
-            input[type="month"]:focus,
-            input[type="week"]:focus,
-            input[type="time"]:focus,
-            input[type="datetime"]:focus,
-            input[type="datetime-local"]:focus,
-            input[type="color"]:focus,
-            textarea:focus {
-                border-color: $color_3; //textbox interactions
-                background: $color_body_bg;
-            }
-            
-            .three-column-gallery-with-title,
-            .three-column-gallery-with-title.is-cropped {
-                ul li.blocks-gallery-item img {
-                    border-color: $color_2;
-                }
-            }
+        }
+        a {
+            color: $color_2; //  text link colour
+        }
+        a:visited {
+            color: $color_2; //  text link colour visited
+        }
+        a:hover,
+        a:focus,
+        a:active {
+            color: $color_3; //  text link colour hover
+        }
 
-            .inline-list-with-checkmarks {
-                li::before {
-                    color: $color_5;
-                }
+        /* Forms
+        --------------------------------------------- */
+
+        button,
+        input,
+        select,
+        textarea,
+        input[type="button"],
+        input[type="reset"],
+        input[type="submit"] {
+            border-color: $color_2; //button colours
+            background: $color_2;
+            color: $white;
+        }
+        button:hover,
+        input[type="button"]:hover,
+        input[type="reset"]:hover,
+        input[type="submit"]:hover,
+        button:active,
+        button:focus,
+        input[type="button"]:active,
+        input[type="button"]:focus,
+        input[type="reset"]:active,
+        input[type="reset"]:focus,
+        input[type="submit"]:active,
+        input[type="submit"]:focus {
+            background: $color_1; //button hovers
+            border-color: $color_2;
+            color: $color_2;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        input[type="password"],
+        input[type="search"],
+        input[type="number"],
+        input[type="tel"],
+        input[type="range"],
+        input[type="date"],
+        input[type="month"],
+        input[type="week"],
+        input[type="time"],
+        input[type="datetime"],
+        input[type="datetime-local"],
+        input[type="color"] {
+            border-color: $color_2; //field colours
+            background: $color_1;
+            color: $color_2;
+        }
+        input:focus,
+        select:focus,
+        option:focus,
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="url"]:focus,
+        input[type="password"]:focus,
+        input[type="search"]:focus,
+        input[type="number"]:focus,
+        input[type="tel"]:focus,
+        input[type="range"]:focus,
+        input[type="date"]:focus,
+        input[type="month"]:focus,
+        input[type="week"]:focus,
+        input[type="time"]:focus,
+        input[type="datetime"]:focus,
+        input[type="datetime-local"]:focus,
+        input[type="color"]:focus,
+        textarea:focus {
+            border-color: $color_3; //textbox interactions
+            background: $color_body_bg;
+        }
+        
+        .three-column-gallery-with-title,
+        .three-column-gallery-with-title.is-cropped {
+            ul li.blocks-gallery-item img {
+                border-color: $color_2;
             }
+        }
+
+        .inline-list-with-checkmarks {
+            li::before {
+                color: $color_5;
+            }
+        }
+                    /* Elementor things
+        --------------------------------------------- */
+
+        
+        .elementor-button{
+            background: $color_2;
+            color: $white;
+        }
+        .elementor-button:hover{
+            background: $color_3;
+            color: $black;
+        }
+        .elementor-element.elementor-button-info .elementor-button{
+            background: $white;
+            color: $color_2;
+        }
+        .elementor-element.elementor-button-info .elementor-button:hover{
+            background: $white;
+            color: $color_4;
+        }
     }
 }

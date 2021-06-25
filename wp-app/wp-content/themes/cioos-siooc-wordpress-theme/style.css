@@ -1393,7 +1393,9 @@ ul.menu .menu-item-has-children > a::after,
 ----------------------------------------------------------*/
 body.atlantic {
 	/* Forms
-            --------------------------------------------- */
+        --------------------------------------------- */
+	/* Elementor things
+        --------------------------------------------- */
 }
 
 body.atlantic hr {
@@ -1481,7 +1483,6 @@ body.atlantic a:active {
 	color: #56dcbe;
 }
 
-body.atlantic .elementor-button,
 body.atlantic button,
 body.atlantic input,
 body.atlantic select,
@@ -1494,7 +1495,6 @@ body.atlantic input[type="submit"] {
 	color: #ffffff;
 }
 
-body.atlantic .elementor-button:hover,
 body.atlantic button:hover,
 body.atlantic input[type="button"]:hover,
 body.atlantic input[type="reset"]:hover,
@@ -1564,9 +1564,31 @@ body.atlantic .inline-list-with-checkmarks li::before {
 	color: #f1e268;
 }
 
+body.atlantic .elementor-button {
+	background: #e55162;
+	color: #ffffff;
+}
+
+body.atlantic .elementor-button:hover {
+	background: #56dcbe;
+	color: #000000;
+}
+
+body.atlantic .elementor-element.elementor-button-info .elementor-button {
+	background: #ffffff;
+	color: #e55162;
+}
+
+body.atlantic .elementor-element.elementor-button-info .elementor-button:hover {
+	background: #ffffff;
+	color: #2fb8da;
+}
+
 body.pacific {
 	/* Forms
-            --------------------------------------------- */
+        --------------------------------------------- */
+	/* Elementor things
+        --------------------------------------------- */
 }
 
 body.pacific hr {
@@ -1654,7 +1676,6 @@ body.pacific a:active {
 	color: #ffc857;
 }
 
-body.pacific .elementor-button,
 body.pacific button,
 body.pacific input,
 body.pacific select,
@@ -1667,7 +1688,6 @@ body.pacific input[type="submit"] {
 	color: #ffffff;
 }
 
-body.pacific .elementor-button:hover,
 body.pacific button:hover,
 body.pacific input[type="button"]:hover,
 body.pacific input[type="reset"]:hover,
@@ -1737,13 +1757,35 @@ body.pacific .inline-list-with-checkmarks li::before {
 	color: #878e88;
 }
 
+body.pacific .elementor-button {
+	background: #007490;
+	color: #ffffff;
+}
+
+body.pacific .elementor-button:hover {
+	background: #ffc857;
+	color: #000000;
+}
+
+body.pacific .elementor-element.elementor-button-info .elementor-button {
+	background: #ffffff;
+	color: #007490;
+}
+
+body.pacific .elementor-element.elementor-button-info .elementor-button:hover {
+	background: #ffffff;
+	color: #ff6b35;
+}
+
 body.national {
 	/* Forms
-            --------------------------------------------- */
+        --------------------------------------------- */
+	/* Elementor things
+        --------------------------------------------- */
 }
 
 body.national hr {
-	background-color: #fa7268;
+	background-color: #c6e3df;
 }
 
 body.national .page-header .pre-nav {
@@ -1767,7 +1809,7 @@ body.national .site-footer a:visited, body.national .site-footer a:link:visited,
 }
 
 body.national .site-footer a:hover, body.national .site-footer a:focus, body.national .site-footer a:active, body.national .site-footer a:link:hover, body.national .site-footer a:link:focus, body.national .site-footer a:link:active, body.national .site-footer ul.menu li a:hover, body.national .site-footer ul.menu li a:focus, body.national .site-footer ul.menu li a:active {
-	color: #fa7268;
+	color: #c6e3df;
 }
 
 body.national ul.nav-menu li a,
@@ -1805,7 +1847,7 @@ body.national ul.menu ul li:hover > a,
 body.national ul.menu ul li.focus > a,
 body.national .menu > ul ul li:hover > a,
 body.national .menu > ul ul li.focus > a {
-	border-left: 3px solid #fa7268;
+	border-left: 3px solid #c6e3df;
 }
 
 body.national .sub-menu .current-menu-item > a {
@@ -1824,10 +1866,9 @@ body.national a:visited {
 body.national a:hover,
 body.national a:focus,
 body.national a:active {
-	color: #fa7268;
+	color: #c6e3df;
 }
 
-body.national .elementor-button,
 body.national button,
 body.national input,
 body.national select,
@@ -1840,7 +1881,6 @@ body.national input[type="submit"] {
 	color: #ffffff;
 }
 
-body.national .elementor-button:hover,
 body.national button:hover,
 body.national input[type="button"]:hover,
 body.national input[type="reset"]:hover,
@@ -1897,7 +1937,7 @@ body.national input[type="datetime"]:focus,
 body.national input[type="datetime-local"]:focus,
 body.national input[type="color"]:focus,
 body.national textarea:focus {
-	border-color: #fa7268;
+	border-color: #c6e3df;
 	background: white;
 }
 
@@ -1907,16 +1947,38 @@ body.national .three-column-gallery-with-title.is-cropped ul li.blocks-gallery-i
 }
 
 body.national .inline-list-with-checkmarks li::before {
-	color: #c6e3df;
+	color: white;
+}
+
+body.national .elementor-button {
+	background: #52a79b;
+	color: #ffffff;
+}
+
+body.national .elementor-button:hover {
+	background: #c6e3df;
+	color: #000000;
+}
+
+body.national .elementor-element.elementor-button-info .elementor-button {
+	background: #ffffff;
+	color: #52a79b;
+}
+
+body.national .elementor-element.elementor-button-info .elementor-button:hover {
+	background: #ffffff;
+	color: #fa7268;
 }
 
 body.slgo {
 	/* Forms
-            --------------------------------------------- */
+        --------------------------------------------- */
+	/* Elementor things
+        --------------------------------------------- */
 }
 
 body.slgo hr {
-	background-color: #c1b499;
+	background-color: #8cc63e;
 }
 
 body.slgo .page-header .pre-nav {
@@ -1940,7 +2002,7 @@ body.slgo .site-footer a:visited, body.slgo .site-footer a:link:visited, body.sl
 }
 
 body.slgo .site-footer a:hover, body.slgo .site-footer a:focus, body.slgo .site-footer a:active, body.slgo .site-footer a:link:hover, body.slgo .site-footer a:link:focus, body.slgo .site-footer a:link:active, body.slgo .site-footer ul.menu li a:hover, body.slgo .site-footer ul.menu li a:focus, body.slgo .site-footer ul.menu li a:active {
-	color: #c1b499;
+	color: #8cc63e;
 }
 
 body.slgo ul.nav-menu li a,
@@ -1978,7 +2040,7 @@ body.slgo ul.menu ul li:hover > a,
 body.slgo ul.menu ul li.focus > a,
 body.slgo .menu > ul ul li:hover > a,
 body.slgo .menu > ul ul li.focus > a {
-	border-left: 3px solid #c1b499;
+	border-left: 3px solid #8cc63e;
 }
 
 body.slgo .sub-menu .current-menu-item > a {
@@ -1997,10 +2059,9 @@ body.slgo a:visited {
 body.slgo a:hover,
 body.slgo a:focus,
 body.slgo a:active {
-	color: #c1b499;
+	color: #8cc63e;
 }
 
-body.slgo .elementor-button,
 body.slgo button,
 body.slgo input,
 body.slgo select,
@@ -2013,7 +2074,6 @@ body.slgo input[type="submit"] {
 	color: #ffffff;
 }
 
-body.slgo .elementor-button:hover,
 body.slgo button:hover,
 body.slgo input[type="button"]:hover,
 body.slgo input[type="reset"]:hover,
@@ -2070,7 +2130,7 @@ body.slgo input[type="datetime"]:focus,
 body.slgo input[type="datetime-local"]:focus,
 body.slgo input[type="color"]:focus,
 body.slgo textarea:focus {
-	border-color: #c1b499;
+	border-color: #8cc63e;
 	background: white;
 }
 
@@ -2080,6 +2140,26 @@ body.slgo .three-column-gallery-with-title.is-cropped ul li.blocks-gallery-item 
 }
 
 body.slgo .inline-list-with-checkmarks li::before {
+	color: #c1b499;
+}
+
+body.slgo .elementor-button {
+	background: #00adef;
+	color: #ffffff;
+}
+
+body.slgo .elementor-button:hover {
+	background: #8cc63e;
+	color: #000000;
+}
+
+body.slgo .elementor-element.elementor-button-info .elementor-button {
+	background: #ffffff;
+	color: #00adef;
+}
+
+body.slgo .elementor-element.elementor-button-info .elementor-button:hover {
+	background: #ffffff;
 	color: #c6cb1f;
 }
 

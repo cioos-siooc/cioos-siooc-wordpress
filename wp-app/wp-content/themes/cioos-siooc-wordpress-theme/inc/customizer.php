@@ -50,7 +50,7 @@ function cioos_customize_register( $wp_customize ) {
 			'national' => __( 'National' ),
 			'pacific' => __( 'Pacific' ),
 			'atlantic' => __( 'Atlantic' ),
-			'slgo' => __( 'Atlantic' ),
+			'slgo' => __( 'SLGO' ),
 		),
 	) );
 
