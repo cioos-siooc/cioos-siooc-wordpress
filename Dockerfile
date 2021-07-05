@@ -8,3 +8,5 @@ RUN apt-get update && \
 
 EXPOSE 80
 EXPOSE 443
+
+RUN pecl install xdebug

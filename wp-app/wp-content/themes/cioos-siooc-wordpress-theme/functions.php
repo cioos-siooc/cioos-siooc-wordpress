@@ -231,7 +231,6 @@ function custom_meta_box_markup($post)
 	$sidebar_dropdown = get_post_meta( $post->ID, 'sidebar_dropdown_value', true );
 	$meta = get_post_meta( $post->ID );
 	$layout = ( isset( $meta['layout'][0] ) && '' !== $meta['layout'][0] ) ? $meta['layout'][0] : '';
-	// $saved_term = $this->field->value;
 	wp_nonce_field(basename(__FILE__), "meta-box-nonce");
 	
 
@@ -243,9 +242,9 @@ function custom_meta_box_markup($post)
 					<td>
 						<ul style="list-style:none">
 							<?php
-								echo '<li><input type="radio" id="layout-full" name="layout" value=option1' . checked( $layout, 'option1', false ) . '>';  
+								echo '<li><input type="radio" id="layout" name="layout" value=option1' . checked( $layout, 'option1', false ) . '>';  
 								echo '<label for="layout-full">Full Width</label></li>';
-								echo '<li><input type="radio" id="layout-left" name="layout" value=option2' . checked( $layout, 'option2', false ) . '>';    
+								echo '<li><input type="radio" id="layout" name="layout" value=option2' . checked( $layout, 'option2', false ) . '>';    
 								echo '<label for="layout-left">Left Sidebar</label></li>';
 							?>
 						</ul>
@@ -296,7 +295,24 @@ function cioos_scripts_admin($hook_suffix) {
 }
 add_action( 'admin_enqueue_scripts', 'cioos_scripts_admin' );
 
+function cioos_meta_sidebars() {	
+	global $post;
+	$cioos_meta_sidebars = get_post_meta( $post->ID, 'sidebar_dropdown_value', true );
 
+	$output = $cioos_meta_sidebars;
+	
+	return $output;
+}
+
+function cioos_meta_layout() {	
+	global $post;
+	$meta = get_post_meta( $post->ID );
+	$cioos_meta_layout = ( isset( $meta['layout'][0] ) && '' !== $meta['layout'][0] ) ? $meta['layout'][0] : '';
+
+	$output = $cioos_meta_layout;
+	
+	return $output;
+}
 
 /**
  * Load Jetpack compatibility file.

@@ -6,7 +6,15 @@
  *
  * @package cioos
  */
-if ( ! is_active_sidebar( 'sidebarlogotype' ) ) {
-	return;
-}
 ?>
+
+	<div id="sidebar">
+	<div id="sidebar-core">
+
+		<?php 
+			dynamic_sidebar( cioos_meta_sidebars() )
+		?>
+
+	</div>
+	</div><!-- #sidebar -->
+			

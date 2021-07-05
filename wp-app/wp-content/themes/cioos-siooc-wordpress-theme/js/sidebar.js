@@ -15,5 +15,5 @@ jQuery(document).ready(function(){
     else if(jQuery('tr.meta_layout input[value=option2]').not(":checked")){
       jQuery('tr.meta_sidebar').fadeOut();
     }
-  });
+  }); 
 });

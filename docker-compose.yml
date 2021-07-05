@@ -1,4 +1,4 @@
-version: '3.4'
+version: "3.4"
 
 services:
   wp:
@@ -11,7 +11,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - ${IP}:80:80 # change ip if required
-      - ${IP}:443:443 
+      - ${IP}:443:443
     volumes:
       - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
       - ./wp-app:/var/www/html # Full wordpress project
@@ -26,6 +26,8 @@ services:
         define('WP_DEBUG', true );
         define('WP_HOME','https://cioos.local');
         define('WP_SITEURL','https://cioos.local');
+      PHP_EXTENSION_XDEBUG: 1
+
     depends_on:
       - db
     links:
@@ -56,11 +58,12 @@ services:
     image: mysql:latest # https://hub.docker.com/_/mysql/ - or mariadb https://hub.docker.com/_/mariadb
     ports:
       - ${IP}:3306:3306 # change ip if required
-    command: [
-        '--default_authentication_plugin=mysql_native_password',
-        '--character-set-server=utf8mb4',
-        '--collation-server=utf8mb4_unicode_ci'
-    ]
+    command:
+      [
+        "--default_authentication_plugin=mysql_native_password",
+        "--character-set-server=utf8mb4",
+        "--collation-server=utf8mb4_unicode_ci",
+      ]
     volumes:
       - ./wp-data:/docker-entrypoint-initdb.d
       - db_data:/var/lib/mysql
