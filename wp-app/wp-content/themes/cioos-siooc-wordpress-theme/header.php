@@ -41,18 +41,18 @@
 					<?php if (function_exists('pll_the_languages')){ ?>
 						<?php if ( pll_current_language() == 'en'){ ?>
 							<?php if ( get_theme_mod( 'english_logo' )){ ?>
-								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php echo get_theme_mod( 'english_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+								<a rel="home" href="/"><img src="<?php echo get_theme_mod( 'english_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
 							<?php } else {?>
-								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/<?php echo get_theme_mod( 'ra_selector' ) ?>/cioos-<?php echo get_theme_mod( 'ra_selector' ) ?>_EN.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+								<a rel="home" href="/"><img src="<?php bloginfo( 'template_url' ); ?>/img/<?php echo get_theme_mod( 'ra_selector' ) ?>/cioos-<?php echo get_theme_mod( 'ra_selector' ) ?>_EN.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
 							<?php }; ?>
 						<?php } else if ( pll_current_language() == 'fr'){?>
 							<?php if ( get_theme_mod( 'french_logo' )){ ?>
-								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php echo get_theme_mod( 'french_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+								<a rel="home" href="/"><img src="<?php echo get_theme_mod( 'french_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
 							<?php } else {?>
-								<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/<?php echo get_theme_mod( 'ra_selector' ) ?>/cioos-<?php echo get_theme_mod( 'ra_selector' ) ?>_FR.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+								<a rel="home" href="/"><img src="<?php bloginfo( 'template_url' ); ?>/img/<?php echo get_theme_mod( 'ra_selector' ) ?>/cioos-<?php echo get_theme_mod( 'ra_selector' ) ?>_FR.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
 							<?php }; ?>
 						<?php } else {?>
-							<a rel="home" href="<?php esc_url( bloginfo() ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/<?php echo get_theme_mod( 'ra_selector' ) ?>/cioos-<?php echo get_theme_mod( 'ra_selector' ) ?>_EN_FR.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
+							<a rel="home" href="/"><img src="<?php bloginfo( 'template_url' ); ?>/img/<?php echo get_theme_mod( 'ra_selector' ) ?>/cioos-<?php echo get_theme_mod( 'ra_selector' ) ?>_EN_FR.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" ></a>
 						<?php }; ?>
 					<?php } else {?>
 						<?php if ( get_theme_mod( 'defaultlogo' )){ ?>
