@@ -450,3 +450,19 @@ $white: #ffffff;
         }
     }
 }
+
+/*----------------------------------------------------------
+# SLGO Multi-sidebar
+----------------------------------------------------------*/
+
+body.slgo{
+    .site-main .container.with-sidebar {
+        max-width: 1640px;
+    }
+    .site-main .container #sidebar {
+        width: 27%;
+    }
+    .site-main .container .sidebar-content {
+        width: 73%;
+    }
+}
