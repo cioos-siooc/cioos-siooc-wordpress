@@ -13,20 +13,29 @@ get_header();
 	<main id="primary" class="site-main">
 	<div class="container">
 		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'cioos' ); ?></h1>
-			</header><!-- .page-header -->
+			<?php if(ICL_LANGUAGE_CODE=='fr'): ?>
+				<div id="notfound">
+					<div class="notfound">
+						<div class="notfound-404">
+							<h1>4<span>0</span>4</h1>
+						</div>
+						<h2>La page demandée est introuvable</h2>
+						<a href="<?php echo home_url(); ?>">Page d'accueil</a>
+					</div>
+				</div>
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'cioos' ); ?></p>
+				<?php else : ?>
 
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-			</div><!-- .page-content -->
+				<div id="notfound">
+					<div class="notfound">
+						<div class="notfound-404">
+							<h1>4<span>0</span>4</h1>
+						</div>
+						<h2>The page you requested could not found</h2>
+						<a href="<?php echo home_url(); ?>">Home page</a>
+					</div>
+				</div>
+			<?php endif; ?>
 		</section><!-- .error-404 -->
 		</div>
 	</main><!-- #main -->
