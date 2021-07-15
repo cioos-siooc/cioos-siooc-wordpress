@@ -93,6 +93,18 @@
 						</div>
 					</nav>
 				<?php }; ?>
+				<?php
+					$enable_header_search = get_theme_mod( 'search_enable', true );
+					if ( "1" === $enable_header_search ) {
+						?>
+						<div id="header-search">
+							<a><div class="dashicons dashicons-search"></div></a>
+							<?php 
+								get_search_form();
+							?>
+						</div>
+					<?php } 
+				?>
 			</div>
 		</div>
 	</header>

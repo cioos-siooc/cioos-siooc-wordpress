@@ -11,7 +11,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-	<div class="container">
+	<div class="container search-page">
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
@@ -37,7 +37,7 @@ get_header();
 
 			endwhile;
 
-			the_posts_navigation();
+			cioos_input_pagination();
 
 		else :
 

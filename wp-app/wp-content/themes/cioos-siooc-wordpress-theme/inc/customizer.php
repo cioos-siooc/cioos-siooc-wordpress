@@ -54,6 +54,22 @@ function cioos_customize_register( $wp_customize ) {
 		),
 	) );
 
+	$wp_customize->add_setting( 'search_enable', array(
+		'default' => true,
+  		'transport' => 'refresh'
+	  ) );
+
+	$wp_customize->add_control( 'search_enable', array(
+		'type' => 'radio',
+		'section' => 'title_tagline', 
+		'label' => __( 'Enable search' ),
+		'choices' => array(
+			true => __( 'Yes' ),
+			false => __( 'No' ),
+		),
+	) );
+
+
 
 	$wp_customize->add_setting( 'defaultlogo', array(
 		'default' => '',
