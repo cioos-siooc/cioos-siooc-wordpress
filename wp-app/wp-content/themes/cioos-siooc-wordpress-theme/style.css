@@ -1306,6 +1306,10 @@ ul.menu .menu-item-has-children > a::after,
 	}
 }
 
+.page-header .post-nav .container #header-search {
+	padding: 1.2em;
+}
+
 .page-header .post-nav .container #header-search .searchform {
 	visibility: hidden;
 	position: relative;

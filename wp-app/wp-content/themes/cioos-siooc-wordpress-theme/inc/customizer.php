@@ -55,7 +55,7 @@ function cioos_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'search_enable', array(
-		'default' => true,
+		'default' => false,
   		'transport' => 'refresh'
 	  ) );
 
