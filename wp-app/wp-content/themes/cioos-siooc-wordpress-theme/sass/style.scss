@@ -54,7 +54,7 @@ and in each row a container is inserted to hold content.
 # Includes
 --------------------------------------------------------*/
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap');
 
 //WIDTHS
 $max_width: 1140px; //Old size
@@ -72,14 +72,12 @@ $mono_font: monaco, consolas, "Andale Mono", "DejaVu Sans Mono",
 // RA SPECIFIC COLOURS - SEE CIOOS Brand Guidelines
 // these are used where appropriate around the site in
 // links and navigation colours, rollovers and more
-$ras: "atlantic" rgb(228, 140, 102) rgba(229, 81, 98, 1) rgba(86, 220, 190, 1)
-    rgba(47, 184, 218, 1) rgba(241, 226, 104, 1),
-  "pacific" rgba(185, 214, 242, 1) rgba(0, 116, 144, 1) rgba(255, 200, 87, 1)
-    rgba(255, 107, 53, 1) rgba(135, 142, 136, 1),
-  "national" rgba(181, 181, 181, 1) rgba(82, 167, 155, 1) rgba(198, 227, 223, 1)
-    rgba(250, 114, 104, 1) rgba(255, 255, 255, 1),
-  "slgo" rgba(30, 70, 89, 1) rgba(0, 173, 239, 1) rgba(140, 198, 62, 1)
-    rgba(198, 203, 31, 1) rgba(193, 180, 153, 1);
+$ras:
+  "atlantic" rgb(228, 140, 102)         rgba(229, 81, 98, 1)    #98213d   rgba(47, 184, 218, 1)   #ffdbe3,
+  "pacific"  rgba(185, 214, 242, 1)     rgba(0, 116, 144, 1)    rgba(255, 200, 87, 1)   rgba(255, 107, 53, 1)   rgba(135, 142, 136, 1),
+  "national" rgba(181, 181, 181, 1)     rgba(82, 167, 155, 1)   rgba(198, 227, 223, 1)  rgba(250, 114, 104, 1)  rgba(255, 255, 255, 1), 
+  "slgo"     rgba(30, 70, 89, 1)        rgba(0, 173, 239, 1)    rgba(140, 198, 62, 1)   rgba(198, 203, 31, 1)   rgba(193, 180, 153, 1);
+
 
 // OTHER COLOURS
 $color_body_bg: rgba(255, 255, 255, 1);
@@ -98,6 +96,10 @@ $white: #ffffff;
 @import "wordpress"; // wordpress specific stuff like wp_galleries
 @import "navigation"; // The navigation system
 @import "accessibility"; // Accessibility helpers
+@import "guttenburg"; // Specific sections for guttenburg objects
+@import "objects"; // Re-usable HTML objects
+@import "helpers"; // Utility classes
+@import "atlantic"; // CIOOS Atantic custom CSS
 
 /*----------------------------------------------------------
 # The site row container
@@ -314,41 +316,59 @@ $white: #ffffff;
 # footer
 ----------------------------------------------------------*/
 .site-footer {
-  background-image: url(img/footer.svg);
-  background-size: cover;
-  padding: 4em 0;
-  .container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-    grid-column-gap: 3em;
-    article {
-      width: 100%;
-    }
-    aside {
-      font-weight: 700;
-      color: $color_body_bg;
-      .textwidget {
-        margin-top: 1em;
-      }
-    }
-  }
-  // MailChimp signup form
-  .mailchimp-form {
-    input {
-      border: none;
-      width: 100%;
-      &.button {
-        padding: 1em 0;
-        &:hover {
-          cursor: pointer;
+    background-image: url(img/footer.svg);
+    background-size: cover;
+    padding: 4em 0;
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-column-gap: 3em;
+        article {
+            width: 100%;
         }
-      }
+        aside {
+            font-weight: 700;
+            color: $color_body_bg;
+            .textwidget {
+                margin-top: 1em;
+            }
+        }
     }
-    .newsletter-field {
-      margin-bottom: 0.5em;
+    @media screen and (min-width: 600px) {
+        .container {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
-  }
+    @media screen and (min-width: 950px) {
+        .container {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    // MailChimp signup form
+    .mailchimp-form {
+        input[type="text"],
+        input[type="email"] {
+            background: $white !important;
+            font-size: 0.875rem;
+            padding: 0.75rem;
+        }
+        input {
+            border: none;
+            width: 100%;
+            border: none;
+            &.btn {
+                padding: 1em 0;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        .newsletter-field {
+            margin-bottom: 0.5em;
+        }
+    }
 }
 .elementor-section-wrap > section {
   margin-bottom: 2.5em;
@@ -358,93 +378,111 @@ $white: #ffffff;
 # Region-dependant colours
 ----------------------------------------------------------*/
 
-@each $name, $color_1, $color_2, $color_3, $color_4, $color_5, $color_6 in $ras
-{
-  body.#{$name} {
-    hr {
-      background-color: $color_3;
-    }
-
-    .page-header .pre-nav {
-      background: $color_2; //top bar regional globe area
-    }
-    .language-nav ul li a {
-      color: $color_light_gray; //Language switch colour
-    }
-    .site-footer {
-      background-color: $color_footer_bg; //footer bg
-      a,
-      a:link,
-      ul.menu li a {
-        color: $white; //  text link colour
-        &:visited {
-          color: $white; //  text link colour visited
+@each $name, $color_1, $color_2, $color_3, $color_4, $color_5, $color_6 in $ras {
+    body.#{$name}{
+        hr {
+            background-color: $color_3;
         }
-        &:hover,
-        &:focus,
-        &:active {
-          color: $color_3; //  text link colour hover
+                
+        .page-header .pre-nav {
+            background: $color_2; //top bar regional globe area
         }
-      }
-    }
-    ul.nav-menu li a,
-    ul.menu li a,
-    .menu > ul li a {
-      color: $black; // Main & flyout nav text color
-    }
-    ul.nav-menu li a:hover,
-    ul.menu li a:hover,
-    .menu > ul li a:hover,
-    ul.nav-menu li.current_page_ancestor > a,
-    ul.nav-menu li.current-menu-item > a ul.menu li.current_page_ancestor > a,
-    ul.menu li.current-menu-item > a {
-      color: $color_2; // Main & flyout nav text color hover
-    }
-    ul.nav-menu,
-    ul.menu,
-    .menu > ul {
-      li ul a {
-        border-left: 3px solid $color_body_bg; // flyout link border colour
-      }
-    }
-    ul.nav-menu,
-    ul.menu,
-    .main-navigation.toggled ul,
-    .menu > ul,
-    .menu-toggle {
-      li {
-        ul {
-          background: $color_body_bg; // flyout bg  colour
+        .language-nav ul li a {
+            color: $color_light_gray; //Language switch colour
         }
-      }
-    }
-    .nav-menu,
-    ul.menu,
-    .menu > ul {
-      ul {
-        li:hover > a,
-        li.focus > a {
-          border-left: 3px solid $color_3; // flyout link border colour hover
+        .site-footer {
+            background-color: $color_footer_bg; //footer bg
+            a, a:link, ul.menu li a {
+                color: $white; //  text link colour
+                font-weight: 400;
+                text-decoration: none;
+                font-size: 0.875em;
+                &:visited {
+                    color: $white; //  text link colour visited
+                }
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $color_2; //  text link colour hover
+                }
+            }
         }
-      }
-    }
-    .sub-menu {
-      .current-menu-item > a {
-        color: $color_2;
-        border-left: 3px solid $color_2; // flyout link current-link colour
-      }
-    }
-    a {
-      color: $color_2; //  text link colour
-    }
-    a:visited {
-      color: $color_2; //  text link colour visited
-    }
-    a:hover,
-    a:focus,
-    a:active {
-      color: $color_3; //  text link colour hover
-    }
+        ul.nav-menu li a,
+        ul.menu li a,
+        .menu > ul li a {
+            color: $black; // Main & flyout nav text color
+        }
+        ul.nav-menu li a:hover,
+        ul.menu li a:hover,
+        .menu > ul li a:hover,
+        ul.nav-menu li.current_page_ancestor > a,
+        ul.nav-menu li.current-menu-item > a ul.menu li.current_page_ancestor > a,
+        ul.menu li.current-menu-item > a {
+            color: $color_2; // Main & flyout nav text color hover
+        }
+        ul.nav-menu,
+        ul.menu,
+        .menu > ul {
+            li ul a {
+                border-left: 3px solid $color_body_bg; // flyout link border colour
+            }
+        }
+        ul.nav-menu,
+        ul.menu,
+        .main-navigation.toggled ul,
+        .menu > ul,
+        .menu-toggle {
+            li {
+                ul {
+                    background: $color_body_bg; // flyout bg  colour
+                }
+            }
+        }
+        .nav-menu,
+        ul.menu,
+        .menu > ul {
+            ul {
+                li:hover > a,
+                li.focus > a {
+                    border-left: 3px solid $color_3; // flyout link border colour hover
+                }
+            }
+        }
+        .sub-menu {
+            .current-menu-item > a {
+                color: $color_2;
+                border-left: 3px solid $color_2; // flyout link current-link colour
+            }
+        }
+        a {
+            color: $color_2; //  text link colour
+            transition: all ease 0.3s;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-decoration-color: $color_5;
+        }
+        a:visited {
+            color: $color_2; //  text link colour visited
+        }
+        a:hover,
+        a:focus,
+        a:active {
+            color: $color_3; //  text link colour hover
+            text-decoration-color: $color_2;
+        }
+        h1 a,
+        h2 a,
+        h3 a,
+        h4 a {
+            color: $black;
+            font-weight: 700;
+        }
+        h1 a:visited,
+        h2 a:visited,
+        h3 a:visited,
+        h4 a:visited {
+            color: $black;
+        }
 
     /* Forms
         --------------------------------------------- */
@@ -477,47 +515,57 @@ $white: #ffffff;
       color: $color_2;
     }
 
-    input[type="text"],
-    input[type="email"],
-    input[type="url"],
-    input[type="password"],
-    input[type="search"],
-    input[type="number"],
-    input[type="tel"],
-    input[type="range"],
-    input[type="date"],
-    input[type="month"],
-    input[type="week"],
-    input[type="time"],
-    input[type="datetime"],
-    input[type="datetime-local"],
-    input[type="color"] {
-      border-color: $color_2; //field colours
-      background: $color_1;
-      color: $color_2;
-    }
-    input:focus,
-    select:focus,
-    option:focus,
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    input[type="url"]:focus,
-    input[type="password"]:focus,
-    input[type="search"]:focus,
-    input[type="number"]:focus,
-    input[type="tel"]:focus,
-    input[type="range"]:focus,
-    input[type="date"]:focus,
-    input[type="month"]:focus,
-    input[type="week"]:focus,
-    input[type="time"]:focus,
-    input[type="datetime"]:focus,
-    input[type="datetime-local"]:focus,
-    input[type="color"]:focus,
-    textarea:focus {
-      border-color: $color_3; //textbox interactions
-      background: $color_body_bg;
-    }
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        input[type="password"],
+        input[type="search"],
+        input[type="number"],
+        input[type="tel"],
+        input[type="range"],
+        input[type="date"],
+        input[type="month"],
+        input[type="week"],
+        input[type="time"],
+        input[type="datetime"],
+        input[type="datetime-local"],
+        input[type="color"] {
+            border-color: $color_light_gray;
+            background: $white;
+            color: $black;
+        }
+        input:focus,
+        select:focus,
+        option:focus,
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="url"]:focus,
+        input[type="password"]:focus,
+        input[type="search"]:focus,
+        input[type="number"]:focus,
+        input[type="tel"]:focus,
+        input[type="range"]:focus,
+        input[type="date"]:focus,
+        input[type="month"]:focus,
+        input[type="week"]:focus,
+        input[type="time"]:focus,
+        input[type="datetime"]:focus,
+        input[type="datetime-local"]:focus,
+        input[type="color"]:focus,
+        textarea:focus {
+            border-color: $color_3; //textbox interactions
+            background: $color_body_bg;
+        }
+        ::placeholder {
+            color: $color_light_gray;
+            font-style: italic;
+        }
+        .three-column-gallery-with-title,
+        .three-column-gallery-with-title.is-cropped {
+            ul li.blocks-gallery-item img {
+                border-color: $color_2;
+            }
+        }
 
     .three-column-gallery-with-title,
     .three-column-gallery-with-title.is-cropped {
