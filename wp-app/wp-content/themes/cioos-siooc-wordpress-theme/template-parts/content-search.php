@@ -27,6 +27,12 @@
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
+		<p class="more-link">
+			<a href="<?php the_permalink(); ?>" class="themebutton">
+				<span class="more-text">READ MORE</span>
+				<span class="more-icon"><i class="fa fa-angle-right fa-lg"></i></span>
+			</a>
+		</p>
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">

@@ -179,7 +179,7 @@ function cioos_scripts() {
 	wp_style_add_data( 'cioos-style', 'rtl', 'replace' );
 	wp_enqueue_style('dashicons');
 	wp_enqueue_script( 'cioos-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
+	wp_enqueue_script( 'front-end', get_template_directory_uri() . '/js/front-end.js', array(), _S_VERSION );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -314,6 +314,80 @@ function cioos_meta_layout() {
 	return $output;
 }
 
+/* ---------------------------------------------------------------------------------- 
+	PAGINATION
+---------------------------------------------------------------------------------- */
+function cioos_input_pagination( $pages = "", $range = 2 ) {
+	global $paged;
+	global $wp_query;
+	
+	$pag_before  = NULL;
+	$pag_after   = NULL;
+	$pag_current = NULL;
+	$pag_close   = NULL;
+	$pag_clear   = NULL;
+	
+		$showitems = ($range)+1;  
+	
+		if(empty($paged)) $paged = 1;
+	
+		if($pages == "") {
+			$pages = $wp_query->max_num_pages;
+			if(!$pages) {
+				$pages = 1;
+			}
+		}
+	
+	if ( $paged > 1 ) {
+		$pag_before  = '<span class="pag-before">';
+		$pag_current = '</span><span class="pag-current">';
+		$pag_after   = '</span><span class="pag-after">';
+		$pag_close   = '</span>';
+		$pag_clear   = '<span class="clearboth"></span>';
+	}
+	
+	if ( $paged == 1 ) {
+		$pag_class = ' pag-start';
+	} else if ( $paged == $pages ) {
+		$pag_class = ' pag-end';
+	} else {
+		$pag_class = ' pag-inner';
+	}
+	
+		if(1 != $pages) {
+			echo '<ul class="pag' . $pag_class . '">';
+	
+				echo $pag_before;
+		
+				if($paged > 2 && $paged > $range+1 && $showitems < $pages)
+					echo '<li class="pag-first"><a href="' . get_pagenum_link(1). '"><i class="fa fa-angle-double-left"></i></a></li>';
+				if($paged > 1 && $showitems < $pages) 
+					echo '<li class="pag-previous"><a href="' . get_pagenum_link($paged - 1). '"><i class="fa fa-angle-left"></i></a></li>';
+	
+				for ($i=1; $i <= $pages; $i++) {
+					if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )) {
+						if ( $paged == $i ) {
+							echo $pag_current;
+								echo '<li class="current"><span>' . $i . '</span></li>'; 
+							echo $pag_after;
+						} else {
+							echo '<li><a href="' . get_pagenum_link($i) . '">'. $i . '</a></li>';
+						}
+					}
+				}
+	
+				if ($paged < $pages && $showitems < $pages)
+					echo '<li class="pag-next"><a href="' . get_pagenum_link($paged + 1) . '"><i class="fa fa-angle-right"></i></a></li>';
+				if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) 
+					echo '<li class="pag-last" ><a href="' . get_pagenum_link($pages) . '"><i class="fa fa-angle-double-right"></i></a></li>';
+	
+				echo $pag_close;
+				echo $pag_clear;
+	
+			echo '</ul>';
+		}
+	}
+	
 /**
  * Load Jetpack compatibility file.
  */

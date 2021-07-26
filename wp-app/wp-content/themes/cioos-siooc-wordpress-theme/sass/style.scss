@@ -62,20 +62,24 @@ $max_width: 1140px; //Old size
 $mobile_trigger: 800px; // when to flip to compressed fluid view
 
 //FONTS
-$font_family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,"Helvetica Neue", sans-serif;
+$font_family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 $font_size: 1em;
 $line_height: 1.625em;
-$mono_font: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", "Courier 10 Pitch", courier, monospace;
+$mono_font: monaco, consolas, "Andale Mono", "DejaVu Sans Mono",
+  "Courier 10 Pitch", courier, monospace;
 
 // RA SPECIFIC COLOURS - SEE CIOOS Brand Guidelines
 // these are used where appropriate around the site in
 // links and navigation colours, rollovers and more
-$ras:
-  "atlantic" rgb(228, 140, 102)         rgba(229, 81, 98, 1)    rgba(86, 220, 190, 1)   rgba(47, 184, 218, 1)   rgba(241, 226, 104, 1),
-  "pacific"  rgba(185, 214, 242, 1)     rgba(0, 116, 144, 1)    rgba(255, 200, 87, 1)   rgba(255, 107, 53, 1)   rgba(135, 142, 136, 1),
-  "national" rgba(181, 181, 181, 1)     rgba(82, 167, 155, 1)   rgba(198, 227, 223, 1)  rgba(250, 114, 104, 1)  rgba(255, 255, 255, 1), 
-  "slgo"     rgba(30, 70, 89, 1)        rgba(0, 173, 239, 1)    rgba(140, 198, 62, 1)   rgba(198, 203, 31, 1)   rgba(193, 180, 153, 1);
-
+$ras: "atlantic" rgb(228, 140, 102) rgba(229, 81, 98, 1) rgba(86, 220, 190, 1)
+    rgba(47, 184, 218, 1) rgba(241, 226, 104, 1),
+  "pacific" rgba(185, 214, 242, 1) rgba(0, 116, 144, 1) rgba(255, 200, 87, 1)
+    rgba(255, 107, 53, 1) rgba(135, 142, 136, 1),
+  "national" rgba(181, 181, 181, 1) rgba(82, 167, 155, 1) rgba(198, 227, 223, 1)
+    rgba(250, 114, 104, 1) rgba(255, 255, 255, 1),
+  "slgo" rgba(30, 70, 89, 1) rgba(0, 173, 239, 1) rgba(140, 198, 62, 1)
+    rgba(198, 203, 31, 1) rgba(193, 180, 153, 1);
 
 // OTHER COLOURS
 $color_body_bg: rgba(255, 255, 255, 1);
@@ -99,28 +103,28 @@ $white: #ffffff;
 # The site row container
 ----------------------------------------------------------*/
 .site {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    min-height: 100vh;
-    .page-header {
-        flex-shrink: 0;
-    }
-    .site-main {
-        flex-grow: 1;
-    }
-    .site-footer {
-        flex-shrink: 0;
-    } // Keeps the footer and header at the top and bottom of the site, and maxes out height to fill it if it's too small.
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100vh;
+  .page-header {
+    flex-shrink: 0;
+  }
+  .site-main {
+    flex-grow: 1;
+  }
+  .site-footer {
+    flex-shrink: 0;
+  } // Keeps the footer and header at the top and bottom of the site, and maxes out height to fill it if it's too small.
 }
 /*----------------------------------------------------------
 # container within each row
 ----------------------------------------------------------*/
 
 .container {
-    max-width: $max_width;
-    margin: 0 auto;
-    padding: 0 1em; // allows the content some room at small screens
+  max-width: $max_width;
+  margin: 0 auto;
+  padding: 0 1em; // allows the content some room at small screens
 }
 
 /*----------------------------------------------------------
@@ -128,341 +132,515 @@ $white: #ffffff;
 ----------------------------------------------------------*/
 
 .page-header {
-    background: $color_body_bg;
-    .post-nav,
-    .pre-nav {
-        font-family: $font_family;
-        font-weight: 700;
-        font-size: 0.8rem;
+  background: $color_body_bg;
+  .post-nav,
+  .pre-nav {
+    font-family: $font_family;
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+  .pre-nav {
+    max-height: 3rem;
+    @media screen and (max-width: $mobile_trigger) {
+      margin: 0 0 5px;
     }
-    .pre-nav {
-        max-height: 3rem;
-        @media screen and (max-width: $mobile_trigger) {
-            margin: 0 0 5px;
+    .container {
+      display: flex;
+      height: 3em; //three lines tall.
+      width: max-content;
+      .nationallogo {
+        overflow: hidden;
+        display: flex;
+        img {
+          align-self: center;
+          margin: 0 1em 0 0;
+          width: 5em;
         }
-        .container {
-            display: flex;
-            height: 3em; //three lines tall.
-            width: max-content;
-            .nationallogo {
-                overflow: hidden;
-                display: flex;
-                img {
-                    align-self: center;
-                    margin: 0 1em 0 0;
-                    width: 5em;
-                }
-            }
-            .logotype {
-                display: flex;
-                .widget {
-                    align-self: center;
-                    margin: 0;
-                }
-                p,
-                a {
-                    padding: 0;
-                    margin: 0;
-                    color: $color_body_bg;
-                    text-decoration: none;
-                }
-            }
+      }
+      .logotype {
+        display: flex;
+        .widget {
+          align-self: center;
+          margin: 0;
         }
+        p,
+        a {
+          padding: 0;
+          margin: 0;
+          color: $color_body_bg;
+          text-decoration: none;
+        }
+      }
     }
-    .post-nav {
-        padding: 2em 0;
-        .container {
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: center;
-            align-items: center;
-            flex-direction: row;
-            @media screen and (max-width: $mobile_trigger) {
-                flex-direction: column;
-            }
+  }
+  .post-nav {
+    padding: 2em 0;
+    .container {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      @media screen and (max-width: $mobile_trigger) {
+        flex-direction: column;
+      }
+
+      #header-search {
+        padding: 1.2em;
+        .searchform {
+          visibility: hidden;
+          position: relative;
         }
-        .sitelogo {
-            @media screen and (max-width: $mobile_trigger) {
-                width: 80vw;
-                text-align: center;
-            }
-            a,
-            img {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 6em;
-            }
+
+        .search {
+          position: absolute;
+          width: 0;
+          top: 10px;
+          right: 0;
+          height: 50px;
+          background: #fff;
+          border: 1px solid #e4e4e4;
+          padding: 12px 0px;
         }
-        .menu-toggle {
-            width: 100%;
+
+        .searchsubmit {
+          position: absolute;
+          top: 10px;
+          right: 0px;
+          height: 50px;
         }
+      }
+
+      #header-search.active {
+        .searchform {
+          visibility: visible;
+          z-index: 1;
+        }
+
+        .search {
+          width: 250px;
+          padding: 12px 10px;
+          height: 50px;
+          margin: 0;
+        }
+      }
     }
+    .sitelogo {
+      @media screen and (max-width: $mobile_trigger) {
+        width: 80vw;
+        text-align: center;
+      }
+      a,
+      img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 6em;
+      }
+    }
+    .menu-toggle {
+      width: 100%;
+    }
+  }
 }
 /*----------------------------------------------------------
 # main
 ----------------------------------------------------------*/
 .site-main {
-    overflow: hidden;
-    background-color: $color_body_bg;
-    margin: 0;
-    .container {
-        display: flex;
+  overflow: hidden;
+  background-color: $color_body_bg;
+  margin: 0;
+  .container {
+    display: flex;
+  }
+
+  .search-page {
+    flex-direction: column;
+    img {
+      max-width: 200px;
     }
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .more-link {
+    display: inline-block;
+    a {
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-block;
+      border: 2px solid;
+      .more-text {
+        display: inline-block;
+        padding: 11px 45px;
+      }
+      .more-icon {
+        display: inline-block;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+
+  .pag {
+    li {
+      font-size: 90%;
+      text-align: center;
+      display: inline-block;
+      margin-right: 1px;
+
+      a,
+      span {
+        display: block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        background: #fff;
+        margin: 2px 8px 2px 2px;
+        border: 1px solid #fff;
+        box-shadow: 0 0 0 2px rgba(17, 81, 114, 0.2);
+      }
+    }
+    li.current {
+      span {
+        background: rgba(17, 81, 114, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0);
+      }
+    }
+  }
 }
 /*----------------------------------------------------------
 # footer
 ----------------------------------------------------------*/
 .site-footer {
-    background-image: url(img/footer.svg);
-    background-size: cover;
-    padding: 4em 0;
-    .container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: auto;
-        grid-column-gap: 3em;
-        article {
-            width: 100%;
-        }
-        aside {
-            font-weight: 700;
-            color: $color_body_bg;
-            .textwidget {
-                margin-top: 1em;
-            }
-        }
+  background-image: url(img/footer.svg);
+  background-size: cover;
+  padding: 4em 0;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 3em;
+    article {
+      width: 100%;
     }
-    // MailChimp signup form
-    .mailchimp-form {
-        input {
-            border: none;
-            width: 100%;
-            &.button {
-                padding: 1em 0;
-                &:hover {
-                    cursor: pointer;
-                }
-            }
-        }
-        .newsletter-field {
-            margin-bottom: 0.5em;
-        }
+    aside {
+      font-weight: 700;
+      color: $color_body_bg;
+      .textwidget {
+        margin-top: 1em;
+      }
     }
+  }
+  // MailChimp signup form
+  .mailchimp-form {
+    input {
+      border: none;
+      width: 100%;
+      &.button {
+        padding: 1em 0;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .newsletter-field {
+      margin-bottom: 0.5em;
+    }
+  }
 }
 .elementor-section-wrap > section {
-    margin-bottom: 2.5em;
+  margin-bottom: 2.5em;
 }
 
 /*----------------------------------------------------------
 # Region-dependant colours
 ----------------------------------------------------------*/
 
-@each $name, $color_1, $color_2, $color_3, $color_4, $color_5, $color_6 in $ras {
-    body.#{$name}{
-        hr {
-            background-color: $color_3;
-        }
-                
-        .page-header .pre-nav {
-            background: $color_2; //top bar regional globe area
-        }
-        .language-nav ul li a {
-            color: $color_light_gray; //Language switch colour
-        }
-        .site-footer {
-            background-color: $color_footer_bg; //footer bg
-            a, a:link, ul.menu li a {
-                color: $white; //  text link colour
-                &:visited {
-                    color: $white; //  text link colour visited
-                }
-                &:hover,
-                &:focus,
-                &:active {
-                    color: $color_3; //  text link colour hover
-                }
-            }
-        }
-        ul.nav-menu li a,
-        ul.menu li a,
-        .menu > ul li a {
-            color: $black; // Main & flyout nav text color
-        }
-        ul.nav-menu li a:hover,
-        ul.menu li a:hover,
-        .menu > ul li a:hover,
-        ul.nav-menu li.current_page_ancestor > a,
-        ul.nav-menu li.current-menu-item > a ul.menu li.current_page_ancestor > a,
-        ul.menu li.current-menu-item > a {
-            color: $color_2; // Main & flyout nav text color hover
-        }
-        ul.nav-menu,
-        ul.menu,
-        .menu > ul {
-            li ul a {
-                border-left: 3px solid $color_body_bg; // flyout link border colour
-            }
-        }
-        ul.nav-menu,
-        ul.menu,
-        .main-navigation.toggled ul,
-        .menu > ul,
-        .menu-toggle {
-            li {
-                ul {
-                    background: $color_body_bg; // flyout bg  colour
-                }
-            }
-        }
-        .nav-menu,
-        ul.menu,
-        .menu > ul {
-            ul {
-                li:hover > a,
-                li.focus > a {
-                    border-left: 3px solid $color_3; // flyout link border colour hover
-                }
-            }
-        }
-        .sub-menu {
-            .current-menu-item > a {
-                color: $color_2;
-                border-left: 3px solid $color_2; // flyout link current-link colour
-            }
-        }
-        a {
-            color: $color_2; //  text link colour
-        }
-        a:visited {
-            color: $color_2; //  text link colour visited
-        }
-        a:hover,
-        a:focus,
-        a:active {
-            color: $color_3; //  text link colour hover
-        }
-
-        /* Forms
-        --------------------------------------------- */
-
-        button,
-        input,
-        select,
-        textarea,
-        input[type="button"],
-        input[type="reset"],
-        input[type="submit"] {
-            border-color: $color_2; //button colours
-            background: $color_2;
-            color: $white;
-        }
-        button:hover,
-        input[type="button"]:hover,
-        input[type="reset"]:hover,
-        input[type="submit"]:hover,
-        button:active,
-        button:focus,
-        input[type="button"]:active,
-        input[type="button"]:focus,
-        input[type="reset"]:active,
-        input[type="reset"]:focus,
-        input[type="submit"]:active,
-        input[type="submit"]:focus {
-            background: $color_1; //button hovers
-            border-color: $color_2;
-            color: $color_2;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="url"],
-        input[type="password"],
-        input[type="search"],
-        input[type="number"],
-        input[type="tel"],
-        input[type="range"],
-        input[type="date"],
-        input[type="month"],
-        input[type="week"],
-        input[type="time"],
-        input[type="datetime"],
-        input[type="datetime-local"],
-        input[type="color"] {
-            border-color: $color_2; //field colours
-            background: $color_1;
-            color: $color_2;
-        }
-        input:focus,
-        select:focus,
-        option:focus,
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        input[type="url"]:focus,
-        input[type="password"]:focus,
-        input[type="search"]:focus,
-        input[type="number"]:focus,
-        input[type="tel"]:focus,
-        input[type="range"]:focus,
-        input[type="date"]:focus,
-        input[type="month"]:focus,
-        input[type="week"]:focus,
-        input[type="time"]:focus,
-        input[type="datetime"]:focus,
-        input[type="datetime-local"]:focus,
-        input[type="color"]:focus,
-        textarea:focus {
-            border-color: $color_3; //textbox interactions
-            background: $color_body_bg;
-        }
-        
-        .three-column-gallery-with-title,
-        .three-column-gallery-with-title.is-cropped {
-            ul li.blocks-gallery-item img {
-                border-color: $color_2;
-            }
-        }
-
-        .inline-list-with-checkmarks {
-            li::before {
-                color: $color_5;
-            }
-        }
-                    /* Elementor things
-        --------------------------------------------- */
-
-        
-        .elementor-button{
-            background: $color_2;
-            color: $white;
-        }
-        .elementor-button:hover{
-            background: $color_3;
-            color: $black;
-        }
-        .elementor-element.elementor-button-info .elementor-button{
-            background: $white;
-            color: $color_2;
-        }
-        .elementor-element.elementor-button-info .elementor-button:hover{
-            background: $white;
-            color: $color_4;
-        }
+@each $name, $color_1, $color_2, $color_3, $color_4, $color_5, $color_6 in $ras
+{
+  body.#{$name} {
+    hr {
+      background-color: $color_3;
     }
+
+    .page-header .pre-nav {
+      background: $color_2; //top bar regional globe area
+    }
+    .language-nav ul li a {
+      color: $color_light_gray; //Language switch colour
+    }
+    .site-footer {
+      background-color: $color_footer_bg; //footer bg
+      a,
+      a:link,
+      ul.menu li a {
+        color: $white; //  text link colour
+        &:visited {
+          color: $white; //  text link colour visited
+        }
+        &:hover,
+        &:focus,
+        &:active {
+          color: $color_3; //  text link colour hover
+        }
+      }
+    }
+    ul.nav-menu li a,
+    ul.menu li a,
+    .menu > ul li a {
+      color: $black; // Main & flyout nav text color
+    }
+    ul.nav-menu li a:hover,
+    ul.menu li a:hover,
+    .menu > ul li a:hover,
+    ul.nav-menu li.current_page_ancestor > a,
+    ul.nav-menu li.current-menu-item > a ul.menu li.current_page_ancestor > a,
+    ul.menu li.current-menu-item > a {
+      color: $color_2; // Main & flyout nav text color hover
+    }
+    ul.nav-menu,
+    ul.menu,
+    .menu > ul {
+      li ul a {
+        border-left: 3px solid $color_body_bg; // flyout link border colour
+      }
+    }
+    ul.nav-menu,
+    ul.menu,
+    .main-navigation.toggled ul,
+    .menu > ul,
+    .menu-toggle {
+      li {
+        ul {
+          background: $color_body_bg; // flyout bg  colour
+        }
+      }
+    }
+    .nav-menu,
+    ul.menu,
+    .menu > ul {
+      ul {
+        li:hover > a,
+        li.focus > a {
+          border-left: 3px solid $color_3; // flyout link border colour hover
+        }
+      }
+    }
+    .sub-menu {
+      .current-menu-item > a {
+        color: $color_2;
+        border-left: 3px solid $color_2; // flyout link current-link colour
+      }
+    }
+    a {
+      color: $color_2; //  text link colour
+    }
+    a:visited {
+      color: $color_2; //  text link colour visited
+    }
+    a:hover,
+    a:focus,
+    a:active {
+      color: $color_3; //  text link colour hover
+    }
+
+    /* Forms
+        --------------------------------------------- */
+
+    button,
+    input,
+    select,
+    textarea,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+      border-color: $color_2; //button colours
+      background: $color_2;
+      color: $white;
+    }
+    button:hover,
+    input[type="button"]:hover,
+    input[type="reset"]:hover,
+    input[type="submit"]:hover,
+    button:active,
+    button:focus,
+    input[type="button"]:active,
+    input[type="button"]:focus,
+    input[type="reset"]:active,
+    input[type="reset"]:focus,
+    input[type="submit"]:active,
+    input[type="submit"]:focus {
+      background: $color_1; //button hovers
+      border-color: $color_2;
+      color: $color_2;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="password"],
+    input[type="search"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="range"],
+    input[type="date"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="color"] {
+      border-color: $color_2; //field colours
+      background: $color_1;
+      color: $color_2;
+    }
+    input:focus,
+    select:focus,
+    option:focus,
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="url"]:focus,
+    input[type="password"]:focus,
+    input[type="search"]:focus,
+    input[type="number"]:focus,
+    input[type="tel"]:focus,
+    input[type="range"]:focus,
+    input[type="date"]:focus,
+    input[type="month"]:focus,
+    input[type="week"]:focus,
+    input[type="time"]:focus,
+    input[type="datetime"]:focus,
+    input[type="datetime-local"]:focus,
+    input[type="color"]:focus,
+    textarea:focus {
+      border-color: $color_3; //textbox interactions
+      background: $color_body_bg;
+    }
+
+    .three-column-gallery-with-title,
+    .three-column-gallery-with-title.is-cropped {
+      ul li.blocks-gallery-item img {
+        border-color: $color_2;
+      }
+    }
+
+    .inline-list-with-checkmarks {
+      li::before {
+        color: $color_5;
+      }
+    }
+    /* Elementor things
+        --------------------------------------------- */
+
+    .elementor-button {
+      background: $color_2;
+      color: $white;
+    }
+    .elementor-button:hover {
+      background: $color_3;
+      color: $black;
+    }
+    .elementor-element.elementor-button-info .elementor-button {
+      background: $white;
+      color: $color_2;
+    }
+    .elementor-element.elementor-button-info .elementor-button:hover {
+      background: $white;
+      color: $color_4;
+    }
+
+    .notfound .notfound-404 h1 > span {
+      color: $color_2;
+    }
+
+    .notfound a:hover {
+      background-color: $color_2;
+    }
+  }
 }
 
 /*----------------------------------------------------------
-# SLGO Multi-sidebar
+# SLGO-National Multi-sidebar
 ----------------------------------------------------------*/
 
-body.slgo{
-    .site-main .container.with-sidebar {
-        max-width: 1640px;
-    }
-    .site-main .container #sidebar {
-        width: 27%;
-    }
-    .site-main .container .sidebar-content {
-        width: 73%;
-    }
+body.slgo,
+body.national {
+  .site-main .container.with-sidebar {
+    max-width: 1640px;
+  }
+  .site-main .container #sidebar {
+    width: 27%;
+  }
+  .site-main .container .sidebar-content {
+    width: 73%;
+  }
+}
+
+/* ====================== */
+/* PAGE 404 */
+/* ====================== */
+
+.error-404 {
+  margin: 0 auto;
+}
+
+.notfound {
+  max-width: 767px;
+  width: 100%;
+  line-height: 1.4;
+  padding: 110px 40px;
+  text-align: center;
+}
+
+.notfound .notfound-404 {
+  height: 180px;
+}
+
+.notfound .notfound-404 h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 165px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.notfound h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.notfound a {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #fff;
+  display: inline-block;
+  padding: 15px 30px;
+  border: 4px solid #c5c5c5;
+  border-radius: 40px;
+  color: #292929;
+  font-weight: 700;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.notfound a:hover {
+  color: #fff;
+}
+
+@media only screen and (max-width: 767px) {
+  .notfound h2 {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .notfound .notfound-404 h1 {
+    font-size: 141px;
+  }
 }

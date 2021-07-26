@@ -1306,6 +1306,45 @@ ul.menu .menu-item-has-children > a::after,
 	}
 }
 
+.page-header .post-nav .container #header-search {
+	padding: 1.2em;
+}
+
+.page-header .post-nav .container #header-search .searchform {
+	visibility: hidden;
+	position: relative;
+}
+
+.page-header .post-nav .container #header-search .search {
+	position: absolute;
+	width: 0;
+	top: 10px;
+	right: 0;
+	height: 50px;
+	background: #fff;
+	border: 1px solid #e4e4e4;
+	padding: 12px 0px;
+}
+
+.page-header .post-nav .container #header-search .searchsubmit {
+	position: absolute;
+	top: 10px;
+	right: 0px;
+	height: 50px;
+}
+
+.page-header .post-nav .container #header-search.active .searchform {
+	visibility: visible;
+	z-index: 1;
+}
+
+.page-header .post-nav .container #header-search.active .search {
+	width: 250px;
+	padding: 12px 10px;
+	height: 50px;
+	margin: 0;
+}
+
 @media screen and (max-width: 800px) {
 	.page-header .post-nav .sitelogo {
 		width: 80vw;
@@ -1336,6 +1375,64 @@ ul.menu .menu-item-has-children > a::after,
 
 .site-main .container {
 	display: flex;
+}
+
+.site-main .search-page {
+	flex-direction: column;
+}
+
+.site-main .search-page img {
+	max-width: 200px;
+}
+
+.site-main .search-page a {
+	text-decoration: none;
+}
+
+.site-main .more-link {
+	display: inline-block;
+}
+
+.site-main .more-link a {
+	font-size: 12px;
+	font-weight: 600;
+	display: inline-block;
+	border: 2px solid;
+}
+
+.site-main .more-link a .more-text {
+	display: inline-block;
+	padding: 11px 45px;
+}
+
+.site-main .more-link a .more-icon {
+	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.site-main .pag li {
+	font-size: 90%;
+	text-align: center;
+	display: inline-block;
+	margin-right: 1px;
+}
+
+.site-main .pag li a,
+.site-main .pag li span {
+	display: block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	background: #fff;
+	margin: 2px 8px 2px 2px;
+	border: 1px solid #fff;
+	box-shadow: 0 0 0 2px rgba(17, 81, 114, 0.2);
+}
+
+.site-main .pag li.current span {
+	background: rgba(17, 81, 114, 0.2);
+	border: 1px solid rgba(255, 255, 255, 0);
 }
 
 /*----------------------------------------------------------
@@ -1414,15 +1511,25 @@ body.atlantic .site-footer {
 	background-color: #17212b;
 }
 
-body.atlantic .site-footer a, body.atlantic .site-footer a:link, body.atlantic .site-footer ul.menu li a {
+body.atlantic .site-footer a,
+body.atlantic .site-footer a:link,
+body.atlantic .site-footer ul.menu li a {
 	color: #ffffff;
 }
 
-body.atlantic .site-footer a:visited, body.atlantic .site-footer a:link:visited, body.atlantic .site-footer ul.menu li a:visited {
+body.atlantic .site-footer a:visited,
+body.atlantic .site-footer a:link:visited,
+body.atlantic .site-footer ul.menu li a:visited {
 	color: #ffffff;
 }
 
-body.atlantic .site-footer a:hover, body.atlantic .site-footer a:focus, body.atlantic .site-footer a:active, body.atlantic .site-footer a:link:hover, body.atlantic .site-footer a:link:focus, body.atlantic .site-footer a:link:active, body.atlantic .site-footer ul.menu li a:hover, body.atlantic .site-footer ul.menu li a:focus, body.atlantic .site-footer ul.menu li a:active {
+body.atlantic .site-footer a:hover, body.atlantic .site-footer a:focus, body.atlantic .site-footer a:active,
+body.atlantic .site-footer a:link:hover,
+body.atlantic .site-footer a:link:focus,
+body.atlantic .site-footer a:link:active,
+body.atlantic .site-footer ul.menu li a:hover,
+body.atlantic .site-footer ul.menu li a:focus,
+body.atlantic .site-footer ul.menu li a:active {
 	color: #56dcbe;
 }
 
@@ -1584,6 +1691,14 @@ body.atlantic .elementor-element.elementor-button-info .elementor-button:hover {
 	color: #2fb8da;
 }
 
+body.atlantic .notfound .notfound-404 h1 > span {
+	color: #e55162;
+}
+
+body.atlantic .notfound a:hover {
+	background-color: #e55162;
+}
+
 body.pacific {
 	/* Forms
         --------------------------------------------- */
@@ -1607,15 +1722,25 @@ body.pacific .site-footer {
 	background-color: #17212b;
 }
 
-body.pacific .site-footer a, body.pacific .site-footer a:link, body.pacific .site-footer ul.menu li a {
+body.pacific .site-footer a,
+body.pacific .site-footer a:link,
+body.pacific .site-footer ul.menu li a {
 	color: #ffffff;
 }
 
-body.pacific .site-footer a:visited, body.pacific .site-footer a:link:visited, body.pacific .site-footer ul.menu li a:visited {
+body.pacific .site-footer a:visited,
+body.pacific .site-footer a:link:visited,
+body.pacific .site-footer ul.menu li a:visited {
 	color: #ffffff;
 }
 
-body.pacific .site-footer a:hover, body.pacific .site-footer a:focus, body.pacific .site-footer a:active, body.pacific .site-footer a:link:hover, body.pacific .site-footer a:link:focus, body.pacific .site-footer a:link:active, body.pacific .site-footer ul.menu li a:hover, body.pacific .site-footer ul.menu li a:focus, body.pacific .site-footer ul.menu li a:active {
+body.pacific .site-footer a:hover, body.pacific .site-footer a:focus, body.pacific .site-footer a:active,
+body.pacific .site-footer a:link:hover,
+body.pacific .site-footer a:link:focus,
+body.pacific .site-footer a:link:active,
+body.pacific .site-footer ul.menu li a:hover,
+body.pacific .site-footer ul.menu li a:focus,
+body.pacific .site-footer ul.menu li a:active {
 	color: #ffc857;
 }
 
@@ -1777,6 +1902,14 @@ body.pacific .elementor-element.elementor-button-info .elementor-button:hover {
 	color: #ff6b35;
 }
 
+body.pacific .notfound .notfound-404 h1 > span {
+	color: #007490;
+}
+
+body.pacific .notfound a:hover {
+	background-color: #007490;
+}
+
 body.national {
 	/* Forms
         --------------------------------------------- */
@@ -1800,15 +1933,25 @@ body.national .site-footer {
 	background-color: #17212b;
 }
 
-body.national .site-footer a, body.national .site-footer a:link, body.national .site-footer ul.menu li a {
+body.national .site-footer a,
+body.national .site-footer a:link,
+body.national .site-footer ul.menu li a {
 	color: #ffffff;
 }
 
-body.national .site-footer a:visited, body.national .site-footer a:link:visited, body.national .site-footer ul.menu li a:visited {
+body.national .site-footer a:visited,
+body.national .site-footer a:link:visited,
+body.national .site-footer ul.menu li a:visited {
 	color: #ffffff;
 }
 
-body.national .site-footer a:hover, body.national .site-footer a:focus, body.national .site-footer a:active, body.national .site-footer a:link:hover, body.national .site-footer a:link:focus, body.national .site-footer a:link:active, body.national .site-footer ul.menu li a:hover, body.national .site-footer ul.menu li a:focus, body.national .site-footer ul.menu li a:active {
+body.national .site-footer a:hover, body.national .site-footer a:focus, body.national .site-footer a:active,
+body.national .site-footer a:link:hover,
+body.national .site-footer a:link:focus,
+body.national .site-footer a:link:active,
+body.national .site-footer ul.menu li a:hover,
+body.national .site-footer ul.menu li a:focus,
+body.national .site-footer ul.menu li a:active {
 	color: #c6e3df;
 }
 
@@ -1970,6 +2113,14 @@ body.national .elementor-element.elementor-button-info .elementor-button:hover {
 	color: #fa7268;
 }
 
+body.national .notfound .notfound-404 h1 > span {
+	color: #52a79b;
+}
+
+body.national .notfound a:hover {
+	background-color: #52a79b;
+}
+
 body.slgo {
 	/* Forms
         --------------------------------------------- */
@@ -1993,15 +2144,25 @@ body.slgo .site-footer {
 	background-color: #17212b;
 }
 
-body.slgo .site-footer a, body.slgo .site-footer a:link, body.slgo .site-footer ul.menu li a {
+body.slgo .site-footer a,
+body.slgo .site-footer a:link,
+body.slgo .site-footer ul.menu li a {
 	color: #ffffff;
 }
 
-body.slgo .site-footer a:visited, body.slgo .site-footer a:link:visited, body.slgo .site-footer ul.menu li a:visited {
+body.slgo .site-footer a:visited,
+body.slgo .site-footer a:link:visited,
+body.slgo .site-footer ul.menu li a:visited {
 	color: #ffffff;
 }
 
-body.slgo .site-footer a:hover, body.slgo .site-footer a:focus, body.slgo .site-footer a:active, body.slgo .site-footer a:link:hover, body.slgo .site-footer a:link:focus, body.slgo .site-footer a:link:active, body.slgo .site-footer ul.menu li a:hover, body.slgo .site-footer ul.menu li a:focus, body.slgo .site-footer ul.menu li a:active {
+body.slgo .site-footer a:hover, body.slgo .site-footer a:focus, body.slgo .site-footer a:active,
+body.slgo .site-footer a:link:hover,
+body.slgo .site-footer a:link:focus,
+body.slgo .site-footer a:link:active,
+body.slgo .site-footer ul.menu li a:hover,
+body.slgo .site-footer ul.menu li a:focus,
+body.slgo .site-footer ul.menu li a:active {
 	color: #8cc63e;
 }
 
@@ -2163,19 +2324,96 @@ body.slgo .elementor-element.elementor-button-info .elementor-button:hover {
 	color: #c6cb1f;
 }
 
+body.slgo .notfound .notfound-404 h1 > span {
+	color: #00adef;
+}
+
+body.slgo .notfound a:hover {
+	background-color: #00adef;
+}
+
 /*----------------------------------------------------------
-# SLGO Multi-sidebar
+# SLGO-National Multi-sidebar
 ----------------------------------------------------------*/
-body.slgo .site-main .container.with-sidebar {
+body.slgo .site-main .container.with-sidebar,
+body.national .site-main .container.with-sidebar {
 	max-width: 1640px;
 }
 
-body.slgo .site-main .container #sidebar {
+body.slgo .site-main .container #sidebar,
+body.national .site-main .container #sidebar {
 	width: 27%;
 }
 
-body.slgo .site-main .container .sidebar-content {
+body.slgo .site-main .container .sidebar-content,
+body.national .site-main .container .sidebar-content {
 	width: 73%;
+}
+
+/* ====================== */
+/* PAGE 404 */
+/* ====================== */
+.error-404 {
+	margin: 0 auto;
+}
+
+.notfound {
+	max-width: 767px;
+	width: 100%;
+	line-height: 1.4;
+	padding: 110px 40px;
+	text-align: center;
+}
+
+.notfound .notfound-404 {
+	height: 180px;
+}
+
+.notfound .notfound-404 h1 {
+	font-family: "Roboto", sans-serif;
+	font-size: 165px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.notfound h2 {
+	font-family: "Roboto", sans-serif;
+	font-size: 22px;
+	margin-bottom: 10px;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.notfound a {
+	font-family: "Raleway", sans-serif;
+	font-size: 14px;
+	text-decoration: none;
+	text-transform: uppercase;
+	background: #fff;
+	display: inline-block;
+	padding: 15px 30px;
+	border: 4px solid #c5c5c5;
+	border-radius: 40px;
+	color: #292929;
+	font-weight: 700;
+	-webkit-transition: 0.2s all;
+	transition: 0.2s all;
+}
+
+.notfound a:hover {
+	color: #fff;
+}
+
+@media only screen and (max-width: 767px) {
+	.notfound h2 {
+		font-size: 18px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.notfound .notfound-404 h1 {
+		font-size: 141px;
+	}
 }
 
 /*# sourceMappingURL=style.css.map */
