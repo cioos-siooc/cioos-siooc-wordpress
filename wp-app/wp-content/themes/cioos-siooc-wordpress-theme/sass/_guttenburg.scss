@@ -1,0 +1,40 @@
+// Hero page design using the Guttenburg editor
+.guttenburg-hero {
+    align-items: center;
+    margin-bottom: 3em;
+    h2 {
+        margin-bottom: 2em;
+        font-weight: 900;
+        letter-spacing: -0.5px;
+    }
+    .btn--solid {
+        margin-right: 0.25em;
+    }
+    .hero-action {
+        font-size: 0.875em;
+        p {
+            margin-top: 2em;
+        }
+    }
+}
+
+// Home page partner logos
+.partners {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 3em;
+    &.wp-block-column:not(:first-child) {
+        margin-left: 0;
+    }
+}
+@media screen and (min-width: 600px) {
+    .partners {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (min-width: 1000px) {
+    .partners {
+        grid-template-columns: repeat(6, 1fr);
+        grid-column-gap: 2em;
+    }
+}

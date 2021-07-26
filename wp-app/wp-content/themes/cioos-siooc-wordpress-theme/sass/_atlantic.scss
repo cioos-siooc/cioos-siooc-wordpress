@@ -1,0 +1,18 @@
+
+.atlantic {
+    // Hide title on home page
+    &.page-id-1395 {
+        .entry-title {
+            display: none;
+        }
+    }
+    // Footer heading size is stupid big for subscribe form
+    footer h2 {
+        font-weight: 700;
+        color: $white;
+        margin-bottom: 1.5em;
+        font-size: 1em;
+        text-transform: uppercase;
+    }
+    // Add more Atlantic only here
+}

@@ -1,0 +1,26 @@
+// Insert your primary and secondary colours here
+$color_1: rgba(229, 81, 98, 1);
+$color_2: #98213d;
+
+// Buttons
+a.btn,
+input.btn {
+    font-weight: 700;
+    text-decoration: none !important;
+    padding: 1.25em 1.625em;
+    border: 2px solid $color_1;
+    &.btn--solid {
+        background: $color_1;
+        color: $white !important;
+    }
+    &.btn--hollow {
+        background: $white;
+        color: $black !important;
+    }  
+    &:hover {
+        background: $color_2 !important;
+        border-color: $color_2;
+        color: $white !important;
+        transition: all 0.3s ease;      
+    }
+}
