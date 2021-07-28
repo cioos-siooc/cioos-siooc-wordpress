@@ -1,9 +1,9 @@
 // Insert your primary and secondary colours here
 $color_1: rgba(229, 81, 98, 1);
-$color_2: #98213d;
-// $color_5: #ffdbe3;
-$salmon: #d30f50;
-$background: #f6fafd;
+$color_2: rgba(152, 33, 61, 1);
+$accent: rgba(12, 55, 85, 1);
+$salmon: rgba(211, 15, 80, 1);
+$background: rgba(246, 250, 253, 1);
 
 // Buttons
 a.btn,
@@ -58,7 +58,7 @@ input.btn {
     background: $background;
     background-position: center;
     &:hover {
-        background: #0c3755;
+        background: $accent;
         h3,
         h3 + p {
             color: $white;
@@ -126,7 +126,7 @@ input.btn {
                 font-weight: 700;
                 font-size: 0.875em;
                 letter-spacing: -0.5px;
-                color: #0c3755;
+                color: $accent;
             }
         }
     }
