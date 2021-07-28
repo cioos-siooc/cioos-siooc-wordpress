@@ -368,6 +368,11 @@ $white: #ffffff;
         .newsletter-field {
             margin-bottom: 0.5em;
         }
+        form {
+          p {
+            margin-bottom: 0; // If widget in footer adds paragraph tags
+          }
+        }
     }
 }
 .elementor-section-wrap > section {
@@ -529,7 +534,7 @@ $white: #ffffff;
     input[type="reset"]:focus,
     input[type="submit"]:active,
     input[type="submit"]:focus {
-      background: $color_1; //button hovers
+      background: $white; //button hovers
       border-color: $color_2;
       color: $color_2;
     }

@@ -23,7 +23,14 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 3em;
-    &.wp-block-column:not(:first-child) {
+    div {
+        align-self: center;
+    }
+    &.partners--internal {
+        grid-row-gap: 3em;
+    }
+    &.wp-block-column:not(:first-child),
+    .wp-block-column:not(:first-child) {
         margin-left: 0;
     }
 }
@@ -36,5 +43,13 @@
     .partners {
         grid-template-columns: repeat(6, 1fr);
         grid-column-gap: 2em;
+        &.partners--internal {
+            grid-template-columns: repeat(3, 1fr);
+            grid-row-gap: 3em;
+            img {
+                max-width: 220px;
+                height: auto;
+            }
+        }
     }
 }

@@ -23,5 +23,12 @@
         margin-bottom: 1em;
 
     }
+
+    // Weird fix for the partners page
+    &.page-id-2826 {
+        .site-main .container {
+            display: inherit;
+        }
+    }
     // Add more Atlantic only here
 }

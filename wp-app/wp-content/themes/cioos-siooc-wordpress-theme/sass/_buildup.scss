@@ -204,4 +204,13 @@ input[type="color"] {
 	//colours set in regional colours
 }
 
-
+// Smooth scrolling
+html {
+	scroll-behavior: smooth;
+}
+:target:before {
+	content: "";
+	display: block;
+	height: 2em;
+	margin-top: -2em;
+}

@@ -12,6 +12,7 @@ input.btn {
     text-decoration: none !important;
     padding: 1.25em 1.625em;
     border: 2px solid $color_1;
+    display: inline-block;
     &.btn--solid {
         background: $color_1;
         color: $white !important;
@@ -128,5 +129,19 @@ input.btn {
                 color: #0c3755;
             }
         }
+    }
+}
+
+// Responsive video
+.video-container {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 55%;
+    iframe,
+    object,
+    embed {
+        position: absolute;
+        width: 100%;
+        height: 100%;
     }
 }
