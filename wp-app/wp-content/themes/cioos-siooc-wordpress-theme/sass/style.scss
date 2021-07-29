@@ -82,7 +82,7 @@ $mono_font: monaco, consolas, "Andale Mono", "DejaVu Sans Mono",
 // these are used where appropriate around the site in
 // links and navigation colours, rollovers and more
 $ras:
-  "atlantic" rgb(228, 140, 102)         rgba(229, 81, 98, 1)    #98213d   rgba(47, 184, 218, 1)   #ffdbe3,
+  "atlantic" rgb(228, 140, 102)         rgba(229, 81, 98, 1)    rgba(152, 33, 61, 1)   rgba(47, 184, 218, 1)    rgba(255, 219, 227, 1),
   "pacific"  rgba(185, 214, 242, 1)     rgba(0, 116, 144, 1)    rgba(255, 200, 87, 1)   rgba(255, 107, 53, 1)   rgba(135, 142, 136, 1),
   "national" rgba(181, 181, 181, 1)     rgba(82, 167, 155, 1)   rgba(198, 227, 223, 1)  rgba(250, 114, 104, 1)  rgba(255, 255, 255, 1), 
   "slgo"     rgba(30, 70, 89, 1)        rgba(0, 173, 239, 1)    rgba(140, 198, 62, 1)   rgba(198, 203, 31, 1)   rgba(193, 180, 153, 1);
@@ -185,7 +185,7 @@ $white: #ffffff;
     }
   }
   .post-nav {
-    padding: 2em 0;
+    padding: 2em 0 4em;
     .container {
       display: flex;
       flex-wrap: nowrap;
@@ -377,10 +377,34 @@ $white: #ffffff;
         .newsletter-field {
             margin-bottom: 0.5em;
         }
+        form {
+          p {
+            margin-bottom: 0; // If widget in footer adds paragraph tags
+          }
+        }
     }
 }
 .elementor-section-wrap > section {
   margin-bottom: 2.5em;
+}
+
+// Edit link when you are logged in
+.edit-link {
+  display: block;
+  margin: 2em 0 4em;
+  a {
+    font-weight: 800;
+    text-align: center;
+    background: $color_2;
+    width: 100%;
+    display: block;
+    color: $white !important;
+    text-decoration: none !important;
+    padding: 0.5em 0;
+    &:hover {
+      background-color: $color_1;
+    }
+  }
 }
 
 /*----------------------------------------------------------
@@ -519,7 +543,7 @@ $white: #ffffff;
     input[type="reset"]:focus,
     input[type="submit"]:active,
     input[type="submit"]:focus {
-      background: $color_1; //button hovers
+      background: $white; //button hovers
       border-color: $color_2;
       color: $color_2;
     }

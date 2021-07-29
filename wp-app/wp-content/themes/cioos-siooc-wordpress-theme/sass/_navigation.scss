@@ -39,6 +39,10 @@ nav.site-nav > div,
 	display: block;
 	width: 100%;
 	align-self: center;
+	.sub-menu {
+		text-transform: capitalize;
+		font-weight: 400;
+	}
 }
 
 ul.nav-menu,
@@ -151,6 +155,9 @@ ul.menu,
 }
 
 @media screen and (max-width: $mobile_trigger) {
+	.menu-toggle {
+		font-weight: 700;
+	}
 	.main-navigation.toggled ul,
 	.menu-toggle {
 		display: block;

@@ -1,6 +1,10 @@
 
 /* Text meant only for screen readers. */
-
+.invis {
+	position:absolute;
+	left:100000px;
+	display:none
+}
 .screen-reader-text {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
