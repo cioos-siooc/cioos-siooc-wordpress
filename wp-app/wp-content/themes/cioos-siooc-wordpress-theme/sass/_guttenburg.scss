@@ -18,6 +18,20 @@
     }
 }
 
+// Reset .wp-block-button__link
+.wp-block-button .wp-block-button__link {
+	color: transparent;
+	background-color: transparent;
+	border-radius: 0;
+	box-shadow: unset;
+	font-size: unset;
+	padding: 0;
+	text-align: center;
+	text-decoration: none;
+	overflow-wrap: unset;
+	box-sizing: unset;
+}
+
 // Home page partner logos
 .partners {
     display: grid;

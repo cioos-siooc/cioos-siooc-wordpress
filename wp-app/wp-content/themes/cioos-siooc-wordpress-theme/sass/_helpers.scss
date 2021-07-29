@@ -1,27 +1,21 @@
 // Width of elements
-.width-70 {
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.width-80 {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.width-90 {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+$widths: 60, 70, 80, 90, 100;
+@each $width in $widths {
+    .width-#{$width} {
+        width: percentage($width/100);
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 // Spacings
-.bottom-1 { margin-bottom: 1em }
-.bottom-2 { margin-bottom: 2em }
-.bottom-3 { margin-bottom: 3em }
-.top-1 { margin-top: 1em }
-.top-2 { margin-top: 2em }
-.top-3 { margin-top: 3em }
+$spacings: 1, 2, 3, 4, 5;
+@each $spacing in $spacings {
+    .bottom-#{$spacing} { margin-bottom: #{$spacing}em; }
+    .top-#{$spacing} { margin-top: #{$spacing}em }
+    .left-#{$spacing} { margin-left: #{$spacing}em }
+    .right-#{$spacing} { margin-right: #{$spacing}em }
+}
 
 // Alignment
 .center {

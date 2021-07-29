@@ -1,23 +1,28 @@
 // Insert your primary and secondary colours here
-$color_1: rgba(229, 81, 98, 1);
-$color_2: #98213d;
+$color_1: rgba(229, 81, 98, 1); // 2
+$color_2: #98213d;              // 3
 
 // Buttons
 a.btn,
-input.btn {
+input.btn,
+.wp-block-button {
     font-weight: 700;
     text-decoration: none !important;
     padding: 1.25em 1.625em;
     border: 2px solid $color_1;
-    &.btn--solid {
+
+    &.btn--solid,
+    &.btn--solid .wp-block-button__link {
         background: $color_1;
         color: $white !important;
     }
-    &.btn--hollow {
+    &.btn--hollow,
+    &.btn--hollow .wp-block-button__link  {
         background: $white;
         color: $black !important;
     }  
-    &:hover {
+    &:hover,
+    &:hover .wp-block-button__link {
         background: $color_2 !important;
         border-color: $color_2;
         color: $white !important;
