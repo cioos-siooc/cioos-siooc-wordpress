@@ -18,6 +18,21 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php esc_url( bloginfo( 'pingback_url' ) ); ?>" />
 	<?php wp_head(); ?>
+	<?php 
+	$google_analytics_choice = get_theme_mod( 'google_analytics', true );
+	if ( $google_analytics_choice === 'tag'){	?>		
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo get_theme_mod( 'tag_google_analytics' ); ?>"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', '<?php echo get_theme_mod( 'tag_google_analytics' ); ?>');
+		</script>
+	<?php } else if( $google_analytics_choice === 'custom'){ ?>
+		<?php echo get_theme_mod( 'custom_google_analytics' ); ?>
+	<?php } ?>
 </head>
 
 <body <?php body_class(get_theme_mod( 'ra_selector' )); ?>>
