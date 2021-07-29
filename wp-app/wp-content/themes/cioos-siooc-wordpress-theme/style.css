@@ -1259,8 +1259,6 @@ ul.menu .menu-item-has-children > a::after,
 }
 
 .wp-block-button .wp-block-button__link {
-	color: transparent;
-	background-color: transparent;
 	border-radius: 0;
 	box-shadow: unset;
 	font-size: unset;
@@ -1318,6 +1316,14 @@ input.btn,
 	text-decoration: none !important;
 	padding: 1.25em 1.625em;
 	border: 2px solid #e55162;
+	color: #e55162;
+}
+
+a.btn .wp-block-button__link,
+input.btn .wp-block-button__link,
+.wp-block-button .wp-block-button__link {
+	color: #e55162;
+	background: #ffffff;
 }
 
 a.btn.btn--solid,
@@ -1623,6 +1629,17 @@ input.btn:hover .wp-block-button__link,
 	letter-spacing: -0.05px;
 	font-size: 1.875em;
 	margin-bottom: 1em;
+}
+
+.atlantic .entry-content h2 {
+	font-size: 1.5em;
+	margin-top: 1.25em;
+}
+
+.atlantic .wp-block-group.highlight {
+	border-left: 8px solid #e55162;
+	padding: 0em 1em 0em 2em;
+	margin-top: 3em;
 }
 
 .atlantic.page-id-2826 .site-main .container {

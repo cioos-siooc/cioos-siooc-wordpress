@@ -13,6 +13,12 @@ input.btn,
     text-decoration: none !important;
     padding: 1.25em 1.625em;
     border: 2px solid $color_1;
+    color: $color_1;
+
+    .wp-block-button__link {
+        color: $color_1;
+        background: $white;
+    }
 
     &.btn--solid,
     &.btn--solid .wp-block-button__link {

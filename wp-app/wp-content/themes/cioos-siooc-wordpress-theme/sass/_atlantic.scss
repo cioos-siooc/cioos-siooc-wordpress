@@ -24,6 +24,19 @@
 
     }
 
+    .entry-content {
+        h2 {
+            font-size: 1.5em;
+            margin-top: 1.25em;
+        }
+    }
+
+    .wp-block-group.highlight {
+        border-left: 8px solid $color_1;
+        padding: 0em 1em 0em 2em;
+        margin-top: 3em;
+    }
+
     // Weird fix for the partners page
     &.page-id-2826 {
         .site-main .container {
