@@ -639,6 +639,17 @@ input[type="color"] {
 	font-weight: 400;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
+:target:before {
+	content: "";
+	display: block;
+	height: 2em;
+	margin-top: -2em;
+}
+
 /* Posts and pages
 --------------------------------------------- */
 .sticky {
@@ -965,6 +976,13 @@ nav.site-nav > div,
 	align-self: center;
 }
 
+.main-nav .sub-menu,
+nav.site-nav > div .sub-menu,
+.main-navigation .sub-menu {
+	text-transform: capitalize;
+	font-weight: 400;
+}
+
 ul.nav-menu,
 ul.menu,
 .menu > ul {
@@ -1108,6 +1126,9 @@ ul.menu .menu-item-has-children > a::after,
 }
 
 @media screen and (max-width: 800px) {
+	.menu-toggle {
+		font-weight: 700;
+	}
 	.main-navigation.toggled ul,
 	.menu-toggle {
 		display: block;
@@ -1173,6 +1194,12 @@ ul.menu .menu-item-has-children > a::after,
 }
 
 /* Text meant only for screen readers. */
+.invis {
+	position: absolute;
+	left: 100000px;
+	display: none;
+}
+
 .screen-reader-text {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
@@ -1250,7 +1277,16 @@ ul.menu .menu-item-has-children > a::after,
 	grid-column-gap: 3em;
 }
 
-.partners.wp-block-column:not(:first-child) {
+.partners div {
+	align-self: center;
+}
+
+.partners.partners--internal {
+	grid-row-gap: 3em;
+}
+
+.partners.wp-block-column:not(:first-child),
+.partners .wp-block-column:not(:first-child) {
 	margin-left: 0;
 }
 
@@ -1264,6 +1300,14 @@ ul.menu .menu-item-has-children > a::after,
 	.partners {
 		grid-template-columns: repeat(6, 1fr);
 		grid-column-gap: 2em;
+	}
+	.partners.partners--internal {
+		grid-template-columns: repeat(3, 1fr);
+		grid-row-gap: 3em;
+	}
+	.partners.partners--internal img {
+		max-width: 220px;
+		height: auto;
 	}
 }
 
@@ -1282,6 +1326,7 @@ input.btn.btn--solid,
 input.btn.btn--solid .wp-block-button__link,
 .wp-block-button.btn--solid,
 .wp-block-button.btn--solid .wp-block-button__link {
+	display: inline-block;
 	background: #e55162;
 	color: #ffffff !important;
 }
@@ -1306,6 +1351,143 @@ input.btn:hover .wp-block-button__link,
 	border-color: #98213d;
 	color: #ffffff !important;
 	transition: all 0.3s ease;
+}
+
+.team-cards {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-row-gap: 2em;
+}
+
+.team-cards .wp-block-column:not(:first-child) {
+	margin-left: 0;
+}
+
+@media screen and (min-width: 781px) {
+	.team-cards {
+		grid-template-columns: repeat(3, 1fr);
+		grid-column-gap: 2em;
+	}
+}
+
+@media screen and (max-width: 781px) {
+	.additional-team-cards {
+		margin-bottom: 0;
+	}
+	.additional-team-cards .team-card--small {
+		margin-bottom: 2em;
+	}
+}
+
+.team-card {
+	padding: 1.5em 2em;
+	transition: all 0.5s ease;
+	background: #f6fafd;
+	background-position: center;
+}
+
+.team-card:hover {
+	background: #0c3755;
+}
+
+.team-card:hover h3,
+.team-card:hover h3 + p {
+	color: #ffffff;
+}
+
+.team-card:hover a {
+	color: #ffffff;
+	text-decoration-color: #ffffff;
+}
+
+.team-card:hover .wp-block-separator {
+	background-color: #000000;
+}
+
+.team-card h3,
+.team-card h4 {
+	font-weight: 700;
+	letter-spacing: -1px;
+	color: #000000;
+	margin-bottom: 0em;
+}
+
+.team-card h3 {
+	font-size: 1.325rem;
+}
+
+.team-card h3 + p {
+	font-style: italic;
+	font-weight: 300;
+}
+
+.team-card .wp-block-separator {
+	height: 3px;
+	width: 100px;
+	margin: 0.75em 0;
+	background-color: #d30f50;
+	border-top: 0;
+	border-bottom: 0;
+}
+
+.team-card p {
+	margin-bottom: 0;
+}
+
+.team-card a {
+	font-weight: 700;
+	font-size: 0.875em;
+}
+
+.team-card a:hover {
+	color: #ffffff !important;
+	text-decoration-color: #d30f50 !important;
+}
+
+.team-card.team-card--small {
+	padding: 0;
+	background: none;
+}
+
+.team-card.team-card--small:hover {
+	background: none;
+}
+
+.team-card.team-card--small h4 {
+	font-size: 1.125em;
+	font-weight: 800;
+	margin-bottom: 0.325rem;
+}
+
+.team-card.team-card--small h4 + p {
+	font-style: italic;
+	font-weight: 300;
+	margin-bottom: 0.325rem;
+}
+
+.team-card.team-card--small p {
+	line-height: 1.25em;
+}
+
+.team-card.team-card--small p:last-child {
+	font-weight: 700;
+	font-size: 0.875em;
+	letter-spacing: -0.5px;
+	color: #0c3755;
+}
+
+.video-container {
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 55%;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
 
 .width-60 {
@@ -1435,6 +1617,18 @@ input.btn:hover .wp-block-button__link,
 	text-transform: uppercase;
 }
 
+.atlantic .entry-title {
+	text-align: center;
+	font-weight: 800;
+	letter-spacing: -0.05px;
+	font-size: 1.875em;
+	margin-bottom: 1em;
+}
+
+.atlantic.page-id-2826 .site-main .container {
+	display: inherit;
+}
+
 /*----------------------------------------------------------
 # The site row container
 ----------------------------------------------------------*/
@@ -1525,7 +1719,7 @@ input.btn:hover .wp-block-button__link,
 }
 
 .page-header .post-nav {
-	padding: 2em 0;
+	padding: 2em 0 4em;
 }
 
 .page-header .post-nav .container {
@@ -1737,8 +1931,32 @@ input.btn:hover .wp-block-button__link,
 	margin-bottom: 0.5em;
 }
 
+.site-footer .mailchimp-form form p {
+	margin-bottom: 0;
+}
+
 .elementor-section-wrap > section {
 	margin-bottom: 2.5em;
+}
+
+.edit-link {
+	display: block;
+	margin: 2em 0 4em;
+}
+
+.edit-link a {
+	font-weight: 800;
+	text-align: center;
+	background: #98213d;
+	width: 100%;
+	display: block;
+	color: #ffffff !important;
+	text-decoration: none !important;
+	padding: 0.5em 0;
+}
+
+.edit-link a:hover {
+	background-color: #e55162;
 }
 
 /*----------------------------------------------------------
@@ -1883,7 +2101,7 @@ body.atlantic input[type="reset"]:active,
 body.atlantic input[type="reset"]:focus,
 body.atlantic input[type="submit"]:active,
 body.atlantic input[type="submit"]:focus {
-	background: #e48c66;
+	background: #ffffff;
 	border-color: #e55162;
 	color: #e55162;
 }
@@ -2117,7 +2335,7 @@ body.pacific input[type="reset"]:active,
 body.pacific input[type="reset"]:focus,
 body.pacific input[type="submit"]:active,
 body.pacific input[type="submit"]:focus {
-	background: #b9d6f2;
+	background: #ffffff;
 	border-color: #007490;
 	color: #007490;
 }
@@ -2351,7 +2569,7 @@ body.national input[type="reset"]:active,
 body.national input[type="reset"]:focus,
 body.national input[type="submit"]:active,
 body.national input[type="submit"]:focus {
-	background: #b5b5b5;
+	background: #ffffff;
 	border-color: #52a79b;
 	color: #52a79b;
 }
@@ -2585,7 +2803,7 @@ body.slgo input[type="reset"]:active,
 body.slgo input[type="reset"]:focus,
 body.slgo input[type="submit"]:active,
 body.slgo input[type="submit"]:focus {
-	background: #1e4659;
+	background: #ffffff;
 	border-color: #00adef;
 	color: #00adef;
 }
