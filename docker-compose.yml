@@ -33,14 +33,20 @@ services:
     links:
       - db
 
-  # wpcli:
-  #   image: wordpress:cli
-  #   volumes:
-  #     - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
-  #     - ./wp-app:/var/www/html
-  #   depends_on:
-  #     - db
-  #     - wp
+  wpcli:
+    image: wordpress:cli
+    volumes:
+      - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
+      - ./wp-app:/var/www/html
+    user: xfs
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: ${DOCKER_DB_NAME}
+      WORDPRESS_DB_USER: ${DOCKER_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${DOCKER_DB_PASSWORD}
+    depends_on:
+      - db
+      - wp
 
   pma:
     image: phpmyadmin/phpmyadmin
@@ -73,3 +79,4 @@ services:
 
 volumes:
   db_data:
+  wp-app:
