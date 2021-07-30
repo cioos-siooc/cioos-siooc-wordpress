@@ -1,7 +1,7 @@
 
 .atlantic {
     // Hide title on home page
-    &.page-id-1395 {
+    &.home {
         .entry-title {
             display: none;
         }
@@ -42,7 +42,8 @@
     }
 
     // Weird fix for the partners page
-    &.page-id-2826 {
+    &.page-id-2826,
+    &.page-id-2840 {
         .site-main .container {
             display: inherit;
         }

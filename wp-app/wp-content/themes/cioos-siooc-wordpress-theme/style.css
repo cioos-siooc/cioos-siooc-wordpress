@@ -1611,7 +1611,7 @@ input.btn:hover .wp-block-button__link,
 	margin-right: auto;
 }
 
-.atlantic.page-id-1395 .entry-title {
+.atlantic.home .entry-title {
 	display: none;
 }
 
@@ -1646,7 +1646,7 @@ input.btn:hover .wp-block-button__link,
 	margin-top: 1.5em;
 }
 
-.atlantic.page-id-2826 .site-main .container {
+.atlantic.page-id-2826 .site-main .container, .atlantic.page-id-2840 .site-main .container {
 	display: inherit;
 }
 
