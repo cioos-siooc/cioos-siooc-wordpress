@@ -1642,6 +1642,10 @@ input.btn:hover .wp-block-button__link,
 	margin-top: 3em;
 }
 
+.atlantic .wp-block-media-text {
+	margin-top: 1.5em;
+}
+
 .atlantic.page-id-2826 .site-main .container {
 	display: inherit;
 }
