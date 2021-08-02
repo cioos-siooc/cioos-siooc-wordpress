@@ -1332,7 +1332,6 @@ input.btn.btn--solid,
 input.btn.btn--solid .wp-block-button__link,
 .wp-block-button.btn--solid,
 .wp-block-button.btn--solid .wp-block-button__link {
-	display: inline-block;
 	background: #e55162;
 	color: #ffffff !important;
 }
