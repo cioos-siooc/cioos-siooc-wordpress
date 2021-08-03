@@ -123,6 +123,7 @@ function fetch_ckan_organizations(){
 
 	$return_value = "<p>NO CKAN API URL SPECIFIED!</p>";
 
+	// Strip trailing slash to ensure consistency in generated URLs, i.e. no double slashes in API calls.
 	$base_url = rtrim(get_theme_mod("ra_catalogue_api_url"), '/');
 
 	if(!empty($base_url)){
@@ -159,9 +160,7 @@ function fetch_ckan_organizations(){
 		}
 		
 		$_org_detail_template  = "  <div class=\"wp-block-column\">";
-		// $_org_detail_template .= "    <figure class=\"wp-block-image size-large\">";
-		$_org_detail_template .= "      {org_logo_link}";
-		// $_org_detail_template .= "    </figure>";
+		$_org_detail_template .= "    {org_logo_link}";
 		$_org_detail_template .= "  </div>";
 
 		$_org_logo_link_template = "<figure class=\"wp-block-image size-large\"><a href=\"{ckan_org_url}\"><img src=\"{logo}\" loading=\"lazy\" alt=\"{name}\" /></a></figure>";
@@ -181,7 +180,7 @@ function fetch_ckan_organizations(){
 				$logo_path = sprintf("%s://%s/%s", $source_url["scheme"], $source_url["host"], $logo_path);
 			}
 			
-			// If logo emtpy then create a text link, otherwise insert logo
+			// If logo emtpy then create a text link, otherwise insert logo + link
 			if(empty($logo_path)){
 				$_org_detail = str_replace("{org_logo_link}", $_org_link_template, $_org_detail);
 			}
@@ -189,6 +188,7 @@ function fetch_ckan_organizations(){
 				$_org_detail = str_replace("{org_logo_link}", $_org_logo_link_template, $_org_detail);
 			}
 
+			// With template created, replace values and add to output
 			$_org_detail = str_replace("{name}", $org["name"][$lang], $_org_detail);
 			$_org_detail = str_replace("{ckan_org_url}", $org["ckan_org_url"], $_org_detail);
 			$_org_detail = str_replace("{site_url}", $org["site_url"], $_org_detail);
@@ -201,8 +201,6 @@ function fetch_ckan_organizations(){
 		curl_close($curl);
 	}
 
-	// return "<p><strong>[SHORT CODE PLACEHOLDER]: $base_url </strong></p>";
-	// return get_locale();
 	return $return_value;
 }
 
