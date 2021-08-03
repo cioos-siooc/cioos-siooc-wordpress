@@ -49,4 +49,16 @@
         }
     }
     // Add more Atlantic only here
+
+    // CKAN Organization List Styling for Orgs without a logo specified in CKAN
+    .ra_ckan_org_list {
+        &.partners {
+            .wp-block-column > a.btn {
+                display: inline-block;
+                text-align: center;
+                font-size: 1em;
+                padding: 1em;
+            }
+        }
+    }
 }

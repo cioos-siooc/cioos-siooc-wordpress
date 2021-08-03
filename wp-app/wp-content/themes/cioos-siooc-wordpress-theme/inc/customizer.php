@@ -159,30 +159,39 @@ function fetch_ckan_organizations(){
 		}
 		
 		$_org_detail_template  = "  <div class=\"wp-block-column\">";
-		$_org_detail_template .= "    <figure class=\"wp-block-image size-large\">";
-		$_org_detail_template .= "      <a href=\"{ckan_org_url}\">";
-		$_org_detail_template .= "      <img src=\"{logo}\" loading=\"lazy\" alt=\"{name}\" />";
-		$_org_detail_template .= "      </a>";
-		$_org_detail_template .= "    </figure>";
+		// $_org_detail_template .= "    <figure class=\"wp-block-image size-large\">";
+		$_org_detail_template .= "      {org_logo_link}";
+		// $_org_detail_template .= "    </figure>";
 		$_org_detail_template .= "  </div>";
+
+		$_org_logo_link_template = "<figure class=\"wp-block-image size-large\"><a href=\"{ckan_org_url}\"><img src=\"{logo}\" loading=\"lazy\" alt=\"{name}\" /></a></figure>";
+		$_org_link_template = "<a href=\"{ckan_org_url}\" class=\"btn btn--solid\">{name}</a>";
 
 		$return_value = "<div class=\"wp-block-columns ra_ckan_org_list partners bottom-3\">";
 		foreach($org_details as $key => $org){
 			$_org_detail = $_org_detail_template;
-			$_org_detail = str_replace("{name}", $org["name"][$lang], $_org_detail);
-			$_org_detail = str_replace("{ckan_org_url}", $org["ckan_org_url"], $_org_detail);
-			$_org_detail = str_replace("{site_url}", $org["site_url"], $_org_detail);
-
+			
 			$logo_path =  $org["logo"][$lang];
-
+			
 			// Determine if a logo path is a full URL or if it is a relataive 
 			// URL, which implies that it a path relative to the root of the 
 			// CKAN base URL.
-			if(!filter_var($logo_path, FILTER_VALIDATE_URL)){
+			if(!filter_var($logo_path, FILTER_VALIDATE_URL) && !empty($logo_path)){
 				$source_url = parse_url($base_url);
 				$logo_path = sprintf("%s://%s/%s", $source_url["scheme"], $source_url["host"], $logo_path);
 			}
+			
+			// If logo emtpy then create a text link, otherwise insert logo
+			if(empty($logo_path)){
+				$_org_detail = str_replace("{org_logo_link}", $_org_link_template, $_org_detail);
+			}
+			else{
+				$_org_detail = str_replace("{org_logo_link}", $_org_logo_link_template, $_org_detail);
+			}
 
+			$_org_detail = str_replace("{name}", $org["name"][$lang], $_org_detail);
+			$_org_detail = str_replace("{ckan_org_url}", $org["ckan_org_url"], $_org_detail);
+			$_org_detail = str_replace("{site_url}", $org["site_url"], $_org_detail);
 			$_org_detail = str_replace("{logo}", $logo_path, $_org_detail);
 			
 			$return_value .= $_org_detail;

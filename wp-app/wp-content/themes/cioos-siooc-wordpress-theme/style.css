@@ -1649,6 +1649,13 @@ input.btn:hover .wp-block-button__link,
 	display: inherit;
 }
 
+.atlantic .ra_ckan_org_list.partners .wp-block-column > a.btn {
+	display: inline-block;
+	text-align: center;
+	font-size: 1em;
+	padding: 1em;
+}
+
 /*----------------------------------------------------------
 # The site row container
 ----------------------------------------------------------*/
