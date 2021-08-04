@@ -1,142 +1,138 @@
-// Insert your primary and secondary colours here
-$color_1: rgba(229, 81, 98, 1);
-$color_2: rgba(152, 33, 61, 1);
-$accent: rgba(12, 55, 85, 1);
-$salmon: rgba(211, 15, 80, 1);
-$background: rgba(246, 250, 253, 1);
+@each $name, $color_1, $color_2, $color_3, $color_4, $color_5, $color_6 in $ras {
+    body.#{$name} {
 
-// Buttons
-a.btn,
-input.btn,
-.wp-block-button {
-    font-weight: 700;
-    text-decoration: none !important;
-    padding: 1.25em 1.625em;
-    border: 2px solid $color_1;
-    color: $color_1;
-
-    .wp-block-button__link {
-        color: $color_1;
-        background: $white;
-    }
-
-    &.btn--solid,
-    &.btn--solid .wp-block-button__link {
-        background: $color_1;
-        color: $white !important;
-    }
-    &.btn--hollow,
-    &.btn--hollow .wp-block-button__link  {
-        background: $white;
-        color: $black !important;
-    }  
-    &:hover,
-    &:hover .wp-block-button__link {
-        background: $color_2 !important;
-        border-color: $color_2;
-        color: $white !important;
-        transition: all 0.3s ease;      
-    }
-}
-
-// Team cards
-.team-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-row-gap: 2em;
-    .wp-block-column:not(:first-child) {
-        margin-left: 0;
-    }
-}
-@media screen and (min-width: 781px) {
-    .team-cards {
-        grid-template-columns: repeat(3, 1fr);
-        grid-column-gap: 2em;
-    }
-}
-@media screen and (max-width: 781px) {
-    .additional-team-cards {
-        margin-bottom: 0;
-        .team-card--small {
-            margin-bottom: 2em;
-        }
-    }
-}
-.team-card {
-    padding: 1.5em 2em;
-    transition: all 0.5s ease;
-    background: $background;
-    background-position: center;
-    &:hover {
-        background: $accent;
-        h3,
-        h3 + p {
-            color: $white;
-        }
-        a {
-            color: $white;
-            text-decoration-color: $white;
-        }
-        .wp-block-separator {
-            background-color: $black;
-        }
-    }
-    h3,
-    h4 {
-        font-weight: 700;
-        letter-spacing: -1px;
-        color: $black;
-        margin-bottom: 0em;
-    }
-    h3 {
-        font-size: 1.325rem;
-        & + p {
-            font-style: italic;
-            font-weight: 300;
-        }
-    }
-    .wp-block-separator {
-        height: 3px;
-        width: 100px;
-        margin: 0.75em 0;
-        background-color: $salmon;
-        border-top: 0;
-        border-bottom: 0;
-    }
-    p {
-        margin-bottom: 0;
-    }
-    a {
-        font-weight: 700;
-        font-size: 0.875em;
-        &:hover {
-            color: $white !important;
-            text-decoration-color: $salmon !important;
-        }
-    }
-    &.team-card--small {
-        padding: 0;
-        background: none;
-        &:hover {
-            background: none;
-        }
-        h4 {
-            font-size: 1.125em;
-            font-weight: 800;
-            margin-bottom: 0.325rem;
-            & + p {
-                font-style: italic;
-                font-weight: 300;
-                margin-bottom: 0.325rem;
+        // Buttons
+        a.btn,
+        input.btn,
+        .wp-block-button {
+            font-weight: 700;
+            text-decoration: none !important;
+            padding: 1.25em 1.625em;
+            border: 2px solid $color_2;
+            color: $color_2;
+            .wp-block-button__link {
+                color: $color_2;
+                background: $white;
+            }
+            &.btn--solid,
+            &.btn--solid .wp-block-button__link {
+                background: $color_2;
+                color: $white !important;
+            }
+            &.btn--hollow,
+            &.btn--hollow .wp-block-button__link  {
+                background: $white;
+                color: $black !important;
+            }  
+            &:hover,
+            &:hover .wp-block-button__link {
+                background: $color_3 !important;
+                border-color: $color_3 !important;
+                color: $white !important;
+                transition: all 0.3s ease;      
             }
         }
-        p {
-            line-height: 1.25em;
-            &:last-child {
+
+        // Team cards
+        .team-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-row-gap: 2em;
+            .wp-block-column:not(:first-child) {
+                margin-left: 0;
+            }
+        }
+        @media screen and (min-width: 781px) {
+            .team-cards {
+                grid-template-columns: repeat(3, 1fr);
+                grid-column-gap: 2em;
+            }
+        }
+        @media screen and (max-width: 781px) {
+            .additional-team-cards {
+                margin-bottom: 0;
+                .team-card--small {
+                    margin-bottom: 2em;
+                }
+            }
+        }
+        .team-card {
+            padding: 1.5em 2em;
+            transition: all 0.5s ease;
+            background: $background;
+            background-position: center;
+            &:hover {
+                background: $color_4;
+                h3,
+                h3 + p {
+                    color: $white;
+                }
+                a {
+                    color: $white;
+                    text-decoration-color: $white;
+                }
+                .wp-block-separator {
+                    background-color: $black;
+                }
+            }
+            h3,
+            h4 {
+                font-weight: 700;
+                letter-spacing: -1px;
+                color: $black;
+                margin-bottom: 0em;
+            }
+            h3 {
+                font-size: 1.325rem;
+                & + p {
+                    font-style: italic;
+                    font-weight: 300;
+                }
+            }
+            .wp-block-separator {
+                height: 3px;
+                width: 100px;
+                margin: 0.75em 0;
+                background-color: #color_3;
+                border-top: 0;
+                border-bottom: 0;
+            }
+            p {
+                margin-bottom: 0;
+            }
+            a {
                 font-weight: 700;
                 font-size: 0.875em;
-                letter-spacing: -0.5px;
-                color: $accent;
+                &:hover {
+                    color: $white !important;
+                    text-decoration-color: #color_3 !important;
+                }
+            }
+            &.team-card--small {
+                padding: 0;
+                background: none;
+                &:hover {
+                    background: none;
+                }
+                h4 {
+                    font-size: 1.125em;
+                    font-weight: 800;
+                    margin-bottom: 0.325rem;
+                    & + p {
+                        font-style: italic;
+                        font-weight: 300;
+                        margin-bottom: 0.325rem;
+                    }
+                }
+                p {
+                    line-height: 1.25em;
+                    &:last-child {
+                        font-weight: 700;
+                        font-size: 0.875em;
+                        letter-spacing: -0.5px;
+                        color: $color_4;
+                    }
+                }
             }
         }
     }

@@ -1,3 +1,6 @@
+@each $name, $color_1, $color_2, $color_3, $color_4, $color_5, $color_6 in $ras {
+    body.#{$name} {
+
 
 .atlantic {
     // Hide title on home page
@@ -48,8 +51,6 @@
             display: inherit;
         }
     }
-    // Add more Atlantic only here
-
     // CKAN Organization List Styling for Orgs without a logo specified in CKAN
     .ra_ckan_org_list {
         &.partners {
