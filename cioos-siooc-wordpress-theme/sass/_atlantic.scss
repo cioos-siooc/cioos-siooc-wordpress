@@ -1,64 +1,62 @@
 @each $name, $color_1, $color_2, $color_3, $color_4, $color_5, $color_6 in $ras {
     body.#{$name} {
-
-
-.atlantic {
-    // Hide title on home page
-    &.home {
+        // Hide title on home page
+        &.home {
+            .entry-title {
+                display: none;
+            }
+        }
+        // Footer heading size is stupid big for subscribe form
+        footer h2 {
+            font-weight: 700;
+            color: $white;
+            margin-bottom: 1.5em;
+            font-size: 1em;
+            text-transform: uppercase;
+        }
+        // Testing new heading styling
         .entry-title {
-            display: none;
+            text-align: center;
+            font-weight: 800;
+            letter-spacing: -0.05px;
+            font-size: 1.875em;
+            margin-bottom: 1em;
+
         }
-    }
-    // Footer heading size is stupid big for subscribe form
-    footer h2 {
-        font-weight: 700;
-        color: $white;
-        margin-bottom: 1.5em;
-        font-size: 1em;
-        text-transform: uppercase;
-    }
-    // Testing new heading styling
-    .entry-title {
-        text-align: center;
-        font-weight: 800;
-        letter-spacing: -0.05px;
-        font-size: 1.875em;
-        margin-bottom: 1em;
 
-    }
-
-    .entry-content {
-        h2 {
-            font-size: 1.5em;
-            margin-top: 1.25em;
+        .entry-content {
+            h2 {
+                font-size: 1.5em;
+                margin-top: 1.25em;
+            }
         }
-    }
 
-    .wp-block-group.highlight {
-        border-left: 8px solid $color_1;
-        padding: 0em 1em 0em 2em;
-        margin-top: 3em;
-    }
-
-    .wp-block-media-text {
-        margin-top: 1.5em;
-    }
-
-    // Weird fix for the partners page
-    &.page-id-2826,
-    &.page-id-2840 {
-        .site-main .container {
-            display: inherit;
+        .wp-block-group.highlight {
+            border-left: 8px solid $color_1;
+            padding: 0em 1em 0em 2em;
+            margin-top: 3em;
         }
-    }
-    // CKAN Organization List Styling for Orgs without a logo specified in CKAN
-    .ra_ckan_org_list {
-        &.partners {
-            .wp-block-column > a.btn {
-                display: inline-block;
-                text-align: center;
-                font-size: 1em;
-                padding: 1em;
+
+        .wp-block-media-text {
+            margin-top: 1.5em;
+        }
+
+        // Weird fix for the partners page
+        &.page-id-2826,
+        &.page-id-2840 {
+            .site-main .container {
+                display: inherit;
+            }
+        }
+        // CKAN Organization List Styling for Orgs without a logo specified in CKAN
+        .ra_ckan_org_list {
+            &.partners {
+                .wp-block-column > a.btn {
+                    display: inline-block;
+                    text-align: center;
+                    font-size: 1em;
+                    padding: 1em;
+                }
             }
         }
     }

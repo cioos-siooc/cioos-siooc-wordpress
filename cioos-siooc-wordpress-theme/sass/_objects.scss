@@ -135,6 +135,24 @@
                 }
             }
         }
+        // Edit link when you are logged in
+        .edit-link {
+            display: block;
+            margin: 2em 0 4em;
+            a {
+                font-weight: 800;
+                text-align: center;
+                background: $color_2;
+                width: 100%;
+                display: block;
+                color: $white !important;
+                text-decoration: none !important;
+                padding: 0.5em 0;
+                &:hover {
+                    background-color: $color_1;
+                }
+            }
+        }
     }
 }
 
