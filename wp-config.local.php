@@ -79,9 +79,9 @@ $table_prefix = 'wp_';
  */
 
 //  Localhost modifications
-define('WP_DEBUG', false );
-define('WP_HOME','https://cioos.local');
-define('WP_SITEURL','https://cioos.local');
+// define('WP_DEBUG', false );
+// define('WP_HOME','https://national.v7');
+// define('WP_SITEURL','https://national.v7');
 
 // If we're behind a proxy server and using HTTPS, we need to alert WordPress of that fact
 // see also http://codex.wordpress.org/Administration_Over_SSL#Using_a_Reverse_Proxy
