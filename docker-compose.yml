@@ -14,9 +14,8 @@ services:
       - ${IP}:443:443
     volumes:
       - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
-      - ./wp-app:/var/www/html # Full wordpress project
-      #- ./plugin-name/trunk/:/var/www/html/wp-content/plugins/plugin-name # Plugin development
-      #- ./theme-name/trunk/:/var/www/html/wp-content/themes/theme-name # Theme development
+      - ./wp-app:/var/www/html # Full wordpress project - if it exists, and once it exists.
+      - ./cioos-siooc-wordpress-theme:/var/www/html/wp-content/themes/cioos-siooc-wordpress-theme # Theme development from this folder. - should overwrite above?
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_NAME: ${DOCKER_DB_NAME}
