@@ -1309,9 +1309,9 @@ ul.menu .menu-item-has-children > a::after,
 	}
 }
 
-a.btn,
-input.btn,
-.wp-block-button {
+body.atlantic a.btn,
+body.atlantic input.btn,
+body.atlantic .wp-block-button {
 	font-weight: 700;
 	text-decoration: none !important;
 	padding: 1.25em 1.625em;
@@ -1319,166 +1319,762 @@ input.btn,
 	color: #e55162;
 }
 
-a.btn .wp-block-button__link,
-input.btn .wp-block-button__link,
-.wp-block-button .wp-block-button__link {
+body.atlantic a.btn .wp-block-button__link,
+body.atlantic input.btn .wp-block-button__link,
+body.atlantic .wp-block-button .wp-block-button__link {
 	color: #e55162;
 	background: #ffffff;
 }
 
-a.btn.btn--solid,
-a.btn.btn--solid .wp-block-button__link,
-input.btn.btn--solid,
-input.btn.btn--solid .wp-block-button__link,
-.wp-block-button.btn--solid,
-.wp-block-button.btn--solid .wp-block-button__link {
+body.atlantic a.btn.btn--solid,
+body.atlantic a.btn.btn--solid .wp-block-button__link,
+body.atlantic input.btn.btn--solid,
+body.atlantic input.btn.btn--solid .wp-block-button__link,
+body.atlantic .wp-block-button.btn--solid,
+body.atlantic .wp-block-button.btn--solid .wp-block-button__link {
 	background: #e55162;
 	color: #ffffff !important;
 }
 
-a.btn.btn--hollow,
-a.btn.btn--hollow .wp-block-button__link,
-input.btn.btn--hollow,
-input.btn.btn--hollow .wp-block-button__link,
-.wp-block-button.btn--hollow,
-.wp-block-button.btn--hollow .wp-block-button__link {
+body.atlantic a.btn.btn--hollow,
+body.atlantic a.btn.btn--hollow .wp-block-button__link,
+body.atlantic input.btn.btn--hollow,
+body.atlantic input.btn.btn--hollow .wp-block-button__link,
+body.atlantic .wp-block-button.btn--hollow,
+body.atlantic .wp-block-button.btn--hollow .wp-block-button__link {
 	background: #ffffff;
 	color: #000000 !important;
 }
 
-a.btn:hover,
-a.btn:hover .wp-block-button__link,
-input.btn:hover,
-input.btn:hover .wp-block-button__link,
-.wp-block-button:hover,
-.wp-block-button:hover .wp-block-button__link {
+body.atlantic a.btn:hover,
+body.atlantic a.btn:hover .wp-block-button__link,
+body.atlantic input.btn:hover,
+body.atlantic input.btn:hover .wp-block-button__link,
+body.atlantic .wp-block-button:hover,
+body.atlantic .wp-block-button:hover .wp-block-button__link {
 	background: #98213d !important;
-	border-color: #98213d;
+	border-color: #98213d !important;
 	color: #ffffff !important;
 	transition: all 0.3s ease;
 }
 
-.team-cards {
+body.atlantic .team-cards {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-row-gap: 2em;
 }
 
-.team-cards .wp-block-column:not(:first-child) {
+body.atlantic .team-cards .wp-block-column:not(:first-child) {
 	margin-left: 0;
 }
 
 @media screen and (min-width: 781px) {
-	.team-cards {
+	body.atlantic .team-cards {
 		grid-template-columns: repeat(3, 1fr);
 		grid-column-gap: 2em;
 	}
 }
 
 @media screen and (max-width: 781px) {
-	.additional-team-cards {
+	body.atlantic .additional-team-cards {
 		margin-bottom: 0;
 	}
-	.additional-team-cards .team-card--small {
+	body.atlantic .additional-team-cards .team-card--small {
 		margin-bottom: 2em;
 	}
 }
 
-.team-card {
+body.atlantic .team-card {
 	padding: 1.5em 2em;
 	transition: all 0.5s ease;
 	background: #f6fafd;
 	background-position: center;
 }
 
-.team-card:hover {
+body.atlantic .team-card:hover {
 	background: #0c3755;
 }
 
-.team-card:hover h3,
-.team-card:hover h3 + p {
+body.atlantic .team-card:hover h3,
+body.atlantic .team-card:hover h3 + p {
 	color: #ffffff;
 }
 
-.team-card:hover a {
+body.atlantic .team-card:hover a {
 	color: #ffffff;
 	text-decoration-color: #ffffff;
 }
 
-.team-card:hover .wp-block-separator {
+body.atlantic .team-card:hover .wp-block-separator {
 	background-color: #000000;
 }
 
-.team-card h3,
-.team-card h4 {
+body.atlantic .team-card h3,
+body.atlantic .team-card h4 {
 	font-weight: 700;
 	letter-spacing: -1px;
 	color: #000000;
 	margin-bottom: 0em;
 }
 
-.team-card h3 {
+body.atlantic .team-card h3 {
 	font-size: 1.325rem;
 }
 
-.team-card h3 + p {
+body.atlantic .team-card h3 + p {
 	font-style: italic;
 	font-weight: 300;
 }
 
-.team-card .wp-block-separator {
+body.atlantic .team-card .wp-block-separator {
 	height: 3px;
 	width: 100px;
 	margin: 0.75em 0;
-	background-color: #d30f50;
+	background-color: #color_3;
 	border-top: 0;
 	border-bottom: 0;
 }
 
-.team-card p {
+body.atlantic .team-card p {
 	margin-bottom: 0;
 }
 
-.team-card a {
+body.atlantic .team-card a {
 	font-weight: 700;
 	font-size: 0.875em;
 }
 
-.team-card a:hover {
+body.atlantic .team-card a:hover {
 	color: #ffffff !important;
-	text-decoration-color: #d30f50 !important;
+	text-decoration-color: #color_3 !important;
 }
 
-.team-card.team-card--small {
+body.atlantic .team-card.team-card--small {
 	padding: 0;
 	background: none;
 }
 
-.team-card.team-card--small:hover {
+body.atlantic .team-card.team-card--small:hover {
 	background: none;
 }
 
-.team-card.team-card--small h4 {
+body.atlantic .team-card.team-card--small h4 {
 	font-size: 1.125em;
 	font-weight: 800;
 	margin-bottom: 0.325rem;
 }
 
-.team-card.team-card--small h4 + p {
+body.atlantic .team-card.team-card--small h4 + p {
 	font-style: italic;
 	font-weight: 300;
 	margin-bottom: 0.325rem;
 }
 
-.team-card.team-card--small p {
+body.atlantic .team-card.team-card--small p {
 	line-height: 1.25em;
 }
 
-.team-card.team-card--small p:last-child {
+body.atlantic .team-card.team-card--small p:last-child {
 	font-weight: 700;
 	font-size: 0.875em;
 	letter-spacing: -0.5px;
 	color: #0c3755;
+}
+
+body.atlantic .edit-link {
+	display: block;
+	margin: 2em 0 4em;
+}
+
+body.atlantic .edit-link a {
+	font-weight: 800;
+	text-align: center;
+	background: #e55162;
+	width: 100%;
+	display: block;
+	color: #ffffff !important;
+	text-decoration: none !important;
+	padding: 0.5em 0;
+}
+
+body.atlantic .edit-link a:hover {
+	background-color: #d30f50;
+}
+
+body.pacific a.btn,
+body.pacific input.btn,
+body.pacific .wp-block-button {
+	font-weight: 700;
+	text-decoration: none !important;
+	padding: 1.25em 1.625em;
+	border: 2px solid #007490;
+	color: #007490;
+}
+
+body.pacific a.btn .wp-block-button__link,
+body.pacific input.btn .wp-block-button__link,
+body.pacific .wp-block-button .wp-block-button__link {
+	color: #007490;
+	background: #ffffff;
+}
+
+body.pacific a.btn.btn--solid,
+body.pacific a.btn.btn--solid .wp-block-button__link,
+body.pacific input.btn.btn--solid,
+body.pacific input.btn.btn--solid .wp-block-button__link,
+body.pacific .wp-block-button.btn--solid,
+body.pacific .wp-block-button.btn--solid .wp-block-button__link {
+	background: #007490;
+	color: #ffffff !important;
+}
+
+body.pacific a.btn.btn--hollow,
+body.pacific a.btn.btn--hollow .wp-block-button__link,
+body.pacific input.btn.btn--hollow,
+body.pacific input.btn.btn--hollow .wp-block-button__link,
+body.pacific .wp-block-button.btn--hollow,
+body.pacific .wp-block-button.btn--hollow .wp-block-button__link {
+	background: #ffffff;
+	color: #000000 !important;
+}
+
+body.pacific a.btn:hover,
+body.pacific a.btn:hover .wp-block-button__link,
+body.pacific input.btn:hover,
+body.pacific input.btn:hover .wp-block-button__link,
+body.pacific .wp-block-button:hover,
+body.pacific .wp-block-button:hover .wp-block-button__link {
+	background: #ffc857 !important;
+	border-color: #ffc857 !important;
+	color: #ffffff !important;
+	transition: all 0.3s ease;
+}
+
+body.pacific .team-cards {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-row-gap: 2em;
+}
+
+body.pacific .team-cards .wp-block-column:not(:first-child) {
+	margin-left: 0;
+}
+
+@media screen and (min-width: 781px) {
+	body.pacific .team-cards {
+		grid-template-columns: repeat(3, 1fr);
+		grid-column-gap: 2em;
+	}
+}
+
+@media screen and (max-width: 781px) {
+	body.pacific .additional-team-cards {
+		margin-bottom: 0;
+	}
+	body.pacific .additional-team-cards .team-card--small {
+		margin-bottom: 2em;
+	}
+}
+
+body.pacific .team-card {
+	padding: 1.5em 2em;
+	transition: all 0.5s ease;
+	background: #f6fafd;
+	background-position: center;
+}
+
+body.pacific .team-card:hover {
+	background: #ff6b35;
+}
+
+body.pacific .team-card:hover h3,
+body.pacific .team-card:hover h3 + p {
+	color: #ffffff;
+}
+
+body.pacific .team-card:hover a {
+	color: #ffffff;
+	text-decoration-color: #ffffff;
+}
+
+body.pacific .team-card:hover .wp-block-separator {
+	background-color: #000000;
+}
+
+body.pacific .team-card h3,
+body.pacific .team-card h4 {
+	font-weight: 700;
+	letter-spacing: -1px;
+	color: #000000;
+	margin-bottom: 0em;
+}
+
+body.pacific .team-card h3 {
+	font-size: 1.325rem;
+}
+
+body.pacific .team-card h3 + p {
+	font-style: italic;
+	font-weight: 300;
+}
+
+body.pacific .team-card .wp-block-separator {
+	height: 3px;
+	width: 100px;
+	margin: 0.75em 0;
+	background-color: #color_3;
+	border-top: 0;
+	border-bottom: 0;
+}
+
+body.pacific .team-card p {
+	margin-bottom: 0;
+}
+
+body.pacific .team-card a {
+	font-weight: 700;
+	font-size: 0.875em;
+}
+
+body.pacific .team-card a:hover {
+	color: #ffffff !important;
+	text-decoration-color: #color_3 !important;
+}
+
+body.pacific .team-card.team-card--small {
+	padding: 0;
+	background: none;
+}
+
+body.pacific .team-card.team-card--small:hover {
+	background: none;
+}
+
+body.pacific .team-card.team-card--small h4 {
+	font-size: 1.125em;
+	font-weight: 800;
+	margin-bottom: 0.325rem;
+}
+
+body.pacific .team-card.team-card--small h4 + p {
+	font-style: italic;
+	font-weight: 300;
+	margin-bottom: 0.325rem;
+}
+
+body.pacific .team-card.team-card--small p {
+	line-height: 1.25em;
+}
+
+body.pacific .team-card.team-card--small p:last-child {
+	font-weight: 700;
+	font-size: 0.875em;
+	letter-spacing: -0.5px;
+	color: #ff6b35;
+}
+
+body.pacific .edit-link {
+	display: block;
+	margin: 2em 0 4em;
+}
+
+body.pacific .edit-link a {
+	font-weight: 800;
+	text-align: center;
+	background: #007490;
+	width: 100%;
+	display: block;
+	color: #ffffff !important;
+	text-decoration: none !important;
+	padding: 0.5em 0;
+}
+
+body.pacific .edit-link a:hover {
+	background-color: #b9d6f2;
+}
+
+body.national a.btn,
+body.national input.btn,
+body.national .wp-block-button {
+	font-weight: 700;
+	text-decoration: none !important;
+	padding: 1.25em 1.625em;
+	border: 2px solid #52a79b;
+	color: #52a79b;
+}
+
+body.national a.btn .wp-block-button__link,
+body.national input.btn .wp-block-button__link,
+body.national .wp-block-button .wp-block-button__link {
+	color: #52a79b;
+	background: #ffffff;
+}
+
+body.national a.btn.btn--solid,
+body.national a.btn.btn--solid .wp-block-button__link,
+body.national input.btn.btn--solid,
+body.national input.btn.btn--solid .wp-block-button__link,
+body.national .wp-block-button.btn--solid,
+body.national .wp-block-button.btn--solid .wp-block-button__link {
+	background: #52a79b;
+	color: #ffffff !important;
+}
+
+body.national a.btn.btn--hollow,
+body.national a.btn.btn--hollow .wp-block-button__link,
+body.national input.btn.btn--hollow,
+body.national input.btn.btn--hollow .wp-block-button__link,
+body.national .wp-block-button.btn--hollow,
+body.national .wp-block-button.btn--hollow .wp-block-button__link {
+	background: #ffffff;
+	color: #000000 !important;
+}
+
+body.national a.btn:hover,
+body.national a.btn:hover .wp-block-button__link,
+body.national input.btn:hover,
+body.national input.btn:hover .wp-block-button__link,
+body.national .wp-block-button:hover,
+body.national .wp-block-button:hover .wp-block-button__link {
+	background: #c6e3df !important;
+	border-color: #c6e3df !important;
+	color: #ffffff !important;
+	transition: all 0.3s ease;
+}
+
+body.national .team-cards {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-row-gap: 2em;
+}
+
+body.national .team-cards .wp-block-column:not(:first-child) {
+	margin-left: 0;
+}
+
+@media screen and (min-width: 781px) {
+	body.national .team-cards {
+		grid-template-columns: repeat(3, 1fr);
+		grid-column-gap: 2em;
+	}
+}
+
+@media screen and (max-width: 781px) {
+	body.national .additional-team-cards {
+		margin-bottom: 0;
+	}
+	body.national .additional-team-cards .team-card--small {
+		margin-bottom: 2em;
+	}
+}
+
+body.national .team-card {
+	padding: 1.5em 2em;
+	transition: all 0.5s ease;
+	background: #f6fafd;
+	background-position: center;
+}
+
+body.national .team-card:hover {
+	background: #fa7268;
+}
+
+body.national .team-card:hover h3,
+body.national .team-card:hover h3 + p {
+	color: #ffffff;
+}
+
+body.national .team-card:hover a {
+	color: #ffffff;
+	text-decoration-color: #ffffff;
+}
+
+body.national .team-card:hover .wp-block-separator {
+	background-color: #000000;
+}
+
+body.national .team-card h3,
+body.national .team-card h4 {
+	font-weight: 700;
+	letter-spacing: -1px;
+	color: #000000;
+	margin-bottom: 0em;
+}
+
+body.national .team-card h3 {
+	font-size: 1.325rem;
+}
+
+body.national .team-card h3 + p {
+	font-style: italic;
+	font-weight: 300;
+}
+
+body.national .team-card .wp-block-separator {
+	height: 3px;
+	width: 100px;
+	margin: 0.75em 0;
+	background-color: #color_3;
+	border-top: 0;
+	border-bottom: 0;
+}
+
+body.national .team-card p {
+	margin-bottom: 0;
+}
+
+body.national .team-card a {
+	font-weight: 700;
+	font-size: 0.875em;
+}
+
+body.national .team-card a:hover {
+	color: #ffffff !important;
+	text-decoration-color: #color_3 !important;
+}
+
+body.national .team-card.team-card--small {
+	padding: 0;
+	background: none;
+}
+
+body.national .team-card.team-card--small:hover {
+	background: none;
+}
+
+body.national .team-card.team-card--small h4 {
+	font-size: 1.125em;
+	font-weight: 800;
+	margin-bottom: 0.325rem;
+}
+
+body.national .team-card.team-card--small h4 + p {
+	font-style: italic;
+	font-weight: 300;
+	margin-bottom: 0.325rem;
+}
+
+body.national .team-card.team-card--small p {
+	line-height: 1.25em;
+}
+
+body.national .team-card.team-card--small p:last-child {
+	font-weight: 700;
+	font-size: 0.875em;
+	letter-spacing: -0.5px;
+	color: #fa7268;
+}
+
+body.national .edit-link {
+	display: block;
+	margin: 2em 0 4em;
+}
+
+body.national .edit-link a {
+	font-weight: 800;
+	text-align: center;
+	background: #52a79b;
+	width: 100%;
+	display: block;
+	color: #ffffff !important;
+	text-decoration: none !important;
+	padding: 0.5em 0;
+}
+
+body.national .edit-link a:hover {
+	background-color: #b5b5b5;
+}
+
+body.slgo a.btn,
+body.slgo input.btn,
+body.slgo .wp-block-button {
+	font-weight: 700;
+	text-decoration: none !important;
+	padding: 1.25em 1.625em;
+	border: 2px solid #00adef;
+	color: #00adef;
+}
+
+body.slgo a.btn .wp-block-button__link,
+body.slgo input.btn .wp-block-button__link,
+body.slgo .wp-block-button .wp-block-button__link {
+	color: #00adef;
+	background: #ffffff;
+}
+
+body.slgo a.btn.btn--solid,
+body.slgo a.btn.btn--solid .wp-block-button__link,
+body.slgo input.btn.btn--solid,
+body.slgo input.btn.btn--solid .wp-block-button__link,
+body.slgo .wp-block-button.btn--solid,
+body.slgo .wp-block-button.btn--solid .wp-block-button__link {
+	background: #00adef;
+	color: #ffffff !important;
+}
+
+body.slgo a.btn.btn--hollow,
+body.slgo a.btn.btn--hollow .wp-block-button__link,
+body.slgo input.btn.btn--hollow,
+body.slgo input.btn.btn--hollow .wp-block-button__link,
+body.slgo .wp-block-button.btn--hollow,
+body.slgo .wp-block-button.btn--hollow .wp-block-button__link {
+	background: #ffffff;
+	color: #000000 !important;
+}
+
+body.slgo a.btn:hover,
+body.slgo a.btn:hover .wp-block-button__link,
+body.slgo input.btn:hover,
+body.slgo input.btn:hover .wp-block-button__link,
+body.slgo .wp-block-button:hover,
+body.slgo .wp-block-button:hover .wp-block-button__link {
+	background: #8cc63e !important;
+	border-color: #8cc63e !important;
+	color: #ffffff !important;
+	transition: all 0.3s ease;
+}
+
+body.slgo .team-cards {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-row-gap: 2em;
+}
+
+body.slgo .team-cards .wp-block-column:not(:first-child) {
+	margin-left: 0;
+}
+
+@media screen and (min-width: 781px) {
+	body.slgo .team-cards {
+		grid-template-columns: repeat(3, 1fr);
+		grid-column-gap: 2em;
+	}
+}
+
+@media screen and (max-width: 781px) {
+	body.slgo .additional-team-cards {
+		margin-bottom: 0;
+	}
+	body.slgo .additional-team-cards .team-card--small {
+		margin-bottom: 2em;
+	}
+}
+
+body.slgo .team-card {
+	padding: 1.5em 2em;
+	transition: all 0.5s ease;
+	background: #f6fafd;
+	background-position: center;
+}
+
+body.slgo .team-card:hover {
+	background: #c6cb1f;
+}
+
+body.slgo .team-card:hover h3,
+body.slgo .team-card:hover h3 + p {
+	color: #ffffff;
+}
+
+body.slgo .team-card:hover a {
+	color: #ffffff;
+	text-decoration-color: #ffffff;
+}
+
+body.slgo .team-card:hover .wp-block-separator {
+	background-color: #000000;
+}
+
+body.slgo .team-card h3,
+body.slgo .team-card h4 {
+	font-weight: 700;
+	letter-spacing: -1px;
+	color: #000000;
+	margin-bottom: 0em;
+}
+
+body.slgo .team-card h3 {
+	font-size: 1.325rem;
+}
+
+body.slgo .team-card h3 + p {
+	font-style: italic;
+	font-weight: 300;
+}
+
+body.slgo .team-card .wp-block-separator {
+	height: 3px;
+	width: 100px;
+	margin: 0.75em 0;
+	background-color: #color_3;
+	border-top: 0;
+	border-bottom: 0;
+}
+
+body.slgo .team-card p {
+	margin-bottom: 0;
+}
+
+body.slgo .team-card a {
+	font-weight: 700;
+	font-size: 0.875em;
+}
+
+body.slgo .team-card a:hover {
+	color: #ffffff !important;
+	text-decoration-color: #color_3 !important;
+}
+
+body.slgo .team-card.team-card--small {
+	padding: 0;
+	background: none;
+}
+
+body.slgo .team-card.team-card--small:hover {
+	background: none;
+}
+
+body.slgo .team-card.team-card--small h4 {
+	font-size: 1.125em;
+	font-weight: 800;
+	margin-bottom: 0.325rem;
+}
+
+body.slgo .team-card.team-card--small h4 + p {
+	font-style: italic;
+	font-weight: 300;
+	margin-bottom: 0.325rem;
+}
+
+body.slgo .team-card.team-card--small p {
+	line-height: 1.25em;
+}
+
+body.slgo .team-card.team-card--small p:last-child {
+	font-weight: 700;
+	font-size: 0.875em;
+	letter-spacing: -0.5px;
+	color: #c6cb1f;
+}
+
+body.slgo .edit-link {
+	display: block;
+	margin: 2em 0 4em;
+}
+
+body.slgo .edit-link a {
+	font-weight: 800;
+	text-align: center;
+	background: #00adef;
+	width: 100%;
+	display: block;
+	color: #ffffff !important;
+	text-decoration: none !important;
+	padding: 0.5em 0;
+}
+
+body.slgo .edit-link a:hover {
+	background-color: #1e4659;
 }
 
 .video-container {
@@ -1610,11 +2206,11 @@ input.btn:hover .wp-block-button__link,
 	margin-right: auto;
 }
 
-.atlantic.home .entry-title {
+body.atlantic.home .entry-title {
 	display: none;
 }
 
-.atlantic footer h2 {
+body.atlantic footer h2 {
 	font-weight: 700;
 	color: #ffffff;
 	margin-bottom: 1.5em;
@@ -1622,7 +2218,7 @@ input.btn:hover .wp-block-button__link,
 	text-transform: uppercase;
 }
 
-.atlantic .entry-title {
+body.atlantic .entry-title {
 	text-align: center;
 	font-weight: 800;
 	letter-spacing: -0.05px;
@@ -1630,26 +2226,164 @@ input.btn:hover .wp-block-button__link,
 	margin-bottom: 1em;
 }
 
-.atlantic .entry-content h2 {
+body.atlantic .entry-content h2 {
 	font-size: 1.5em;
 	margin-top: 1.25em;
 }
 
-.atlantic .wp-block-group.highlight {
-	border-left: 8px solid #e55162;
+body.atlantic .wp-block-group.highlight {
+	border-left: 8px solid #d30f50;
 	padding: 0em 1em 0em 2em;
 	margin-top: 3em;
 }
 
-.atlantic .wp-block-media-text {
+body.atlantic .wp-block-media-text {
 	margin-top: 1.5em;
 }
 
-.atlantic.page-id-2826 .site-main .container, .atlantic.page-id-2840 .site-main .container {
+body.atlantic.page-id-2826 .site-main .container, body.atlantic.page-id-2840 .site-main .container {
 	display: inherit;
 }
 
-.atlantic .ra_ckan_org_list.partners .wp-block-column > a.btn {
+body.atlantic .ra_ckan_org_list.partners .wp-block-column > a.btn {
+	display: inline-block;
+	text-align: center;
+	font-size: 1em;
+	padding: 1em;
+}
+
+body.pacific.home .entry-title {
+	display: none;
+}
+
+body.pacific footer h2 {
+	font-weight: 700;
+	color: #ffffff;
+	margin-bottom: 1.5em;
+	font-size: 1em;
+	text-transform: uppercase;
+}
+
+body.pacific .entry-title {
+	text-align: center;
+	font-weight: 800;
+	letter-spacing: -0.05px;
+	font-size: 1.875em;
+	margin-bottom: 1em;
+}
+
+body.pacific .entry-content h2 {
+	font-size: 1.5em;
+	margin-top: 1.25em;
+}
+
+body.pacific .wp-block-group.highlight {
+	border-left: 8px solid #b9d6f2;
+	padding: 0em 1em 0em 2em;
+	margin-top: 3em;
+}
+
+body.pacific .wp-block-media-text {
+	margin-top: 1.5em;
+}
+
+body.pacific.page-id-2826 .site-main .container, body.pacific.page-id-2840 .site-main .container {
+	display: inherit;
+}
+
+body.pacific .ra_ckan_org_list.partners .wp-block-column > a.btn {
+	display: inline-block;
+	text-align: center;
+	font-size: 1em;
+	padding: 1em;
+}
+
+body.national.home .entry-title {
+	display: none;
+}
+
+body.national footer h2 {
+	font-weight: 700;
+	color: #ffffff;
+	margin-bottom: 1.5em;
+	font-size: 1em;
+	text-transform: uppercase;
+}
+
+body.national .entry-title {
+	text-align: center;
+	font-weight: 800;
+	letter-spacing: -0.05px;
+	font-size: 1.875em;
+	margin-bottom: 1em;
+}
+
+body.national .entry-content h2 {
+	font-size: 1.5em;
+	margin-top: 1.25em;
+}
+
+body.national .wp-block-group.highlight {
+	border-left: 8px solid #b5b5b5;
+	padding: 0em 1em 0em 2em;
+	margin-top: 3em;
+}
+
+body.national .wp-block-media-text {
+	margin-top: 1.5em;
+}
+
+body.national.page-id-2826 .site-main .container, body.national.page-id-2840 .site-main .container {
+	display: inherit;
+}
+
+body.national .ra_ckan_org_list.partners .wp-block-column > a.btn {
+	display: inline-block;
+	text-align: center;
+	font-size: 1em;
+	padding: 1em;
+}
+
+body.slgo.home .entry-title {
+	display: none;
+}
+
+body.slgo footer h2 {
+	font-weight: 700;
+	color: #ffffff;
+	margin-bottom: 1.5em;
+	font-size: 1em;
+	text-transform: uppercase;
+}
+
+body.slgo .entry-title {
+	text-align: center;
+	font-weight: 800;
+	letter-spacing: -0.05px;
+	font-size: 1.875em;
+	margin-bottom: 1em;
+}
+
+body.slgo .entry-content h2 {
+	font-size: 1.5em;
+	margin-top: 1.25em;
+}
+
+body.slgo .wp-block-group.highlight {
+	border-left: 8px solid #1e4659;
+	padding: 0em 1em 0em 2em;
+	margin-top: 3em;
+}
+
+body.slgo .wp-block-media-text {
+	margin-top: 1.5em;
+}
+
+body.slgo.page-id-2826 .site-main .container, body.slgo.page-id-2840 .site-main .container {
+	display: inherit;
+}
+
+body.slgo .ra_ckan_org_list.partners .wp-block-column > a.btn {
 	display: inline-block;
 	text-align: center;
 	font-size: 1em;
@@ -1966,26 +2700,6 @@ input.btn:hover .wp-block-button__link,
 	margin-bottom: 2.5em;
 }
 
-.edit-link {
-	display: block;
-	margin: 2em 0 4em;
-}
-
-.edit-link a {
-	font-weight: 800;
-	text-align: center;
-	background: #98213d;
-	width: 100%;
-	display: block;
-	color: #ffffff !important;
-	text-decoration: none !important;
-	padding: 0.5em 0;
-}
-
-.edit-link a:hover {
-	background-color: #e55162;
-}
-
 /*----------------------------------------------------------
 # Region-dependant colours
 ----------------------------------------------------------*/
@@ -2104,6 +2818,10 @@ body.atlantic h4 a:visited {
 	color: #000000;
 }
 
+body.atlantic .entry-header {
+	display: none;
+}
+
 body.atlantic button,
 body.atlantic input,
 body.atlantic select,
@@ -2198,11 +2916,13 @@ body.atlantic .inline-list-with-checkmarks li::before {
 body.atlantic .elementor-button {
 	background: #e55162;
 	color: #ffffff;
+	text-decoration: none;
 }
 
 body.atlantic .elementor-button:hover {
 	background: #98213d;
 	color: #000000;
+	text-decoration: none;
 }
 
 body.atlantic .elementor-element.elementor-button-info .elementor-button {
@@ -2212,7 +2932,7 @@ body.atlantic .elementor-element.elementor-button-info .elementor-button {
 
 body.atlantic .elementor-element.elementor-button-info .elementor-button:hover {
 	background: #ffffff;
-	color: #2fb8da;
+	color: #0c3755;
 }
 
 body.atlantic .notfound .notfound-404 h1 > span {
@@ -2338,6 +3058,10 @@ body.pacific h4 a:visited {
 	color: #000000;
 }
 
+body.pacific .entry-header {
+	display: none;
+}
+
 body.pacific button,
 body.pacific input,
 body.pacific select,
@@ -2432,11 +3156,13 @@ body.pacific .inline-list-with-checkmarks li::before {
 body.pacific .elementor-button {
 	background: #007490;
 	color: #ffffff;
+	text-decoration: none;
 }
 
 body.pacific .elementor-button:hover {
 	background: #ffc857;
 	color: #000000;
+	text-decoration: none;
 }
 
 body.pacific .elementor-element.elementor-button-info .elementor-button {
@@ -2572,6 +3298,10 @@ body.national h4 a:visited {
 	color: #000000;
 }
 
+body.national .entry-header {
+	display: none;
+}
+
 body.national button,
 body.national input,
 body.national select,
@@ -2666,11 +3396,13 @@ body.national .inline-list-with-checkmarks li::before {
 body.national .elementor-button {
 	background: #52a79b;
 	color: #ffffff;
+	text-decoration: none;
 }
 
 body.national .elementor-button:hover {
 	background: #c6e3df;
 	color: #000000;
+	text-decoration: none;
 }
 
 body.national .elementor-element.elementor-button-info .elementor-button {
@@ -2806,6 +3538,10 @@ body.slgo h4 a:visited {
 	color: #000000;
 }
 
+body.slgo .entry-header {
+	display: none;
+}
+
 body.slgo button,
 body.slgo input,
 body.slgo select,
@@ -2900,11 +3636,13 @@ body.slgo .inline-list-with-checkmarks li::before {
 body.slgo .elementor-button {
 	background: #00adef;
 	color: #ffffff;
+	text-decoration: none;
 }
 
 body.slgo .elementor-button:hover {
 	background: #8cc63e;
 	color: #000000;
+	text-decoration: none;
 }
 
 body.slgo .elementor-element.elementor-button-info .elementor-button {

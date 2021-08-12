@@ -498,6 +498,7 @@ $white: #ffffff;
         h4 a:visited {
             color: $black;
         }
+        .entry-header{display:none;}  //Hide the title
 
     /* Forms
         --------------------------------------------- */
@@ -600,10 +601,12 @@ $white: #ffffff;
     .elementor-button {
       background: $color_2;
       color: $white;
+      text-decoration: none;
     }
     .elementor-button:hover {
       background: $color_3;
       color: $black;
+      text-decoration: none;
     }
     .elementor-element.elementor-button-info .elementor-button {
       background: $white;
@@ -613,11 +616,9 @@ $white: #ffffff;
       background: $white;
       color: $color_4;
     }
-
     .notfound .notfound-404 h1 > span {
       color: $color_2;
     }
-
     .notfound a:hover {
       background-color: $color_2;
     }
