@@ -34,8 +34,8 @@ services:
       WORDPRESS_DB_USER: ${DOCKER_DB_USER}
       WORDPRESS_DB_PASSWORD: ${DOCKER_DB_PASSWORD}
       WORDPRESS_CONFIG_EXTRA: |
-        define('WP_HOME','https://test.cioosatlantic.ca');
-        define('WP_SITEURL','https://test.cioosatlantic.ca');
+        define('WP_HOME','${BASE_URL}');
+        define('WP_SITEURL','${BASE_URL}');
         define('FS_METHOD', 'direct');
         @ini_set( 'upload_max_filesize' , '1024M' );
         @ini_set( 'post_max_size', '1024M');
