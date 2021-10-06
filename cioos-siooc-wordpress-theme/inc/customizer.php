@@ -185,6 +185,11 @@ function fetch_ckan_organizations(){
 		// Get language code for currently selected language
 		$lang = strtolower(substr(get_locale(), 0, 2));
 
+		// Configure Base URL to use current locale setting of Wordpress to 
+		// ensure that when linking to organizations in CKAN the selected 
+		// language is preserved
+		$base_url = $base_url . "/" . $lang; 
+
 		$curl = curl_init();
 
 		$org_list = $base_url . "/api/3/action/organization_list";
@@ -227,7 +232,7 @@ function fetch_ckan_organizations(){
 			
 			$logo_path =  $org["logo"][$lang];
 			
-			// Determine if a logo path is a full URL or if it is a relataive 
+			// Determine if a logo path is a full URL or if it is a relative 
 			// URL, which implies that it a path relative to the root of the 
 			// CKAN base URL.
 			if(!filter_var($logo_path, FILTER_VALIDATE_URL) && !empty($logo_path)){
