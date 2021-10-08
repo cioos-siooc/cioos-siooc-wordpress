@@ -24,10 +24,11 @@ services:
       # Below are production CIOOS Atlantic settings
       #- ${WP_CONTENT}:/var/www/html/wp-content
       #- ${WP_LOGS}:/var/log
-      #- ${WEB_ACCESS_FOLDER}:/var/www/html/docs
-      #- ${METADATA_FOLDER}:/var/www/html/metadata
+      - ${WEB_ACCESS_FOLDER}:/var/www/html/docs
+      - ${METADATA_FOLDER}:/var/www/html/metadata
       #- ${RAW_FOLDER}:/var/www/html/raw
-      #- ${PROFILE_FOLDER}:/var/www/html/profile
+      - ${PROFILE_FOLDER}:/var/www/html/profile
+      - ${CMAR_ACCESS_FOLDER}:/var/www/html/cmar
     environment:
       WORDPRESS_DB_HOST: wp_db:3306
       WORDPRESS_DB_NAME: ${DOCKER_DB_NAME}
