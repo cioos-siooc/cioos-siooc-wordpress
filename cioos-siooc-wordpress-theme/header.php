@@ -18,6 +18,8 @@
 	<meta name="description" content="The Canadian Integrated Ocean Observing System (CIOOS) is a powerful open-access platform for sharing information about the state of our oceans.">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php esc_url( bloginfo( 'pingback_url' ) ); ?>" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<?php wp_head(); ?>
 	<?php 
 	$google_analytics_choice = get_theme_mod( 'google_analytics', true );
