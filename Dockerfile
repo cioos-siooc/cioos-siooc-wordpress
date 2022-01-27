@@ -1,11 +1,16 @@
 # =============================================================================
 # wordpress:5-php7.4-apache
 #
-# WordPress 5.*, Apache 2.4, PHP 7.4
-# Modification: Rsyslog/Fail2Ban setup
+# WordPress 5.*, Apache 2.4, PHP 7.4 (image defaults)
+# Modifications: Rsyslog to shape log format output
+# Update Apache to latest available
+# Default text editors for DevOps
+# W3 Total Cache dependencies
+# Brotli compression
+# Removed Apache identifiers for security
 #
 # =============================================================================
-FROM wordpress:5.8-php7.4-apache
+FROM wordpress:5.9-php7.4-apache
 LABEL maintainer="Jacob Thompson <jacob.thompson@wiwasolvet.ca>"
 ARG PROXY_IP
 ARG BASE_URL
