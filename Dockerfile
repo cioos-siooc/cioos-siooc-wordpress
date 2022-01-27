@@ -110,6 +110,9 @@ RUN printf "%s\n" "<IfModule mod_headers.c>" \
     "Header always set Strict-Transport-Security \"max-age=31536000; includeSubDomains\"" \
     "</IfModule>" >> /etc/apache2/apache2.conf
 
+
+RUN apt-get update && apt-get upgrade apache2 -y
+
 # -----------------------------------------------------------------------------
 # Set ports and env variable HOME
 # -----------------------------------------------------------------------------
