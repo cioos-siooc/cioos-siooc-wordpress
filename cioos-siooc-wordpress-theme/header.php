@@ -15,6 +15,7 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="The Canadian Integrated Ocean Observing System (CIOOS) is a powerful open-access platform for sharing information about the state of our oceans.">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php esc_url( bloginfo( 'pingback_url' ) ); ?>" />
 	<?php wp_head(); ?>
@@ -42,7 +43,7 @@
 	<header id="masthead" class="page-header">
 		<div class="pre-nav">
 			<div class="container">
-				<div class="nationallogo"><img src="<?php bloginfo( 'template_url' ); ?>/img/CIOOS-watermark.svg"></div>
+				<div class="nationallogo"><img alt="CIOOS National" src="<?php bloginfo( 'template_url' ); ?>/img/CIOOS-watermark.svg"></div>
 				<div class="logotype">
 				<?php if ( is_active_sidebar( 'sidebarlogotype' ) ) : ?>
 				<?php dynamic_sidebar( 'sidebarlogotype' ); ?>
