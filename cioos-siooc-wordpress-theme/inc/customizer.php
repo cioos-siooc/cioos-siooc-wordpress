@@ -64,6 +64,33 @@ function cioos_customize_register( $wp_customize ) {
 		'label' => __( 'R.A. CKAN Base URL' ),
 		'description' => __( 'Pulls a list of data contributors from the referenced CKAN organization list that contain at least 1 dataset.  Example: https://catalogue.[hostname]/ or https://[hostname]/ckan/.  Use the [ckan_organizations] shortcode to place the list in a page/post.' ),
 	) );
+	
+	$ra_menus = array();
+	// print("<pre>");
+	$ra_menus[''] = ' - none - ';
+	foreach(wp_get_nav_menus() as $ra_menu_item){
+		$ra_menus[$ra_menu_item->slug] = $ra_menu_item->name;
+		// print($ra_menu_item->slug);
+	}
+	// print("</pre>");
+	
+	$wp_customize->add_setting( 'ra_menu_en', array() );
+	$wp_customize->add_control( 'ra_menu_en', array(
+		'type' => 'select',
+		'section' => 'title_tagline', 
+		'label' => __( 'R.A. English menu selector' ),
+		'choices' => $ra_menus,
+		'description' => __( 'Makes the contents of the selected menu available via the Wordpress REST API in JSON format for consumption by CKAN to create consistent menus' ),
+	) );
+	
+	$wp_customize->add_setting( 'ra_menu_fr', array() );
+	$wp_customize->add_control( 'ra_menu_fr', array(
+		'type' => 'select',
+		'section' => 'title_tagline', 
+		'label' => __( 'R.A. French menu selector' ),
+		'choices' => $ra_menus,
+		'description' => __( 'Makes the contents of the selected menu available via the Wordpress REST API in JSON format for consumption by CKAN to create consistent menus' ),
+	) );
 
 	$wp_customize->add_setting( 'search_enable', array(
 		'default' => false,
@@ -185,6 +212,11 @@ function fetch_ckan_organizations(){
 		// Get language code for currently selected language
 		$lang = strtolower(substr(get_locale(), 0, 2));
 
+		// Configure Base URL to use current locale setting of Wordpress to 
+		// ensure that when linking to organizations in CKAN the selected 
+		// language is preserved
+		$base_url = $base_url . "/" . $lang; 
+
 		$curl = curl_init();
 
 		$org_list = $base_url . "/api/3/action/organization_list";
@@ -227,7 +259,7 @@ function fetch_ckan_organizations(){
 			
 			$logo_path =  $org["logo"][$lang];
 			
-			// Determine if a logo path is a full URL or if it is a relataive 
+			// Determine if a logo path is a full URL or if it is a relative 
 			// URL, which implies that it a path relative to the root of the 
 			// CKAN base URL.
 			if(!filter_var($logo_path, FILTER_VALIDATE_URL) && !empty($logo_path)){
@@ -260,3 +292,68 @@ function fetch_ckan_organizations(){
 }
 
 add_shortcode('ckan_organizations', 'fetch_ckan_organizations');
+
+// Reformats the output of 
+function get_ra_menu($ra_menu_slug) {
+	// Fetch menu items as defined in the RA Menu Selector setting
+	$menu = wp_get_nav_menu_items(get_theme_mod($ra_menu_slug));
+
+	$return_val = array();
+
+	foreach($menu as $menu_id => $menu_item){
+		$id = $menu_item->ID;
+		$parent_id = (int)$menu_item->menu_item_parent;
+		$new_menu_item = array();
+		$new_menu_item["post_title"] = $menu_item->post_title;
+		$new_menu_item["title"] = $menu_item->title;
+		$new_menu_item["url"] = $menu_item->url;
+		$new_menu_item["menu_order"] = $menu_item->menu_order;
+		$new_menu_item["sub_menu_items"] = null;
+
+		// Root items have a parent ID of 0
+		if ($parent_id === 0) {
+			$return_val[$id] = $new_menu_item;
+		}
+		else{
+			$return_val[$parent_id]["sub_menu_items"][$id] = $new_menu_item;
+		}
+	}
+	
+	// https://stackoverflow.com/a/2699159
+	usort($return_val, function($a, $b) {
+		return $a['menu_order'] <=> $b['menu_order'];
+	});
+
+	foreach($return_val as $menu_id => $menu_item){
+		if($menu_item["sub_menu_items"]){
+			usort($menu_item["sub_menu_items"], function($a, $b) {
+				return $a['menu_order'] <=> $b['menu_order'];
+			});
+		}
+
+		$return_val[$menu_id]["sub_menu_items"] = $menu_item["sub_menu_items"];
+	}
+
+    return $return_val;
+}
+
+// Shortcuts for the French and English menus
+function get_menu_en() {
+    return get_ra_menu('ra_menu_en');
+}
+
+function get_menu_fr() {
+    return get_ra_menu('ra_menu_fr');
+}
+
+add_action( 'rest_api_init', function () {
+	register_rest_route( 'ra', '/menu/en', array(
+		'methods' => 'GET',
+		'callback' => 'get_menu_en',
+	) );
+
+	register_rest_route( 'ra', '/menu/fr', array(
+		'methods' => 'GET',
+		'callback' => 'get_menu_fr',
+	) );
+} );
