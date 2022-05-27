@@ -35,10 +35,10 @@ RUN sed -i -e 's|\$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat|#\$Ac
 
 
 # Adds setting for Apache to ensure Fail2Ban correctly uses proxy IP on production server setup. i.e. ban the client IP not the proxy IP.
-RUN a2enmod remoteip && \
-    touch /etc/apache2/conf-enabled/remoteip.conf && \
-    printf "%s\n" "RemoteIPHeader X-Forwarded-For" \
-           "RemoteIPTrustedProxy $PROXY_IP" > /etc/apache2/conf-enabled/remoteip.conf
+#RUN a2enmod remoteip && \
+#    touch /etc/apache2/conf-enabled/remoteip.conf && \
+#    printf "%s\n" "RemoteIPHeader X-Forwarded-For" \
+#           "RemoteIPTrustedProxy $PROXY_IP" > /etc/apache2/conf-enabled/remoteip.conf
 
 # service apache2 restart
 
