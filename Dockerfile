@@ -1,7 +1,7 @@
 # =============================================================================
-# wordpress:5-php7.4-apache
+# wordpress:6-php8.1-apache
 #
-# WordPress 5.*, Apache 2.4, PHP 7.4 (image defaults)
+# WordPress 6.*, Apache 2.4, PHP 8.1 (image defaults)
 # Modifications: Rsyslog to shape log format output
 # Update Apache to latest available
 # Default text editors for DevOps
@@ -10,7 +10,7 @@
 # Removed Apache identifiers for security
 #
 # =============================================================================
-FROM wordpress:5.9-php7.4-apache
+FROM wordpress:6.0-php8.1-apache
 LABEL maintainer="Jacob Thompson <jacob.thompson@wiwasolvet.ca>"
 ARG PROXY_IP
 ARG BASE_URL
@@ -100,7 +100,7 @@ RUN touch /usr/local/etc/php/conf.d/uploads.ini && \
 
 RUN printf "%s\n" "ServerTokens Prod" \
     "ServerSignature Off" \
-    #"Header add Content-Security-Policy: \"default-src $BASE_URL https://fonts.gstatic.com https://cdn.usersnap.com https://api.usersnap.com; style-src $BASE_URL https://fonts.googleapis.com https://netdna.bootstrapcdn.com https://cdn-images.mailchimp.com/embedcode/ 'unsafe-inline'; script-src $BASE_URL https://dl.dropboxusercontent.com/s/pxxqg90g7zxtt8n/ https://www.googletagmanager.com/gtag/ https://www.google-analytics.com https://cdn.usersnap.com https://api.usersnap.com 'self' 'unsafe-eval' 'unsafe-inline'; connect-src $BASE_URL https://api.usersnap.com; font-src $BASE_URL 'self' data: fonts.gstatic.com https://netdna.bootstrapcdn.com; img-src $BASE_URL https://secure.gravatar.com https://dev.cioosatlantic.ca/wp-content/uploads/ https://www.google-analytics.com https://cdn.usersnap.com 'self' data:;\"" \
+    #"Header add Content-Security-Policy: \"default-src $BASE_URL https://fonts.gstatic.com; style-src $BASE_URL https://fonts.googleapis.com https://cdn-images.mailchimp.com/embedcode/ 'unsafe-inline'; script-src $BASE_URL https://www.googletagmanager.com/gtag/ https://www.google-analytics.com 'self' 'unsafe-eval' 'unsafe-inline'; connect-src $BASE_URL https://www.google-analytics.com; font-src $BASE_URL 'self' data: fonts.gstatic.com; img-src $BASE_URL https://secure.gravatar.com https://dev.cioosatlantic.ca/wp-content/uploads/ https://www.google-analytics.com 'self' data:;\"" \
     "Header set X-Content-Type-Options: \"nosniff\"" \
     "Header always set X-Xss-Protection \"1; mode=block\"" >> /etc/apache2/conf-enabled/security.conf
 
