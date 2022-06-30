@@ -7,7 +7,7 @@ services:
     # If you want to build a wordpress image with default self signed certs for Apache
     # See Dockerfile
     container_name: wordpress
-    image: wordpress-5-php7.4-apache-mod # updates minor WordPress versions, stays on PHP7.4 for compatibility
+    image: wordpress-6-php8.1-apache-mod # updates minor WordPress versions, stays on PHP8.1 for compatibility
     build:
       context: .
       dockerfile: Dockerfile
